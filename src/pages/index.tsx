@@ -1,7 +1,7 @@
 import Image from "next/image";
 import mainBanner from '../../public/image/children.jpg'
 import Link from "next/link";
-import { DONATE_CARD } from "@/static/Home";
+import { DONATE_CARD, VISION } from "@/static/Home";
 
 
 export default function Home() {
@@ -96,6 +96,29 @@ export default function Home() {
               </Link>
           </div>
           <Image src={'/image/main-AboutUs.jpg'} alt="about-us" width={630} height={544} />
+        </div>
+        {/* 비젼 */}
+        <div className="flex gap-3 items-center mt-[88px] ml-[10vw] mb-[20px]">
+          <div className="text-black text-[3vw] font-bold">
+            라고나브 청소년에게 그리스도의 사랑을
+          </div>
+          <div className="w-[40vw] border-b border-gray-400" />
+        </div>
+        <div className="bg-[#FFEFE0] width-[100vw] height-[50vw] p-[5vw] flex items-center justify-center gap-[10vw]">
+          <div className="flex flex-col gap-[3vw]">
+          {VISION.map((info, index) => {
+            return (
+              <div key={index} className="w-[25vw]">
+              <div className="flex mb-[2vw] gap-3">
+                <Image src={info.icon} width={28} height={28} alt="vision icon" />
+                <div className="font-bold text-[1.5vw]">{info.title}</div>
+              </div>
+              <p className="text-[1.1vw] font-light">{info.description}</p>
+              </div>
+            )
+          })}
+          </div>
+          <Image src={'/image/main-vision.jpg'}alt="vision" width={600} height={400} />
         </div>
       </div>
     </main>
