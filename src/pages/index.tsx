@@ -1,112 +1,78 @@
 import Image from "next/image";
+import mainBanner from '../../public/image/children.jpg'
+import Link from "next/link";
+import { DONATE_CARD } from "@/static/Home";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col justify-center">
+      <div className="flex flex-col relative contrast-70">
+        <Image src={mainBanner}
+          alt="main banner"
+          sizes="100vw"
+          style={{ width: '100vw', height: 'auto'}}>
+        </Image>
+        <div className="absolute left-[7vw] top-[16vw] text-white ">
+        <div className="text-[4vw] whitespace-pre font-bold leading-[120%]" >
+          {`라고나브 청소년들을
+후원해주세요`}
+        </div>
+        <div className="font-semibold text-[1.5vw] mt-[13px]">
+          Hand in Hand project for La Gonave
+          </div>
+          <Link
+            href={'/our-ministries'}
+            className="bg-white text-black w-[10vw] h-[3vw] flex justify-center items-center rounded-md text-[0.9vw] font-semibold mt-[6vw]">
+            Learn More
+          </Link>
+        </div>
+      <div className="flex items-baseline ">
+        <div className="w-[9vw] border-b-2 border-black" />
+        <div className="text-[#F3851D] mt-[88px] pl-[3vw] text-[1.3vw] font-bold">
+        맞춤 후원
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="text-[4vw] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw]">
+          {`양육에 가치를 더하는,
+당신을 위한 `}
+          <strong className="text-[#F3851D] font-bold">맞춤 후원</strong>
+        </div>
+        {/* 후원 card */}
+        <div className="flex ml-[10vw] justify-center mt-[140px]">
+        <Image src="/ArrowButton.svg" alt="arrow button" width={38} height={38} />
+        <div className="flex pl-[200px] overflow-x-scroll">
+          {DONATE_CARD.map((info, index) => {
+            return (
+              <div key={index} className="flex flex-col relative contrast-70 snap-center mr-[26px] rounded">
+              <Image
+                src={info.backgroundImage}
+                alt="donation card"
+                width={430}
+                height={550}
+                className="object-cover rounded w-[430px] h-[550px] max-w-[430px]"
+                />
+                <div className="absolute bottom-[70px] left-[50px] text-white w-[330px]">
+                  <div className="text-[33px] font-semibold">{info.title}</div>
+                  <div className="text-[16px] mt-4">{info.description}</div>
+                  <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold">
+                    <Link
+                      href={'/our-ministries'}
+                      className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md">
+                      Learn More
+                    </Link> 
+                    <Link
+                      href={'/our-ministries'}
+                      className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md ">
+                      바로 후원하기
+                      </Link>
+                    </div>
+                </div>
+              </div>
+            )
+          })}
+          </div>
+        </div>  
       </div>
     </main>
   );
