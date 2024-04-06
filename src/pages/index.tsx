@@ -1,10 +1,13 @@
 import Image from "next/image";
 import mainBanner from '../../public/image/children.jpg'
 import Link from "next/link";
-import { DONATE_CARD, VISION } from "@/static/Home";
+import { DONATE_CARD, PROJECT, VISION } from "@/static/Home";
+import { useState } from "react";
 
 
 export default function Home() {
+  const [projectIdx, setProjectIdx] = useState(0);
+
   return (
     <main className="flex flex-col justify-center">
       <div className="flex flex-col relative contrast-70">
@@ -76,10 +79,10 @@ export default function Home() {
         </div>
         {/* Know About Us */}
         <div className="flex items-baseline ">
-        <div className="w-[9vw] border-b-2 border-black" />
-        <div className="text-black mt-[88px] pl-[3vw] text-[1.3vw] font-bold">
-          KNOW ABOUT US
-        </div>
+          <div className="w-[9vw] border-b-2 border-black" />
+          <div className="text-black mt-[88px] pl-[2vw] text-[1.3vw] font-bold">
+            KNOW ABOUT US
+          </div>
         </div>
         <div className="flex justify-center gap-[8vw] p-8">
           <div className="w-[450px] mt-[5vw] ml-[3vw]">
@@ -119,6 +122,39 @@ export default function Home() {
           })}
           </div>
           <Image src={'/image/main-vision.jpg'}alt="vision" width={600} height={400} />
+        </div>
+        {/* 프로젝트 */}
+        <div className="flex items-baseline ">
+          <div className="w-[9vw] border-b-2 border-black" />
+          <div className="text-black mt-[88px] pl-[2vw] text-[1.3vw] font-bold">
+            PROJECT WE HAVE DONE
+          </div>
+        </div>
+        <div className="text-black text-[3vw] font-bold ml-[9vw] my-[2vw]">우리는 이렇게 함께 일합니다</div>
+        <div className="bg-[#1D2130] height-[80vh] p-[6vw] flex text-[2.5vw] relative">
+          <div className="ml-[10vw] z-10">
+            <div className="text-white">{PROJECT[projectIdx].location} |</div>
+            <div className="text-[#F5D992]">{PROJECT[projectIdx].title}</div>
+            <div className="flex gap-3 mt-[5vw]">
+              <Image src={'/projectLeftArrow.svg'}
+                alt="project-left-icon"
+                width={46} height={46}
+                className="cursor-pointer"
+                onClick={() => projectIdx > 0 ? setProjectIdx(projectIdx-1) : null} />
+              <Image src={'/projectRightArrow.svg'}
+                alt="project-right-icon"
+                width={46} height={46}
+                className="cursor-pointer"
+                onClick={() => projectIdx < PROJECT.length-1 ? setProjectIdx(projectIdx+1) : null} />
+            </div>
+            <div className="bg-[#2E425A] w-[40vw] text-white text-[1.3vw] font-normal px-[3vw] py-[5vw] mt-[2vw]">
+              <p>{PROJECT[projectIdx].description}</p>
+              <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
+            </div>
+          </div>
+          <Image src={PROJECT[projectIdx].image}
+            alt="project" width={540} height={580}
+            className="object-fit absolute right-[15vw] top-[9vw]" />
         </div>
       </div>
     </main>

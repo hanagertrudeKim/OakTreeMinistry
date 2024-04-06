@@ -34,3 +34,18 @@ export const VISION = [
     icon: "/visionIcon2.svg"
   }
 ]
+
+export const PROJECT = [
+  {
+    location: "아이티 라고나브 섬",
+    title: "소망 학교를 세우다",
+    description: "우리는 지금 쉽지 않은 상황이지만 아이들이 안전하게 공부할 수 있는 초. 중고등학교 크리스찬 학교를 짓고 있습니다. 이 학교를 통해 청소년들에게 성경을 가르치고 예수의 비전을 심어 주고 하나님 나라에 소망을 갖게 하여 이들을 주님의 군사로 준비 시키고자 합니다.",
+    image: "/image/main-project1.jpg"
+  },
+  {
+    location: "도미니카 공화국",
+    title: "소망 학교를 세우다",
+    description: "우리는 지금 쉽지 않은 상황이지만 아이들이 안전하게 공부할 수 있는 초. 중고등학교 크리스찬 학교를 짓고 있습니다. 이 학교를 통해 청소년들에게 성경을 가르치고 예수의 비전을 심어 주고 하나님 나라에 소망을 갖게 하여 이들을 주님의 군사로 준비 시키고자 합니다.",
+    image: "/image/main-project1.jpg"
+  },
+]
