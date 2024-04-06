@@ -154,7 +154,14 @@ export default function Home() {
           </div>
           <Image src={PROJECT[projectIdx].image}
             alt="project" width={540} height={580}
-            className="object-fit absolute right-[15vw] top-[9vw]" />
+            className="object-fit absolute right-[15vw] top-[9vw] w-[35vw]" />
+        </div>
+          <div className="relative mt-[4vw] mb-[13vw]">
+            <Image src={'/mainCircle.svg'} alt="circle" width={150} height={150} className="absolute w-[10vw]"/>
+            <div className="font-bold text-[2.5vw] z-10 absolute left-[6vw] top-[30px]">OUR RECENT WORK</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <Image src={'/image/main-gallery.jpg'} alt="gallery" width={1100} height={900} className="w-[80vw]" />
         </div>
       </div>
     </main>
