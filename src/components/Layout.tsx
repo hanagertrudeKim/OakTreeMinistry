@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import '../app/globals.css'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Drawer from "./Sidebar";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +18,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Header/>
+      <Header setIsOpen={setIsOpen} />
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <div>안녕</div>
+        <div>안녕</div>
+        <div>안녕</div>
+        <div>안녕</div>
+      </Drawer>
         <div className={inter.className}>{children}</div>
       <Footer/>
     </>
