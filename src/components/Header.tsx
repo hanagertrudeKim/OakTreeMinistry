@@ -12,14 +12,6 @@ export default function Header({ setIsOpen }: any) {
         height={80}
         className="sm:h-[12vw] sm:w-[30vw] sm:left-[10px]"
       />
-      <Image
-        src="/mobileMenu.svg"
-        alt="menu"
-        width={24}
-        height={24}
-        onClick={() => setIsOpen(true)}
-        className="lg:hidden sm:absolute sm:right-[28vw]"
-      />
       <div className="sm:hidden flex justify-center items-center gap-16 text-base font-semibold">
         {NAVIGATION.map((content, index) => {
           return (
@@ -31,10 +23,18 @@ export default function Header({ setIsOpen }: any) {
       </div>
       <Link
         href="/donate"
-        className="bg-[#07403A] text-white w-28 h-10 flex justify-center items-center rounded-md text-sm sm:h-[7vw] sm:w-[19vw] sm:text-[3vw] sm:absolute right-6"
+        className="bg-[#07403A] text-white w-28 h-10 flex justify-center items-center rounded-md text-sm sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] sm:absolute right-[16vw]"
       >
         <div>Donate</div>
       </Link>
+      <Image
+        src="/mobileMenu.svg"
+        alt="menu"
+        width={26}
+        height={26}
+        onClick={() => setIsOpen(true)}
+        className="lg:hidden sm:absolute sm:right-5"
+      />
     </div>
   );
 }
