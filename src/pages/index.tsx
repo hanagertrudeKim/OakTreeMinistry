@@ -22,7 +22,7 @@ export default function Home() {
           />
         ) : (
           <Image
-            src={"/image/children.jpg"}
+            src={"/image/children-high-resolution.jpg"}
             alt="main banner"
             sizes="100vw"
             width={1400}
