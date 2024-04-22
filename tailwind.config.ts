@@ -31,6 +31,13 @@ const config: Config = {
           fontFeatureSettings: '"cv11", "ss01"',
           fontVariationSettings: '"opsz" 32'
         },
+        ],
+      NSK: [
+        '"Noto Sans KR", "Roboto", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
       ],
     },
     },

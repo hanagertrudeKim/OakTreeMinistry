@@ -1,18 +1,18 @@
 export const NAVIGATION = [
   {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "About us",
+    title: "소개",
     link: "/about-us",
   },
-  {
-    title: "Our Ministries",
+    {
+    title: "맞춤후원",
     link: "/our-ministries",
   },
   {
-    title: "Media",
+    title: "사역",
+    link: "/project",
+  },
+  {
+    title: "소식",
     link: "/media",
   },
 ];
