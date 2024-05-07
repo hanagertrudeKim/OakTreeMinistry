@@ -5,7 +5,7 @@ export const NAVIGATION = [
   },
     {
     title: "맞춤후원",
-    link: "/our-ministries",
+    link: "/donate-program",
   },
   {
     title: "사역",

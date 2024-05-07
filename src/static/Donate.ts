@@ -16,3 +16,24 @@ export const DONATE = [
     description: "후원학생들이 한 곳에서 모여 양질의 교육과 신앙 훈련을 할 수 있는 크리스찬 학교를 세우고 인터넷과 컴퓨터를 이용한 최신 교육을 배울 수 있도록 한다. 전자 도서관, 무료 급식. 직업 훈련 등 다양한 학교 프로그램 운영을 지원한다."
   }
 ]
+
+export const DONATION_PROGRAM = [
+  {
+    imageUrl: "/image/childrenDonate.jpg",
+    alt: "어린이 후원 사진",
+    title: "1:1 청소년 후원하기",
+    description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+  },
+  {
+    imageUrl: "/image/collegeDonate.jpg",
+    alt: "대학생 후원 사진",
+    title: "대학생 후원하기",
+    description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+  },
+  {
+    imageUrl: "/image/schoolDonate.jpg",
+    alt: "소망학교 후원 사진",
+    title: "소망 학교 후원하기",
+    description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+  },
+];
