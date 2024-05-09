@@ -40,7 +40,7 @@ export default function Home() {
             Hand in Hand project for La Gonave
           </div>
           <Link
-            href={"/our-ministries"}
+            href={"/donate-program"}
             className="bg-white text-black w-[10vw] h-[3vw] flex justify-center items-center rounded-md text-[0.9vw] font-semibold mt-[6vw] sm:w-[25vw] sm:h-[8vw] sm:text-[2.8vw] sm:bg-[#F3851D] sm:text-white sm:font-medium"
           >
             Learn More
@@ -90,13 +90,13 @@ export default function Home() {
                     </div>
                     <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[10px]">
                       <Link
-                        href={"/our-ministries"}
+                        href={"/donate-program"}
                         className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
                       >
                         Learn More
                       </Link>
                       <Link
-                        href={"/our-ministries"}
+                        href={"/donate-program"}
                         className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
                       >
                         바로 후원하기
@@ -127,7 +127,7 @@ export default function Home() {
               다양한 사역을 교회와 글로벌 케어 팀과 함께 진행해왔습니다.
             </p>
             <Link
-              href={"/our-ministries"}
+              href={"/donate-program"}
               className="bg-[#F3851D] text-black w-[167px] h-[44px] flex justify-center items-center rounded-md mt-[4vw] sm:w-[27vw] sm:h-[8vw] sm:text-[2.5vw] sm:mt-[5vw] sm:font-semibold"
             >
               Learn More
