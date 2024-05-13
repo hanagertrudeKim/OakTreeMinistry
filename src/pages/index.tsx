@@ -67,7 +67,7 @@ export default function Home() {
             height={38}
             className="sm:hidden"
           />
-          <div className="flex pl-[200px] overflow-x-scroll sm:pl-10">
+          <div className="flex pl-[200px] overflow-x-scroll sm:pl-10 sm:flex-col sm:gap-[20px]">
             {DONATE_CARD.map((info, index) => {
               return (
                 <div
@@ -82,13 +82,13 @@ export default function Home() {
                     className="object-cover rounded w-[430px] h-[550px] max-w-[430px] sm:w-[264px] sm:h-[380px]"
                   />
                   <div className="absolute bottom-[70px] left-[50px] text-white w-[330px] sm:w-[220px] sm:left-[20px] sm:bottom-[40px]">
-                    <div className="text-[33px] font-semibold sm:text-[20px]">
+                    <div className="text-[33px] font-bold sm:text-[23px]">
                       {info.title}
                     </div>
                     <div className="text-[16px] mt-4 sm:text-[12px]">
                       {info.description}
                     </div>
-                    <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[10px]">
+                    <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[11px]">
                       <Link
                         href={"/donate-program"}
                         className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
@@ -128,7 +128,7 @@ export default function Home() {
             </p>
             <Link
               href={"/donate-program"}
-              className="bg-[#F3851D] text-black w-[167px] h-[44px] flex justify-center items-center rounded-md mt-[4vw] sm:w-[27vw] sm:h-[8vw] sm:text-[2.5vw] sm:mt-[5vw] sm:font-semibold"
+              className="bg-[#F3851D] text-black w-[167px] h-[44px] flex justify-center items-center rounded-md mt-[4vw] sm:w-[27vw] sm:h-[8vw] sm:text-[2.8vw] sm:mt-[5vw] sm:font-semibold"
             >
               Learn More
             </Link>
@@ -189,7 +189,7 @@ export default function Home() {
         <div className="text-black text-[3vw] font-bold ml-[9vw] my-[2vw] sm:hidden">
           우리는 이렇게 함께 일합니다
         </div>
-        <div className="bg-[#1D2130] p-[6vw] flex text-[2.5vw] relative sm:text-[5vw] sm:font-semibold sm:h-[110vw] sm:px-[2vw] sm:mt-[10vw]">
+        <div className="bg-[#1D2130] p-[6vw] flex text-[3vw] relative sm:text-[6vw] font-semibold sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw]">
           <div className="ml-[10vw] z-10 sm:ml-[4vw]">
             <div className="text-white">{PROJECT[projectIdx].location} |</div>
             <div className="text-[#F5D992]">{PROJECT[projectIdx].title}</div>
@@ -224,7 +224,7 @@ export default function Home() {
               height={580}
               className="object-fit w-[60vw] h-[65vw] lg:hidden"
             />
-            <div className="bg-[#2E425A] w-[40vw] text-white text-[1.3vw] font-normal px-[3vw] py-[5vw] mt-[2vw] sm:text-[2.5vw] sm:absolute sm:top-[70vw] sm:right-0 sm:w-[80vw] sm:p-[6vw]">
+            <div className="bg-[#2E425A] w-[40vw] text-white text-[1.3vw] font-normal px-[3vw] py-[5vw] mt-[2vw] sm:text-[3.3vw] sm:absolute sm:top-[70vw] sm:right-0 sm:w-[80vw] sm:p-[6vw]">
               <p>{PROJECT[projectIdx].description}</p>
               <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
             </div>
