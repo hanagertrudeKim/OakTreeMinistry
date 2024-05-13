@@ -5,7 +5,7 @@ export default function A() {
   return (
     <div className="mt-[3vw]">
       <div className="py-[2vw] px-[9vw]  z-4">
-        <div className="whitespace-pre text-[3vw] font-extrabold text-end leading-snug ㅊ">
+        <div className="whitespace-pre text-[3vw] font-extrabold text-end leading-snug">
           {`우리는 아이티 라고나브 청소년이 그리스도의 제자로
 잘 성장하도록 훈련시키고 지지합니다`}
         </div>
