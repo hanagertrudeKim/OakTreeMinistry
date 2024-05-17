@@ -9,7 +9,7 @@ export default function Donation() {
         {!isMobile && (
           <div className="font-NSK text-white">
             <div className="text-[65px] font-extrabold indent-3">
-              1:1 청소년 후원하기
+              후원 결제 진행하기
             </div>
             <div className="text-[30px] font-extralight mt-[70px] ml-3">
               후원하실 프로그램을 선택해주세요.

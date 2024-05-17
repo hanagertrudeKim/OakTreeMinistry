@@ -28,12 +28,12 @@ export const DONATION_PROGRAM = [
     imageUrl: "/image/collegeDonate.jpg",
     alt: "대학생 후원 사진",
     title: "대학생 후원하기",
-    description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+    description: "고등학교 졸업생들의 대학 진학을 지원합니다.",
   },
   {
     imageUrl: "/image/schoolDonate.jpg",
     alt: "소망학교 후원 사진",
     title: "소망 학교 후원하기",
-    description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+    description: "교육과 신앙 훈련을 받을 수 있는 크리스천 학교를 세웁니다.",
   },
 ];

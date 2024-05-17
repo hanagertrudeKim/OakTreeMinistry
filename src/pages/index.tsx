@@ -91,7 +91,7 @@ export default function Home() {
                         Learn More
                       </Link>
                       <Link
-                        href={"/donate-program"}
+                        href={"/donate"}
                         className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
                       >
                         바로 후원하기

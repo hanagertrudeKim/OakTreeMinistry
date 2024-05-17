@@ -50,7 +50,7 @@ export default function A() {
           className="w-[37vw] h-[40vw] sm:w-[90vw] ml-[8vw] object-cover sm:ml-0 sm:h-auto sm:mt-[20px]"
         />
       </div>
-      <div className="w-[100vw] bg-[#FFEFE0] h-[70vw] absolute top-[43vw] -z-10 sm:h-[97vh] sm:top-[47vh]"></div>
+      <div className="w-[100vw] bg-[#FFEFE0] h-[70vw] absolute top-[43vw] -z-10 sm:h-[189vw] sm:top-[92vw]"></div>
       <div className="my-[13vw] mx-[15vw] sm:mx-0 sm:px-[5vw]">
         <div className="flex justify-center items-center sm:flex-col sm:items-start">
           <p className="font-extrabold text-[3vw] sm:text-[6vw]">

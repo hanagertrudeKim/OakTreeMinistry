@@ -2,21 +2,21 @@ export const DONATE_CARD = [
   {
     backgroundImage: "/image/donateCard1.jpg",
     title: "1:1 청소년 후원하기",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    description: "초등학생부터 고등학생까지 학비 지원과 매주 성경공부 및 제자훈련을 통해 신앙생활을 지도합니다.",
     learnMoreLink: "donate-program",
     donateLink: "/donate",
   }, 
   {
     backgroundImage: "/image/donateCard2.jpg",
     title: "대학생 후원하기",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    description: "우수한 고등학교 졸업생들의 대학 진학을 지원하며, 대학생활동안 신앙 공동체를 통해 선교사로서 훈련시킵니다.",
     learnMoreLink: "donate-program",
     donateLink: "/donate",
   },
   {
     backgroundImage: "/image/donateCard3.jpg",
     title: "소망 학교 후원하기",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    description: "양질의 교육과 신앙 훈련을 받을 수 있는 크리스찬 학교를 세우고, 최신 교육, 전자 도서관, 무료 급식, 직업 훈련 등을 지원합니다.",
     learnMoreLink: "donate-program",
     donateLink: "/donate",
   }
