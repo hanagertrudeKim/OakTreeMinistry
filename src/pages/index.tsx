@@ -184,7 +184,7 @@ export default function Home() {
         <div className="text-black text-[3vw] font-bold ml-[9vw] my-[2vw] sm:hidden">
           우리는 이렇게 함께 일합니다
         </div>
-        <div className="bg-[#1D2130] p-[6vw] flex text-[3vw] relative sm:text-[6vw] font-semibold sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw]">
+        <div className="bg-[#1D2130] p-[6vw] flex text-[2.9vw] relative sm:text-[6vw] font-semibold sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw]">
           <div className="ml-[10vw] z-10 sm:ml-[4vw]">
             <div className="text-white">{PROJECT[projectIdx].location} |</div>
             <div className="text-[#F5D992]">{PROJECT[projectIdx].title}</div>
