@@ -7,30 +7,25 @@ import useMediaQuery from "@/utils/hooks/useMediaQuery";
 export default function Home() {
   const [projectIdx, setProjectIdx] = useState(0);
   const isMobile = useMediaQuery();
+  console.log(isMobile);
 
   return (
     <main className="flex flex-col justify-center">
       <div className="flex flex-col relative contrast-70">
-        {isMobile ? (
-          <Image
-            src={"/image/main-mobileBanner.jpg"}
-            alt="main banner"
-            sizes="100vw"
-            width={600}
-            height={900}
-            className="w-[100vw] brightness-75"
-          />
-        ) : (
-          <Image
-            src={"/image/children-high-resolution.jpg"}
-            alt="main banner"
-            sizes="100vw"
-            width={1400}
-            height={900}
-            className="w-[100vw]"
-          />
-        )}
-
+        <Image
+          src={"/image/main-mobileBanner.jpg"}
+          alt="main banner"
+          width={439}
+          height={539}
+          className="w-[100vw] brightness-75 lg:hidden "
+        />
+        <Image
+          src={"/image/children-high-resolution.jpg"}
+          alt="main banner"
+          width={1400}
+          height={900}
+          className="w-[100vw] sm:hidden"
+        />
         <div className="absolute left-[7vw] top-[16vw] text-white sm:top-[35vh]">
           <div className="text-[4vw] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
             {`라고나브 청소년들을
