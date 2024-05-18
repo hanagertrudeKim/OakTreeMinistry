@@ -14,7 +14,7 @@ export default function DonateProgram() {
               후원 프로그램
             </div>
           </div>
-          <div className="w-[600px] text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[400px] sm:text-[30px]">
+          <div className="w-[600px] text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[92vw] sm:text-[30px]">
             주제별 양육보완후원
           </div>
           <div className="text-[20px] mt-[2vw] ml-[6vw] text-white sm:text-[12px]">
@@ -25,7 +25,7 @@ export default function DonateProgram() {
       </div>
       <div className="py-[150px] flex flex-col items-center sm:py-[50px]">
         <div>
-          <div className="text-[50px] font-bold mb-[5vw] leading-snug sm:w-[90vw] sm:text-[33px] sm:mt-[15vw]">
+          <div className="text-[50px] font-bold mb-[5vw] leading-snug sm:w-[90vw] sm:text-[33px] sm:mt-[5vw]">
             Hand in Hand project <br /> for La Gonave
           </div>
           <div className="flex sm:flex-col sm:m-auto">
@@ -50,7 +50,7 @@ export default function DonateProgram() {
             </div>
           </div>
         </div>
-        <div className="w-[65vw] max-w-[1100px]">
+        <div className="w-[65vw] max-w-[1100px] sm:w-auto">
           <div className="flex mt-[8vw] mb-[4vw]">
             <div className="text-[40px] font-bold font-roboto sm:text-[28px] sm:my-[10vw]">
               후원이 필요한 곳
@@ -86,10 +86,10 @@ export default function DonateProgram() {
             height={700}
             className="w-[650px] sm:w-[90vw] object-contain m-auto"
           />
-          <div className="text-[40px] font-extrabold mt-[8vw] mb-[2vw] font-NSK sm:text-[26px] sm:my-[15vw]">
+          <div className="text-[40px] font-extrabold mt-[8vw] mb-[2vw] font-NSK sm:text-[26px] sm:mt-[15vw] sm:mb-[8vw]">
             후원 방법
           </div>
-          <div className="mb-[2vw] text-[25px] w-[90%] m-auto sm:w-[90vw] sm:text-[18px] whitespace-pre-wrap leading-relaxed font-NSK">
+          <div className="mb-[2vw] text-[25px] w-[90%] m-auto sm:w-[95vw] sm:text-[3.6vw] whitespace-pre-wrap leading-relaxed font-NSK sm:whitespace-pre-line">
             {`1. 후원대상: 라고나브 어린이, 청소년, 대학생, 현지 교사, 소망학교
 2. 후원금 : 매달 $35불(40,000원) 혹 일시불 납부
 3. 지출내용 : * 1년 학비 $300 (등록비, 수업비, 책값 보조 등)
@@ -111,7 +111,7 @@ export default function DonateProgram() {
                 alt={item.alt}
                 width={550}
                 height={350}
-                className="w-[450px] sm:w-[90vw] object-contain"
+                className="w-[450px] sm:w-[90vw] sm:h-[250px] object-cover"
               />
             ) : null}
             <div
@@ -119,7 +119,7 @@ export default function DonateProgram() {
                 index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#1D2130] text-white"
               } p-[70px] sm:p-[30px] sm:w-[90vw] sm:h-[280px] sm:gap-[22px]`}
             >
-              <div className="text-[35px] font-NSK font-extrabold sm:text-[30px]">
+              <div className="text-[35px] font-NSK font-extrabold sm:text-[26px]">
                 {item.title}
               </div>
               <div className="text-[20px] font-NSK font-medium sm:text-[16px] sm:font-normal">
@@ -153,7 +153,7 @@ export default function DonateProgram() {
                 alt={item.alt}
                 width={550}
                 height={350}
-                className="w-[450px] sm:w-[90vw] object-contain"
+                className="w-[450px] sm:w-[90vw] sm:h-[250px] object-cover"
               />
             ) : null}
           </div>
