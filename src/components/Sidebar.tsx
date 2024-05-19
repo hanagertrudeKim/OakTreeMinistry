@@ -14,7 +14,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
         " fixed overflow-hidden z-30 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out w-[100vw] " +
         (isOpen
           ? " transition-opacity opacity-100 duration-500 translate-x-0  "
-          : " transition-all delay-500 opacity-0 translate-x-full  ")
+          : " transition-all delay-500 opacity-0 translate-x-full ")
       }
     >
       <section

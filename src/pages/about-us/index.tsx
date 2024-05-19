@@ -6,7 +6,7 @@ export default function A() {
   const isMobile = useMediaQuery();
   return (
     <div className="mt-[3vw]">
-      <div className="py-[2vw] px-[9vw] z-4 sm:px-[1vw]">
+      <div className="py-[2vw] px-[9vw] z-4 sm:px-[5vw]">
         <div className="whitespace-pre text-[3vw] font-extrabold text-end leading-snug sm:text-[6vw]">
           {!isMobile
             ? `우리는 아이티 라고나브 청소년이 그리스도의 제자로

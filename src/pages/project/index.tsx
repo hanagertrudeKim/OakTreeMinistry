@@ -15,7 +15,7 @@ export default function index() {
               프로젝트
             </div>
           </div>
-          <div className="w-[600px] text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[400px] sm:text-[30px]">
+          <div className="sm:w-full w-[600px] text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:text-[24px]">
             우리는 이런 일을 하고 있어요
           </div>
           <div className="text-[20px] mt-[2vw] ml-[6vw] text-white sm:text-[12px]">
@@ -25,7 +25,7 @@ export default function index() {
         <div className="w-[400px] sm:w-0"></div>
       </div>
       <div className="flex flex-col">
-        <div className="flex justify-center font-bold text-[19px] mt-[50px] text-center font-NSK gap-[120px] sm:gap-[30px] sm:text-[16px]">
+        <div className="flex mx-8 justify-center font-bold text-[19px] mt-[50px] text-center font-NSK gap-[120px] sm:gap-[30px] sm:text-[16px]">
           <button
             className={`w-[280px] h-[55px] border border-black rounded-full ${
               isClickRight ? "bg-[#175a41] text-white" : "text-black"
@@ -82,13 +82,15 @@ export default function index() {
 
 4. 미혼모 신앙 공동체를 구성하여, 소외된 여성들이 참된 그리스도의 제자로 성장할 수 있도록 지원합니다.`}
                     </div>
-                    <Image
-                      src={"/image/dorega-graph.jpg"}
-                      alt="project-school"
-                      width={550}
-                      height={550}
-                      className="w-[420px] sm:w-[80vw] object-scale-down sm:m-auto"
-                    />
+                    <div className="mb-12">
+                      <Image
+                        src={"/image/dorega-graph.jpg"}
+                        alt="project-school"
+                        width={550}
+                        height={550}
+                        className="w-[420px] sm:w-[80vw] object-scale-down sm:m-auto mb-12"
+                      />
+                    </div>
                   </div>
                 </div>
               )}
