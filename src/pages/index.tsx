@@ -26,7 +26,7 @@ export default function Home() {
           height={900}
           className="w-[100vw] sm:hidden"
         />
-        <div className="absolute left-[7vw] top-[16vw] text-white sm:top-[35vh]">
+        <div className="absolute left-[7vw] top-[16vw] text-white sm:top-[32vh]">
           <div className="text-[4vw] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
             {`라고나브 청소년들을
 후원해주세요`}

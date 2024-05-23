@@ -7,7 +7,7 @@ export default function index() {
   const [isClickRight, setIsClickRight] = useState(true);
   return (
     <div>
-      <div className="h-[450px] px-[10vw] flex justify-center bg-[url('/image/projectBanner2.jpg')] sm:w-[100vw]">
+      <div className="h-[450px] px-[10vw] flex bg-[url('/image/projectBanner2.jpg')] sm:px-0 sm:w-[100vw] sm:object-cover">
         <div>
           <div className="flex items-baseline">
             <div className="w-[5vw] border-b-2 border-white" />
@@ -51,7 +51,7 @@ export default function index() {
                 className="flex justify-center mt-[150px] sm:flex-col sm:mt-[80px] sm:items-center"
               >
                 <div className="font-NSK pr-[6vw] w-[600px] sm:w-[90vw] sm:pr-0">
-                  <div className="text-[30px] font-extrabold sm:text-[28px]">
+                  <div className="text-[35px] font-extrabold sm:text-[28px]">
                     {project.title}
                   </div>
                   <div className="text-[21px] font-normal mt-[35px] sm:mb-5 sm:text-[18px]">
@@ -68,7 +68,7 @@ export default function index() {
               </div>
               {project.title === "도르가 미혼모 사역" && (
                 <div className="font-NSK mt-[100px] flex flex-col justify-center items-center">
-                  <div className="text-[30px] font-extrabold mb-[50px] sm:text-[25px] sm:mb-[10px] sm:w-[90vw]">
+                  <div className="text-[35px] font-extrabold mb-[50px] sm:text-[25px] sm:mb-[10px] sm:w-[90vw]">
                     도르가 미혼모 사역의 목적
                   </div>
                   <div className="flex gap-[8vw] justify-between items-center sm:w-[90vw] sm:flex-col">
@@ -98,13 +98,13 @@ export default function index() {
           ))
         ) : (
           <div className="font-NSK m-auto px-[20vw] my-[100px] sm:px-[5vw]">
-            <div className="text-[30px] font-extrabold sm:text-[28px]">
+            <div className="text-[35px] font-extrabold sm:text-[28px]">
               {PROJECT.dominica_project.info.title}
             </div>
             <div className="text-[20px] font-normal mt-[60px] sm:mt-[30px] sm:text-[18px]">
               {PROJECT.dominica_project.info.text}
             </div>
-            <div className="text-[30px] font-extrabold mt-[100px] sm:mt-[80px] sm:text-[28px]">
+            <div className="text-[35px] font-extrabold mt-[100px] sm:mt-[80px] sm:text-[28px]">
               {PROJECT.dominica_project.clinic.title}
             </div>
             <div className="text-[20px] font-normal my-[60px] whitespace-pre-wrap leading-relaxed sm:text-[17px] sm:my-[30px]">

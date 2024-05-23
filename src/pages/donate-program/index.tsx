@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function DonateProgram() {
   return (
     <div>
-      <div className="h-[450px] px-[10vw] flex justify-center bg-[url('/image/projectBanner.jpg')] sm:px-0 sm:w-[100vw] sm:object-cover">
+      <div className="h-[450px] px-[10vw] flex bg-[url('/image/projectBanner.jpg')] sm:px-0 sm:w-[100vw] sm:object-cover">
         <div>
           <div className="flex items-baseline">
             <div className="w-[5vw] border-b-2 border-white" />
@@ -14,7 +14,7 @@ export default function DonateProgram() {
               후원 프로그램
             </div>
           </div>
-          <div className="w-[600px] text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[92vw] sm:text-[30px]">
+          <div className="text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[92vw] sm:text-[30px]">
             주제별 양육보완후원
           </div>
           <div className="text-[20px] mt-[2vw] ml-[6vw] text-white sm:text-[12px]">

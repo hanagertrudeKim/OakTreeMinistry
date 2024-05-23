@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Program() {
   const router = useRouter();
-  console.log(router);
+  
   return (
     <div>
       <div
