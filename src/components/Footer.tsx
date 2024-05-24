@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <div className="flex md:flex-row justify-between sm:justify-start">
           <div className="mb-4 md:mb-0 sm:hidden">
-            <h1 className="text-xl font-normal">OakTree Ministry</h1>
+            <h1 className="text-[18px] font-semibold font-NSK">OakTree Ministry</h1>
           </div>
           <div className="flex flex-col gap-3 sm:hidden">
             <Link href='/'>

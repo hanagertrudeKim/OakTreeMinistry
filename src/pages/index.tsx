@@ -184,53 +184,52 @@ export default function Home() {
         <div className="text-black text-[3vw] font-bold ml-[9vw] my-[2vw] sm:hidden">
           우리는 이렇게 함께 일합니다
         </div>
-        <div className="bg-[#1D2130] p-[6vw] flex text-[2.9vw] relative sm:text-[6vw] font-semibold sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw]">
-          <div className="ml-[10vw] z-10 sm:ml-[4vw]">
-            <div className="text-white">{PROJECT[projectIdx].location} |</div>
-            <div className="text-[#F5D992]">{PROJECT[projectIdx].title}</div>
-            <div className="flex gap-3 mt-[5vw]">
-              <Image
-                src={"/projectLeftArrow.svg"}
-                alt="project-left-icon"
-                width={46}
-                height={46}
-                className="cursor-pointer sm:hidden"
-                onClick={() =>
-                  projectIdx > 0 ? setProjectIdx(projectIdx - 1) : null
-                }
-              />
-              <Image
-                src={"/projectRightArrow.svg"}
-                alt="project-right-icon"
-                width={46}
-                height={46}
-                className="cursor-pointer sm:hidden"
-                onClick={() =>
-                  projectIdx < PROJECT.length - 1
-                    ? setProjectIdx(projectIdx + 1)
-                    : null
-                }
-              />
-            </div>
-            <Image
-              src={PROJECT[projectIdx].image}
-              alt="project"
-              width={540}
-              height={580}
-              className="object-fit w-[60vw] h-[65vw] lg:hidden"
-            />
-            <div className="bg-[#2E425A] w-[40vw] text-white text-[1.3vw] font-normal px-[3vw] py-[5vw] mt-[2vw] sm:text-[3.3vw] sm:absolute sm:top-[70vw] sm:right-0 sm:w-[80vw] sm:p-[6vw]">
-              <p>{PROJECT[projectIdx].description}</p>
-              <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
-            </div>
-          </div>
+        <div className="my-[3vw] flex sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw] relative h-[700px]">
           <Image
             src={PROJECT[projectIdx].image}
             alt="project"
             width={540}
-            height={580}
-            className="object-fit absolute right-[15vw] top-[9vw] w-[35vw] sm:top-[20vw] sm:hidden"
+            height={600}
+            className="object-cover w-[650px] h-[590px] sm:top-[20vw] absolute left-[15vw] top-0"
           />
+          <div className="absolute right-[15vw] bottom-0">
+            <div className="bg-[#042C28] w-[690px] h-[590px] font-light text-white text-[18px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:absolute sm:top-[70vw] sm:right-0 sm:w-[80vw] sm:p-[6vw]">
+              <div className="text-[40px] font-semibold">
+                <div className="text-white">
+                  {PROJECT[projectIdx].location} |
+                </div>
+                <div className="text-[#F5D992]">
+                  {PROJECT[projectIdx].title}
+                </div>
+              </div>
+              <div className="flex gap-3 my-[2vw]">
+                <Image
+                  src={"/projectLeftArrow.svg"}
+                  alt="project-left-icon"
+                  width={46}
+                  height={46}
+                  className="cursor-pointer sm:hidden"
+                  onClick={() =>
+                    projectIdx > 0 ? setProjectIdx(projectIdx - 1) : null
+                  }
+                />
+                <Image
+                  src={"/projectRightArrow.svg"}
+                  alt="project-right-icon"
+                  width={46}
+                  height={46}
+                  className="cursor-pointer sm:hidden"
+                  onClick={() =>
+                    projectIdx < PROJECT.length - 1
+                      ? setProjectIdx(projectIdx + 1)
+                      : null
+                  }
+                />
+              </div>
+              <p>{PROJECT[projectIdx].description}</p>
+              <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
+            </div>
+          </div>
         </div>
         <div className="relative mt-[4vw] mb-[13vw] sm:mt-[10vw]">
           <Image
