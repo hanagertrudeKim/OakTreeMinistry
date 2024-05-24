@@ -184,24 +184,27 @@ export default function Home() {
         <div className="text-black text-[3vw] font-bold ml-[9vw] my-[2vw] sm:hidden">
           우리는 이렇게 함께 일합니다
         </div>
-        <div className="my-[3vw] flex sm:h-[124vw] sm:px-[2vw] sm:mt-[10vw] relative h-[700px]">
+        <div className="my-[3vw] flex sm:px-[2vw] sm:mt-[10vw] relative h-[700px] sm:flex-col sm:h-[440px]">
           <Image
             src={PROJECT[projectIdx].image}
             alt="project"
             width={540}
             height={600}
-            className="object-cover w-[650px] h-[590px] sm:top-[20vw] absolute left-[15vw] top-0"
+            className="object-cover w-[40vw] h-[590px] absolute left-[15vw] top-0 sm:w-[100vw] sm:h-[250px] sm:left-0"
           />
-          <div className="absolute right-[15vw] bottom-0">
-            <div className="bg-[#042C28] w-[690px] h-[590px] font-light text-white text-[18px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:absolute sm:top-[70vw] sm:right-0 sm:w-[80vw] sm:p-[6vw]">
-              <div className="text-[40px] font-semibold">
+          <div className="absolute right-[15vw] bottom-0 sm:right-0">
+            <div className="bg-[#042C28] w-[40vw] h-[590px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[380px] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
+              <Link
+                className="text-[2.3vw] font-semibold sm:text-[5vw]"
+                href="/project"
+              >
                 <div className="text-white">
                   {PROJECT[projectIdx].location} |
                 </div>
                 <div className="text-[#F5D992]">
                   {PROJECT[projectIdx].title}
                 </div>
-              </div>
+              </Link>
               <div className="flex gap-3 my-[2vw]">
                 <Image
                   src={"/projectLeftArrow.svg"}
@@ -226,7 +229,16 @@ export default function Home() {
                   }
                 />
               </div>
-              <p>{PROJECT[projectIdx].description}</p>
+              <p
+                style={{
+                  WebkitLineClamp: 3,
+                  display: "-webkit-box",
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }}
+              >
+                {PROJECT[projectIdx].description}
+              </p>
               <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
             </div>
           </div>
@@ -243,15 +255,15 @@ export default function Home() {
             OUR RECENT WORK
           </div>
         </div>
-        <div className="flex flex-col items-center">
+        <Link className="flex flex-col items-center" href="/media">
           <Image
             src={"/image/main-gallery.jpg"}
             alt="gallery"
             width={1100}
             height={900}
-            className="w-[80vw] sm:w-[100vw]"
+            className="w-[70vw] sm:w-[100vw]"
           />
-        </div>
+        </Link>
       </div>
     </main>
   );
