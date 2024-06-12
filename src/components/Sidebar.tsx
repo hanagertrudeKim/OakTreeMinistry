@@ -11,7 +11,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
   return (
     <main
       className={
-        " fixed overflow-hidden z-30 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out w-[100vw] " +
+        "fixed overflow-hidden z-30 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out w-[100vw]" +
         (isOpen
           ? " transition-opacity opacity-100 duration-500 translate-x-0  "
           : " transition-all delay-500 opacity-0 translate-x-full ")
@@ -23,11 +23,11 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
           (isOpen ? " translate-x-0 " : " translate-x-full ")
         }
       >
-        <article className="relative w-screen max-w-lg flex flex-col overflow-y-scroll h-full text-white p-5 font-bold">
-          <header className="font-bold text-[5vw] py-[5vw]">메뉴</header>
+        <article className="relative w-screen max-w-lg flex flex-col overflow-y-scroll h-full text-white p-5 font-normal pt-[80px]">
+          {/* <header className="font-bold text-[5vw] py-[5vw]">메뉴</header> */}
           {NAVIGATION.map((info, index) => {
             return (
-              <div key={index} className="text-[3.5vw] p-4">
+              <div key={index} className="text-[3.8vw] p-4">
                 <Link href={info.link}>{info.title}</Link>
               </div>
             );

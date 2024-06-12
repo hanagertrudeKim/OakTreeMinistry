@@ -23,12 +23,13 @@ export const DONATION_PROGRAM = [
     alt: "어린이 후원 사진",
     title: "1:1 청소년 후원하기",
     description: "학비 지원으로 성경 공부, 제자 훈련을 지원합니다.",
+    description2: ""
   },
   {
     imageUrl: "/image/collegeDonate.jpg",
     alt: "대학생 후원 사진",
     title: "대학생 후원하기",
-    description: "고등학교 졸업생들의 대학 진학을 지원합니다.",
+    description: "아이티 라고나브 학생들의 대학 진학을 지원합니다.",
   },
   {
     imageUrl: "/image/schoolDonate.jpg",

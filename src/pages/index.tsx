@@ -193,7 +193,7 @@ export default function Home() {
             className="object-cover w-[40vw] h-[590px] absolute left-[15vw] top-0 sm:w-[100vw] sm:h-[250px] sm:left-0"
           />
           <div className="absolute right-[15vw] bottom-0 sm:right-0">
-            <div className="bg-[#042C28] w-[40vw] h-[590px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[380px] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
+            <div className="bg-[#042C28] w-[40vw] h-[500px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[380px] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
               <Link
                 className="text-[2.3vw] font-semibold sm:text-[5vw]"
                 href="/project"
