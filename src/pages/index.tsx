@@ -156,7 +156,7 @@ export default function Home() {
                       alt="vision icon"
                       className="sm:w-[20px]"
                     />
-                    <div className="font-bold text-[1.5vw] sm:text-[3.7vw]">
+                    <div className="font-bold text-[1.8vw] sm:text-[3.7vw]">
                       {info.title}
                     </div>
                   </div>
@@ -261,7 +261,7 @@ export default function Home() {
             alt="gallery"
             width={1100}
             height={900}
-            className="w-[70vw] sm:w-[100vw]"
+            className="w-[70vw] sm:w-[100vw] mb-[120px]"
           />
         </Link>
       </div>

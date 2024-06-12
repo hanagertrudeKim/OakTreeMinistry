@@ -8,10 +8,10 @@ export default function Donation() {
       <div className="flex items-start gap-[10vw] sm:flex-col">
         {!isMobile && (
           <div className="font-NSK text-white">
-            <div className="text-[65px] font-extrabold indent-3">
+            <div className="text-[62px] font-bold indent-3 mt-5">
               후원 결제 진행하기
             </div>
-            <div className="text-[30px] font-extralight mt-[70px] ml-3">
+            <div className="text-[30px] font-extralight mt-[50px] ml-3">
               후원하실 프로그램을 선택해주세요.
             </div>
           </div>
