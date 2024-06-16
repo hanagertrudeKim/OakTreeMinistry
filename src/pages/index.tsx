@@ -160,7 +160,7 @@ export default function Home() {
                       {info.title}
                     </div>
                   </div>
-                  <p className="text-[1.1vw] font-light sm:text-[3.3vw] sm:font-normal sm:mt-[3vw]">
+                  <p className="text-[1.1vw] font-normal sm:text-[3.3vw] sm:font-normal sm:mt-[3vw]">
                     {info.description}
                   </p>
                 </div>
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="absolute right-[15vw] bottom-0 sm:right-0">
             <div className="bg-[#042C28] w-[40vw] h-[500px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[380px] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
               <Link
-                className="text-[2.3vw] font-semibold sm:text-[5vw]"
+                className="text-[35px] font-semibold sm:text-[5vw]"
                 href="/project"
               >
                 <div className="text-white">
@@ -235,11 +235,15 @@ export default function Home() {
                   display: "-webkit-box",
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
+                  fontWeight: "400",
                 }}
               >
                 {PROJECT[projectIdx].description}
               </p>
-              <p className="mt-[3vw]"> - {PROJECT[projectIdx].location}</p>
+              <p className="mt-[3vw] font-normal">
+                {" "}
+                - {PROJECT[projectIdx].location}
+              </p>
             </div>
           </div>
         </div>
