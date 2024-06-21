@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { DONATE_CARD, PROJECT, VISION } from "@/static/Home";
 import { useState } from "react";
-import useMediaQuery from "@/utils/hooks/useMediaQuery";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function Home() {
   const [projectIdx, setProjectIdx] = useState(0);
-  const isMobile = useMediaQuery();
-  console.log(isMobile);
+  const { t } = useTranslation(["common"]);
 
   return (
     <main className="flex flex-col justify-center">
@@ -28,8 +28,9 @@ export default function Home() {
         />
         <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]">
           <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
-            {`라고나브 청소년들을
-후원해주세요`}
+            {/* {`라고나브 청소년들을
+후원해주세요`} */}
+            {t("main-banner")}
           </div>
           <div className="font-semibold text-[25px] mt-[20px] sm:text-[3.5vw] sm:mt-[4px]">
             Hand in Hand project for La Gonave
@@ -266,3 +267,11 @@ export default function Home() {
     </main>
   );
 }
+
+export const getStaticProps = async ({ locale }: any) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])), // common, footer namespace 전달
+    },
+  };
+};

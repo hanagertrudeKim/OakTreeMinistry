@@ -1,8 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { NAVIGATION } from "@/static/Navbar";
+import { useTranslation } from "next-i18next";
 
 export default function Header({ setIsOpen }: any) {
+  const { i18n } = useTranslation();
+  const { t } = useTranslation(["common"]);
+
+  const handleClickChangeLng = () => {
+    const newlng = i18n.language === "ko" ? "/en" : "";
+    const { protocol, host, pathname } = window.location;
+    const newPath = pathname.replace(/^\/en(\/|$)/g, "/");
+    window.location.href = protocol + "//" + host + newlng + newPath;
+  };
+
   return (
     <div className="sticky w-full h-[85px] bg-white flex items-center pr-20 sm:relative sm:h-[12vw] justify-end">
       <Link href={"/"}>
@@ -18,7 +29,7 @@ export default function Header({ setIsOpen }: any) {
         {NAVIGATION.map((content, index) => {
           return (
             <Link key={index} href={content.link} className="">
-              {content.title}
+              {t(content.title)}
             </Link>
           );
         })}
@@ -37,6 +48,15 @@ export default function Header({ setIsOpen }: any) {
         onClick={() => setIsOpen(true)}
         className="lg:hidden sm:absolute sm:right-5"
       />
+      <button className="flex ml-2 gap-1" onClick={handleClickChangeLng}>
+        <Image
+          src="/globalIcon.svg"
+          alt="언어 선택 버튼"
+          width={25}
+          height={25}
+        />
+        <span>{t("current-locale")}</span>
+      </button>
     </div>
   );
 }
