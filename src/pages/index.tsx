@@ -26,7 +26,7 @@ export default function Home() {
           height={900}
           className="w-[100vw] h-[850px] object-cover sm:hidden"
         />
-        <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh]">
+        <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]">
           <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
             {`라고나브 청소년들을
 후원해주세요`}
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <Link
             href={"/donate-program"}
-            className="bg-white text-black w-[170px] h-[50px] flex justify-center items-center rounded-md text-[16px] font-semibold mt-[70px] sm:w-[25vw] sm:h-[8vw] sm:text-[2.8vw] sm:bg-[#F3851D] sm:text-white sm:font-medium"
+            className="bg-white text-black w-[170px] h-[50px] flex justify-center items-center rounded-md text-[16px] font-semibold mt-[70px] sm:mt-[30px] sm:w-[25vw] sm:h-[8vw] sm:text-[2.8vw] sm:bg-[#F3851D] sm:text-white sm:font-medium"
           >
             Learn More
           </Link>
@@ -67,25 +67,25 @@ export default function Home() {
                     alt="donation card"
                     width={430}
                     height={550}
-                    className="object-cover rounded w-[430px] h-[550px] max-w-[430px] sm:w-[264px] sm:h-[380px]"
+                    className="object-cover rounded w-[430px] h-[550px] max-w-[430px] sm:w-[80vw] sm:h-[350px]"
                   />
-                  <div className="absolute bottom-[70px] left-[50px] text-white w-[330px] sm:w-[220px] sm:left-[20px] sm:bottom-[40px]">
-                    <div className="text-[33px] font-bold sm:text-[23px]">
+                  <div className="absolute bottom-[70px] left-[50px] text-white w-[330px] sm:w-[70vw] sm:left-[20px] sm:bottom-[40px]">
+                    <div className="text-[33px] font-bold sm:text-[25px]">
                       {info.title}
                     </div>
-                    <div className="text-[16px] mt-4 sm:text-[12px]">
+                    <div className="text-[16px] mt-4 sm:text-[15px]">
                       {info.description}
                     </div>
-                    <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[11px]">
+                    <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[13px]">
                       <Link
                         href={"/donate-program"}
-                        className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
+                        className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
                       >
                         Learn More
                       </Link>
                       <Link
                         href={"/donate"}
-                        className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[100px] sm:h-[30px]"
+                        className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
                       >
                         바로 후원하기
                       </Link>
@@ -104,11 +104,11 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-center gap-[8vw] p-8 sm:flex-col sm:py-7">
-          <div className="w-[500px] mt-[50px] ml-[3vw] sm:w-[70vw] sm:mt-[2vw]">
-            <div className="font-bold text-[40px] sm:text-[6vw]">
+          <div className="w-[500px] mt-[50px] ml-[3vw] sm:w-[80vw] sm:mt-[2vw]">
+            <div className="font-bold text-[40px] sm:text-[7.5vw]">
               라고나브로의 보내심
             </div>
-            <p className="mt-[40px] text-[20px] sm:text-[3.5vw] sm:mt-[6vw]">
+            <p className="mt-[40px] text-[20px] sm:text-[4vw] sm:mt-[4vw]">
               우리는 아이티에서도 가장 열악한 지역 중 하나인 La Gonave 섬으로
               발을 들였습니다. 거기서는 마을 보건 선교사 양성, 의료 인프라 구축,
               콜레라 퇴치, 교회 개척, 지역 개발, 청소년 양육, 학교 건축 등
@@ -116,7 +116,7 @@ export default function Home() {
             </p>
             <Link
               href={"/donate-program"}
-              className="bg-[#F3851D] text-black w-[167px] h-[44px] flex justify-center items-center rounded-md mt-[4vw] sm:w-[27vw] sm:h-[8vw] sm:text-[2.8vw] sm:mt-[5vw] sm:font-semibold"
+              className="bg-[#F3851D] text-black w-[167px] h-[44px] flex justify-center items-center rounded-md mt-[4vw] sm:w-[30vw] sm:h-[9vw] sm:text-[3vw] sm:mt-[6vw] sm:font-semibold"
             >
               Learn More
             </Link>
@@ -131,7 +131,7 @@ export default function Home() {
         </div>
         {/* 비젼 */}
         <div className="flex gap-3 items-center mt-[88px] ml-[10vw] mb-[20px] sm:mt-[10vw] sm:ml-[9vw]">
-          <div className="text-black text-[45px] font-bold sm:text-[6vw] sm:w-[50vw]">
+          <div className="text-black text-[45px] font-bold sm:text-[7vw] sm:w-[90vw]">
             라고나브 청소년에게 그리스도의 사랑을
           </div>
           <div className="w-[40vw] border-b border-gray-400" />
@@ -149,11 +149,11 @@ export default function Home() {
                       alt="vision icon"
                       className="sm:w-[20px]"
                     />
-                    <div className="font-bold text-[32px] sm:text-[3.7vw]">
+                    <div className="font-bold text-[32px] sm:text-[5vw]">
                       {info.title}
                     </div>
                   </div>
-                  <p className="text-[20px] font-normal sm:text-[3.3vw] sm:font-normal sm:mt-[3vw]">
+                  <p className="text-[20px] font-normal sm:text-[4vw] sm:font-normal sm:mt-[3vw]">
                     {info.description}
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function Home() {
         <div className="text-black text-[45px] font-bold ml-[9vw] my-[2vw] sm:hidden">
           우리는 이렇게 함께 일합니다
         </div>
-        <div className="my-[30px] flex sm:px-[2vw] sm:mt-[10vw] relative w-[80vw] h-[700px] sm:flex-col sm:h-[440px]">
+        <div className="my-[30px] flex sm:px-[2vw] sm:mt-[10vw] relative w-[80vw] h-[700px] sm:flex-col sm:h-[440px] sm:w-[100vw]">
           <Image
             src={PROJECT[projectIdx].image}
             alt="project"
@@ -186,8 +186,8 @@ export default function Home() {
             height={600}
             className="object-cover w-[580px] h-[590px] absolute left-[15vw] top-0 sm:w-[100vw] sm:h-[250px] sm:left-0"
           />
-          <div className="absolute bottom-0 left-[45vw] sm:right-0">
-            <div className="bg-[#042C28] w-[640px] h-[500px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[380px] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
+          <div className="absolute bottom-0 left-[45vw] sm:left-auto sm:right-0">
+            <div className="bg-[#042C28] w-[640px] h-[500px] font-light text-white text-[17px] px-[3.5vw] py-[4vw] mt-[2vw] sm:text-[3.3vw] sm:w-[85vw] sm:h-[220px] sm:mt-0 sm:px-[10vw]">
               <Link
                 className="text-[35px] font-semibold sm:text-[5vw]"
                 href="/project"
@@ -249,7 +249,7 @@ export default function Home() {
             height={150}
             className="absolute w-[10vw]"
           />
-          <div className="font-bold text-[45px] z-10 absolute left-[100px] top-[30px] sm:text-[4.5vw] sm:top-[10px]">
+          <div className="font-bold text-[45px] z-10 absolute left-[100px] top-[30px] sm:text-[4.5vw] sm:top-[10px] sm:left-[10vw]">
             OUR RECENT WORK
           </div>
         </div>
