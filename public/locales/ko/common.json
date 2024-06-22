@@ -1,9 +1,9 @@
 {
   "current-locale": "ko",
-  "main-banner": "라고나브 청소년들을 후원해주세요",
   "about-us": "소개",
   "donate-program": "맞춤후원",
   "project": "사역",
   "media": "소식",
-  "donate": "후원"
+  "donate": "후원",
+  "donate-button": "바로 후원하기"
 }

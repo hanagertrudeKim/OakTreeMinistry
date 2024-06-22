@@ -7,7 +7,8 @@ import { useTranslation } from "next-i18next";
 
 export default function Home() {
   const [projectIdx, setProjectIdx] = useState(0);
-  const { t } = useTranslation(["common"]);
+  const { t: common } = useTranslation(["common"]);
+  const { t: home } = useTranslation(["home"]);
 
   return (
     <main className="flex flex-col justify-center">
@@ -28,9 +29,11 @@ export default function Home() {
         />
         <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]">
           <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
-            {/* {`라고나브 청소년들을
-후원해주세요`} */}
-            {t("main-banner")}
+            {common("current-locale") === "ko"
+              ? `라고나브 청소년들을
+후원해주세요`
+              : `Please support
+La Gonave Children`}
           </div>
           <div className="font-semibold text-[25px] mt-[20px] sm:text-[3.5vw] sm:mt-[4px]">
             Hand in Hand project for La Gonave
@@ -47,13 +50,18 @@ export default function Home() {
         <div className="flex items-baseline ">
           <div className="w-[9vw] border-b-2 border-black" />
           <div className="text-[#F3851D] mt-[88px] pl-[3vw] text-[25px] font-bold sm:text-[4vw]">
-            맞춤 후원
+            {home("customized-donation")}
           </div>
         </div>
         <div className="text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw] sm:text-[7vw]">
-          {`양육에 가치를 더하는,
-당신을 위한 `}
-          <strong className="text-[#F3851D] font-bold">맞춤 후원</strong>
+          {common("current-locale") === "ko"
+            ? `양육에 가치를 더하는,
+당신을 위한 `
+            : `Enhancing Parenting Support 
+with Personalized, `}
+          <strong className="text-[#F3851D] font-bold">
+            {home("customized-donation")}
+          </strong>
         </div>
         <div className="flex justify-center mt-[140px] sm:ml-0 sm:mt-[50px]">
           <div className="flex overflow-x-scroll sm:pl-10 sm:flex-col sm:gap-[20px]">
@@ -70,17 +78,17 @@ export default function Home() {
                     height={550}
                     className="object-cover rounded w-[430px] h-[550px] max-w-[430px] sm:w-[80vw] sm:h-[350px]"
                   />
-                  <div className="absolute bottom-[70px] left-[50px] text-white w-[330px] sm:w-[70vw] sm:left-[20px] sm:bottom-[40px]">
-                    <div className="text-[33px] font-bold sm:text-[25px]">
-                      {info.title}
+                  <div className="absolute bottom-[70px] left-[40px] text-white w-[360px] sm:w-[70vw] sm:left-[20px] sm:bottom-[40px]">
+                    <div className="text-[29px] font-bold sm:text-[25px]">
+                      {home(info.title)}
                     </div>
                     <div className="text-[16px] mt-4 sm:text-[15px]">
-                      {info.description}
+                      {home(info.description)}
                     </div>
                     <div className="flex justify-around gap-3 text-[16px] mt-[30px] font-semibold sm:text-[13px]">
                       <Link
                         href={"/donate-program"}
-                        className="bg-white text-black w-[146px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
+                        className="bg-white text-black w-[160px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
                       >
                         Learn More
                       </Link>
@@ -88,7 +96,7 @@ export default function Home() {
                         href={"/donate"}
                         className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
                       >
-                        바로 후원하기
+                        {common("donate-button")}
                       </Link>
                     </div>
                   </div>
@@ -105,15 +113,12 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-center gap-[8vw] p-8 sm:flex-col sm:py-7">
-          <div className="w-[500px] mt-[50px] ml-[3vw] sm:w-[80vw] sm:mt-[2vw]">
+          <div className="w-[470px] mt-[50px] ml-[3vw] sm:w-[80vw] sm:mt-[2vw]">
             <div className="font-bold text-[40px] sm:text-[7.5vw]">
-              라고나브로의 보내심
+              {home("know-about-us-title")}
             </div>
             <p className="mt-[40px] text-[20px] sm:text-[4vw] sm:mt-[4vw]">
-              우리는 아이티에서도 가장 열악한 지역 중 하나인 La Gonave 섬으로
-              발을 들였습니다. 거기서는 마을 보건 선교사 양성, 의료 인프라 구축,
-              콜레라 퇴치, 교회 개척, 지역 개발, 청소년 양육, 학교 건축 등
-              다양한 사역을 교회와 글로벌 케어 팀과 함께 진행해왔습니다.
+              {home("know-about-us-description")}
             </p>
             <Link
               href={"/donate-program"}
@@ -133,7 +138,7 @@ export default function Home() {
         {/* 비젼 */}
         <div className="flex gap-3 items-center mt-[88px] ml-[10vw] mb-[20px] sm:mt-[10vw] sm:ml-[9vw]">
           <div className="text-black text-[45px] font-bold sm:text-[7vw] sm:w-[90vw]">
-            라고나브 청소년에게 그리스도의 사랑을
+            {home("vision-title")}
           </div>
           <div className="w-[40vw] border-b border-gray-400" />
         </div>
@@ -155,7 +160,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-[20px] font-normal sm:text-[4vw] sm:font-normal sm:mt-[3vw]">
-                    {info.description}
+                    {home(info.description)}
                   </p>
                 </div>
               );
@@ -177,7 +182,7 @@ export default function Home() {
           </div>
         </div>
         <div className="text-black text-[45px] font-bold ml-[9vw] my-[2vw] sm:hidden">
-          우리는 이렇게 함께 일합니다
+          {home("project-title")}
         </div>
         <div className="my-[30px] flex sm:px-[2vw] sm:mt-[10vw] relative w-[80vw] h-[700px] sm:flex-col sm:h-[440px] sm:w-[100vw]">
           <Image
@@ -194,10 +199,10 @@ export default function Home() {
                 href="/project"
               >
                 <div className="text-white">
-                  {PROJECT[projectIdx].location} |
+                  {home(PROJECT[projectIdx].location)} |
                 </div>
                 <div className="text-[#F5D992]">
-                  {PROJECT[projectIdx].title}
+                  {home(PROJECT[projectIdx].title)}
                 </div>
               </Link>
               <div className="flex gap-3 my-[2vw]">
@@ -233,11 +238,11 @@ export default function Home() {
                   fontWeight: "400",
                 }}
               >
-                {PROJECT[projectIdx].description}
+                {home(PROJECT[projectIdx].description)}
               </p>
               <p className="mt-[3vw] font-normal">
                 {" "}
-                - {PROJECT[projectIdx].location}
+                - {home(PROJECT[projectIdx].location)}
               </p>
             </div>
           </div>
@@ -271,7 +276,7 @@ export default function Home() {
 export const getStaticProps = async ({ locale }: any) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])), // common, footer namespace 전달
+      ...(await serverSideTranslations(locale, ["common", "home"])),
     },
   };
 };

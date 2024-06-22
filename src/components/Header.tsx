@@ -15,7 +15,7 @@ export default function Header({ setIsOpen }: any) {
   };
 
   return (
-    <div className="sticky w-full h-[85px] bg-white flex items-center pr-20 sm:relative sm:h-[12vw] justify-end">
+    <div className="sticky w-full h-[85px] bg-white flex items-center pr-5 sm:relative sm:h-[12vw] justify-end">
       <Link href={"/"}>
         <Image
           src="/logo.svg"
@@ -48,7 +48,10 @@ export default function Header({ setIsOpen }: any) {
         onClick={() => setIsOpen(true)}
         className="lg:hidden sm:absolute sm:right-5"
       />
-      <button className="flex ml-2 gap-1" onClick={handleClickChangeLng}>
+      <button
+        className="flex ml-5 gap-1 justify-center"
+        onClick={handleClickChangeLng}
+      >
         <Image
           src="/globalIcon.svg"
           alt="언어 선택 버튼"
