@@ -51,7 +51,7 @@ export default function DonateProgram() {
           </div>
         </div>
         <div className="w-[65vw] max-w-[1100px] sm:w-auto">
-          <div className="flex mt-[8vw] mb-[4vw]">
+          {/* <div className="flex mt-[8vw] mb-[4vw]">
             <div className="text-[40px] font-bold font-roboto sm:text-[28px] sm:my-[10vw]">
               후원이 필요한 곳
             </div>
@@ -62,20 +62,7 @@ export default function DonateProgram() {
               height={45}
               className="ml-3 sm:w-[30px]"
             />
-          </div>
-          {DONATE.map((info, index) => {
-            return (
-              <div
-                key={index}
-                className="flex mb-[3vw] w-[90%] text-[25px] m-auto sm:w-[90vw] sm:text-[18px]"
-              >
-                <div className="mr-3 font-bold">{index + 1}.</div>
-                <div className="w-[70vw] items-start justify-start sm:w-auto">
-                  <strong>{info.title}</strong> : {info.description}
-                </div>
-              </div>
-            );
-          })}
+          </div> */}
           <div className="text-[40px] font-extrabold mt-[8vw] mb-[8vw] leading-snug font-NSK sm:text-[26px] sm:my-[15vw]">
             Hand in Hand project 의 선순환
           </div>
@@ -86,10 +73,26 @@ export default function DonateProgram() {
             height={700}
             className="w-[650px] sm:w-[90vw] object-contain m-auto"
           />
+          <div className="mt-[100px]">
+            {DONATE.map((info, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex mt-[50px] w-[90%] text-[25px] m-auto sm:w-[90vw] sm:text-[18px]"
+                >
+                  <div className="mr-3 font-bold">{index + 1}.</div>
+                  <div className="w-[70vw] items-start justify-start sm:w-auto">
+                    <strong>{info.title}</strong> : {info.description}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="text-[40px] font-extrabold mt-[8vw] mb-[2vw] font-NSK sm:text-[26px] sm:mt-[15vw] sm:mb-[8vw]">
             후원 방법
           </div>
-          <div className="mb-[2vw] text-[25px] w-[90%] m-auto sm:w-[95vw] sm:text-[3.6vw] whitespace-pre-wrap leading-relaxed font-NSK sm:whitespace-pre-line">
+          <div className="mb-[2vw] text-[25px] m-auto sm:w-[95vw] sm:text-[3.6vw] whitespace-pre-wrap leading-relaxed font-NSK sm:whitespace-pre-line">
             {`1. 후원대상: 라고나브 어린이, 청소년, 대학생, 현지 교사, 소망학교
 2. 후원금 : 매달 $35불(40,000원) 혹 일시불 납부
 3. 지출내용 : * 1년 학비 $300 (등록비, 수업비, 책값 보조 등)
@@ -98,6 +101,7 @@ export default function DonateProgram() {
 	                  * 의료비 지원 : $5(매달)`}
           </div>
         </div>
+
         {DONATION_PROGRAM.map((item, index) => (
           <div
             key={index}
@@ -116,7 +120,7 @@ export default function DonateProgram() {
             ) : null}
             <div
               className={`w-[620px] h-[340px] flex flex-col justify-center gap-[40px] ${
-                index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#1D2130] text-white"
+                index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#07403A] text-white"
               } p-[70px] sm:p-[30px] sm:w-[90vw] sm:h-[280px] sm:gap-[22px]`}
             >
               <div className="text-[35px] font-NSK font-extrabold sm:text-[26px]">
