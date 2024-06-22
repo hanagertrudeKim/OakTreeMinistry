@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <div className="mt-[3vw]">
       <div className="py-[2vw] px-[9vw] z-4 sm:px-[5vw]">
-        <div className="whitespace-pre text-[3vw] font-extrabold text-end leading-snug sm:text-[6vw]">
+        <div className="whitespace-pre text-[55px] font-extrabold text-end leading-snug sm:text-[6vw]">
           {!isMobile
             ? common("current-locale") === "ko"
               ? `우리는 아이티 라고나브 청소년이 그리스도의 제자로 
@@ -31,18 +31,18 @@ to grow as Christ's disciples.`}
           sizes="100vw"
           width={1280}
           height={500}
-          className="w-[100vw] h-[32vw] mt-[5vw] z-40 object-center opacity-100 transform -translate-y-5 transition duration-1000 ease-in-out sm:mt-[46px] sm:h-[43vw]"
+          className="w-[1400px] h-[32vw] mt-[5vw] z-40 object-center opacity-100 transform -translate-y-5 transition duration-1000 ease-in-out sm:mt-[46px] sm:h-[43vw]"
         />
       </div>
       <div className="flex items-baseline ">
         <div className="w-[9vw] border-b-2 border-black" />
-        <div className="text-black mt-[88px] pl-[2vw] text-[1vw] font-extrabold sm:text-[3vw] sm:mt-[5vw]">
+        <div className="text-black mt-[88px] pl-[2vw] text-[18px] font-extrabold sm:text-[55px] sm:mt-[5vw]">
           KNOW ABOUT US
         </div>
       </div>
       <div className="mt-[4vw] px-[10vw] flex items-center justify-center sm:flex-col sm:px-[0vw]">
         <div className="flex flex-col w-[34vw] flex-wrap sm:w-[90%]">
-          <div className="font-extrabold text-[3vw] sm:text-[6vw]">
+          <div className="font-extrabold text-[55px] sm:text-[6vw]">
             OUR STORY
           </div>
           <div className="whitespace-pre-wrap text-[1.3vw] mt-[4vw] font-SUITE font-medium leading-snug sm:text-[3.5vw]">
@@ -64,13 +64,13 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
           alt="about-us"
           width={580}
           height={680}
-          className="w-[37vw] h-[40vw] sm:w-[90vw] ml-[8vw] object-cover sm:ml-0 sm:h-auto sm:mt-[20px]"
+          className="w-[600px] h-[650px] sm:w-[90vw] ml-[8vw] object-cover sm:ml-0 sm:h-auto sm:mt-[20px]"
         />
       </div>
       <div className="w-[100vw] bg-[#FFEFE0] h-[70vw] absolute top-[43vw] -z-10 sm:h-[189vw] sm:top-[92vw]"></div>
       <div className="my-[13vw] mx-[15vw] sm:mx-0 sm:px-[5vw]">
         <div className="flex justify-center items-center sm:flex-col sm:items-start">
-          <p className="font-extrabold text-[3vw] sm:text-[6vw]">
+          <p className="font-extrabold text-[55px] sm:text-[6vw]">
             OUR {isMobile ?? <br />}
             VISION
           </p>
@@ -80,7 +80,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
         </div>
         <div className="flex font-roboto mt-[8vw] justify-center items-center sm:flex-col">
           <div>
-            <div className="text-[2vw] font-extrabold sm:text-[5vw]">
+            <div className="text-[40px] font-extrabold sm:text-[5vw]">
               OUR <br />
               INTERNAL VISION
             </div>
@@ -127,7 +127,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             />
           )}
           <div>
-            <div className="text-[2vw] font-extrabold sm:text-[5vw]">
+            <div className="text-[40px] font-extrabold sm:text-[5vw]">
               OUR <br />
               EXTERNAL VISION
             </div>
@@ -148,7 +148,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             />
           )}
         </div>
-        <div className="font-extrabold text-[3vw] mt-[10vw] sm:text-[6vw]">
+        <div className="font-extrabold text-[55px] mt-[10vw] sm:text-[6vw]">
           OUR TEAM
         </div>
         <Image
@@ -156,7 +156,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
           alt="about-us"
           width={1200}
           height={1024}
-          className="w-[80vw] sm:w-[90vw] mt-[4vw] object-contain"
+          className="w-[1200px] sm:w-[90vw] mt-[4vw] object-contain"
         />
       </div>
     </div>
