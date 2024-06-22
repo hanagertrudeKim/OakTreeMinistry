@@ -1,24 +1,28 @@
 import { DONATE, DONATION_PROGRAM } from "@/static/Donate";
-import { DONATE_CARD } from "@/static/Home";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function DonateProgram() {
+  const { t: common } = useTranslation(["common"]);
+  const { t: dp } = useTranslation(["donate-program"]);
+
   return (
     <div>
       <div className="h-[450px] px-[10vw] flex bg-[url('/image/projectBanner.jpg')] sm:px-0 sm:w-[100vw] sm:object-cover">
         <div>
           <div className="flex items-baseline">
             <div className="w-[5vw] border-b-2 border-white" />
-            <div className="text-white mt-[50px] pl-[1vw] text-[1.2vw] font-bold sm:text-[3vw]">
-              후원 프로그램
+            <div className="text-white mt-[50px] pl-[1vw] text-[20px] font-bold sm:text-[3vw]">
+              {dp("donate-program-title")}
             </div>
           </div>
-          <div className="text-[50px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[92vw] sm:text-[30px]">
-            주제별 양육보완후원
+          <div className="text-[45px] font-bold ml-[6vw] mt-[85px] leading-snug text-white sm:w-[92vw] sm:text-[30px]">
+            {dp("page-title")}
           </div>
           <div className="text-[20px] mt-[2vw] ml-[6vw] text-white sm:text-[12px]">
-            모든 어린이가 부족함 없이 자랄 수 있도록 돕습니다.
+            {dp("page-sub-title")}
           </div>
         </div>
         <div className="w-[400px] sm:w-0"></div>
@@ -38,14 +42,9 @@ export default function DonateProgram() {
             />
             <div className="ml-[5vw] w-[500px] sm:w-[90vw] sm:ml-0">
               <div className="text-[26px] font-SUITE font-medium leading-snug sm:text-[20px] sm:mt-[10vw] sm:font-normal">
-                Hand In Hand 프로젝트는 아이티의 La Gonave 섬의 빈민가
-                청소년들을 일대일 후원을 통해 학교 교육에 참여할 수 있도록 돕고,
-                더불어 다양한 제자 훈련 프로그램을 통해 온전한 그리스도인으로
-                성장할 수 있도록 지원하는 청소년 학교 후원 프로젝트입니다.
-                <br />
-                <br /> 이를 통해 La Gonave의 청소년들은 자신의 가정, 지역, 국가,
-                그리고 전 세계에 그리스도의 나라를 참된 그리스도 지도자로서
-                구축해 나갈 것입니다.
+                {dp("hand-in-hand-project-description1")}
+                <br /> <br />
+                {dp("hand-in-hand-project-description2")}
               </div>
             </div>
           </div>
@@ -64,7 +63,7 @@ export default function DonateProgram() {
             />
           </div> */}
           <div className="text-[40px] font-extrabold mt-[8vw] mb-[8vw] leading-snug font-NSK sm:text-[26px] sm:my-[15vw]">
-            Hand in Hand project 의 선순환
+            {dp("hand-in-hand-project-cycle")}
           </div>
           <Image
             src={"/image/HandinHand.jpg"}
@@ -82,7 +81,7 @@ export default function DonateProgram() {
                 >
                   <div className="mr-3 font-bold">{index + 1}.</div>
                   <div className="w-[70vw] items-start justify-start sm:w-auto">
-                    <strong>{info.title}</strong> : {info.description}
+                    <strong>{dp(info.title)}</strong> : {dp(info.description)}
                   </div>
                 </div>
               );
@@ -90,15 +89,22 @@ export default function DonateProgram() {
           </div>
 
           <div className="text-[40px] font-extrabold mt-[8vw] mb-[2vw] font-NSK sm:text-[26px] sm:mt-[15vw] sm:mb-[8vw]">
-            후원 방법
+            {dp("how-to-donate")}
           </div>
           <div className="mb-[2vw] text-[25px] m-auto sm:w-[95vw] sm:text-[3.6vw] whitespace-pre-wrap leading-relaxed font-NSK sm:whitespace-pre-line">
-            {`1. 후원대상: 라고나브 어린이, 청소년, 대학생, 현지 교사, 소망학교
+            {common("current-locale") === "ko"
+              ? `1. 후원대상: 라고나브 어린이, 청소년, 대학생, 현지 교사, 소망학교
 2. 후원금 : 매달 $35불(40,000원) 혹 일시불 납부
 3. 지출내용 : * 1년 학비 $300 (등록비, 수업비, 책값 보조 등)
 	                  * 방과후 학교(영어, 컴퓨터, 악기, 체육등) : $170/년
 	                  * 제자훈련 프로그램
-	                  * 의료비 지원 : $5(매달)`}
+	                  * 의료비 지원 : $5(매달)`
+              : `1. Target of Donation: Children, Youth, University Students, Local Teachers, Hope School
+2. Donation Amount: $35 per month (40,000 KRW) or one-time payment
+3. Expenditures: * Annual tuition fee: $300 (registration fee, tuition, book subsidies, etc.)
+                           * After-school programs (English, computer skills): $170 per year
+                           * Discipleship training programs
+                           * Medical expenses support: $5 per month`}
           </div>
         </div>
 
@@ -119,15 +125,15 @@ export default function DonateProgram() {
               />
             ) : null}
             <div
-              className={`w-[620px] h-[340px] flex flex-col justify-center gap-[40px] ${
+              className={`w-[620px] h-[340px] flex flex-col justify-center gap-[20px] ${
                 index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#07403A] text-white"
-              } p-[70px] sm:p-[30px] sm:w-[90vw] sm:h-[280px] sm:gap-[22px]`}
+              } p-[70px] pt-[90px] sm:p-[30px] sm:w-[90vw] sm:h-[280px] sm:gap-[22px]`}
             >
-              <div className="text-[35px] font-NSK font-extrabold sm:text-[26px]">
-                {item.title}
+              <div className="text-[31px] font-NSK font-extrabold sm:text-[26px]">
+                {dp(item.title)}
               </div>
               <div className="text-[20px] font-NSK font-medium sm:text-[16px] sm:font-normal">
-                {item.description}
+                {dp(item.description)}
               </div>
               <div className="flex gap-10 text-[16px] mt-[30px] font-semibold sm:text-[16px] sm:gap-6 sm:mt-[15px] font-NSK">
                 <Link
@@ -141,13 +147,13 @@ export default function DonateProgram() {
                   }}
                   className="bg-white text-black w-[210px] h-[48px] flex justify-center items-center sm:w-[150px] sm:h-[55px]"
                 >
-                  자세히 보기
+                  {common("detail-button")}
                 </Link>
                 <Link
                   href={"/donate"}
                   className="bg-[#F3851D] text-white w-[210px] h-[48px] flex justify-center items-center sm:w-[150px] sm:h-[55px]"
                 >
-                  바로 후원하기
+                  {common("donate-button")}
                 </Link>
               </div>
             </div>
@@ -166,3 +172,11 @@ export default function DonateProgram() {
     </div>
   );
 }
+
+export const getStaticProps = async ({ locale }: any) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "donate-program"])),
+    },
+  };
+};
