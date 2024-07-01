@@ -24,7 +24,7 @@ export const DONATE_CARD = [
 
 export const VISION = [
   {
-    title: "Our Eternal Vision",
+    title: "Our External Vision",
     description: "vision1-description",
     icon: "/visionIcon1.svg"
   },
