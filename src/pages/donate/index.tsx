@@ -1,18 +1,22 @@
 import useMediaQuery from "@/utils/hooks/useMediaQuery";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
 export default function Donation() {
   const isMobile = useMediaQuery();
+  const { t: donate } = useTranslation(["donate"]);
+
   return (
     <div className="flex flex-col items-center justify-center py-4 bg-[url('/image/donateBackground.jpg')] h-[93vh] bg-cover sm:h-[630px] sm:bg-none">
       <div className="flex items-start gap-[10vw] sm:flex-col">
         {!isMobile && (
           <div className="font-NSK text-white">
             <div className="text-[62px] font-bold indent-3 mt-5">
-              후원 결제 진행하기
+              {donate("donate_title")}
             </div>
             <div className="text-[30px] font-extralight mt-[50px] ml-3">
-              후원하실 프로그램을 선택해주세요.
+              {donate("donate_sub-title")}
             </div>
           </div>
         )}
@@ -25,3 +29,11 @@ export default function Donation() {
     </div>
   );
 }
+
+export const getStaticProps = async ({ locale }: any) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "donate"])),
+    },
+  };
+};

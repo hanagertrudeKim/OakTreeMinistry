@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function DonateProgram() {
   const { t: common } = useTranslation(["common"]);
   const { t: dp } = useTranslation(["donate-program"]);
-  jeffton;
+
   return (
     <div>
       <div className="h-[450px] px-[10vw] flex bg-[url('/image/projectBanner.jpg')] sm:px-0 sm:w-[100vw] sm:object-cover">
