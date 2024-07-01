@@ -71,7 +71,7 @@ export default function index() {
                   className="w-[500px] sm:w-[90vw] object-scale-down"
                 />
               </div>
-              {info.title === "도르가 미혼모 사역" && (
+              {info.title === "lagonave_projects_title4" && (
                 <div className="font-NSK mt-[100px] flex flex-col justify-center items-center">
                   <div className="text-[35px] font-extrabold mb-[50px] sm:text-[25px] sm:mb-[10px] sm:w-[90vw]">
                     {project("lagonave_dorcas_projects_title")}
@@ -98,11 +98,15 @@ export default function index() {
                     </div>
                     <div className="mb-12">
                       <Image
-                        src={"/image/dorega-graph.jpg"}
+                        src={
+                          common("current_locale") == "ko"
+                            ? "/image/ko_dorega-graph.jpg"
+                            : "/image/en_dorega-graph.jpg"
+                        }
                         alt="project-school"
                         width={550}
                         height={550}
-                        className="w-[420px] sm:w-[80vw] object-scale-down sm:m-auto mb-12"
+                        className="w-[450px] sm:w-[80vw] object-scale-down sm:m-auto my-12"
                       />
                     </div>
                   </div>

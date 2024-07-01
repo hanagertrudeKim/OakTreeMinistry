@@ -109,7 +109,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             </div>
           </div>
           <Image
-            src={"/image/internal-vision.jpg"}
+            src={
+              common("current_locale") == "ko"
+                ? "/image/ko_internal-vision.jpg"
+                : "/image/en_internal-vision.jpg"
+            }
             alt="about-us"
             width={581}
             height={480}
@@ -140,7 +144,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
           </div>
           {isMobile && (
             <Image
-              src={"/image/external-vision.jpg"}
+              src={
+                common("current_locale") === "ko"
+                  ? "/image/ko_external-vision.jpg"
+                  : "/image/en_external-vision.jpg"
+              }
               alt="about-us"
               width={581}
               height={480}

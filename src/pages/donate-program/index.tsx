@@ -66,7 +66,11 @@ export default function DonateProgram() {
             {dp("hand-in-hand-project-cycle")}
           </div>
           <Image
-            src={"/image/HandinHand.jpg"}
+            src={
+              common("current_locale") == "ko"
+                ? "/image/ko_HandinHand.jpg"
+                : "/image/en_HandinHand.jpg"
+            }
             alt="lagonave-map"
             width={850}
             height={700}
