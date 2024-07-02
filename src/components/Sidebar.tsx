@@ -20,7 +20,7 @@ export default function Drawer({ isOpen, setIsOpen }: DrawerProps) {
       <section
         className={
           "max-w-lg right-0 absolute bg-[#07403A] h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform w-[80vw] " +
-          (isOpen ? " translate-x-0 " : " translate-x-full ")
+          (isOpen ? "translate-x-0" : "translate-x-full")
         }
       >
         <article className="relative w-screen max-w-lg flex flex-col overflow-y-scroll h-full text-white p-5 font-normal pt-[80px]">

@@ -36,7 +36,7 @@ export default function Header({ setIsOpen }: any) {
       </div>
       <Link
         href="/donate"
-        className="bg-[#07403A] text-white w-28 h-10 leading-none flex justify-center items-center rounded-md text-md sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] sm:absolute ml-16"
+        className="bg-[#07403A] text-white w-28 h-10 leading-none flex justify-center items-center rounded-md text-md sm:hidden sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] ml-16"
       >
         <div>Donate</div>
       </Link>
@@ -49,7 +49,7 @@ export default function Header({ setIsOpen }: any) {
         className="lg:hidden sm:absolute sm:right-5"
       />
       <button
-        className="flex ml-5 gap-1 justify-center"
+        className="flex ml-5 gap-1 justify-center sm:mr-[40px]"
         onClick={handleClickChangeLng}
       >
         <Image

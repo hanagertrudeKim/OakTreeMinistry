@@ -36,7 +36,7 @@ to grow as Christ's disciples.`}
       </div>
       <div className="flex items-baseline ">
         <div className="w-[9vw] border-b-2 border-black" />
-        <div className="text-black mt-[88px] pl-[2vw] text-[18px] font-extrabold sm:text-[55px] sm:mt-[5vw]">
+        <div className="text-black mt-[88px] pl-[2vw] text-[18px] font-extrabold sm:text-[11px] sm:mt-[5vw]">
           KNOW ABOUT US
         </div>
       </div>
@@ -45,7 +45,7 @@ to grow as Christ's disciples.`}
           <div className="font-extrabold text-[55px] sm:text-[6vw]">
             OUR STORY
           </div>
-          <div className="whitespace-pre-wrap text-[1.3vw] mt-[4vw] font-SUITE font-medium leading-snug sm:text-[3.5vw]">
+          <div className="whitespace-pre-wrap text-[1.3vw] mt-[4vw] font-SUITE font-medium sm:font-semibold leading-snug sm:text-[3.6vw]">
             {common("current-locale") == "ko"
               ? `2010년, 하나님은 갑작스런 소명을 우리에게 부여하셨습니다. 먼 아이티 땅으로 우리를 보내며 이사야서 61장의 말씀을 통해 오랫동안 어둠 속에 잠들어 있는 아이티의 젊은이들을 깨우시고, 여호와의 영광을 드러내기 위해 의의 나무로 세우라고 하셨습니다.
 
@@ -70,7 +70,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
       <div className="w-[100vw] bg-[#FFEFE0] h-[70vw] absolute top-[43vw] -z-10 sm:h-[189vw] sm:top-[92vw]"></div>
       <div className="my-[13vw] mx-[15vw] sm:mx-0 sm:px-[5vw]">
         <div className="flex justify-center items-center sm:flex-col sm:items-start">
-          <p className="font-extrabold text-[55px] sm:text-[6vw]">
+          <p className="font-extrabold text-[55px] sm:text-[7vw] sm:mt-[30px]">
             OUR {isMobile ?? <br />}
             VISION
           </p>
@@ -80,11 +80,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
         </div>
         <div className="flex font-roboto mt-[8vw] justify-center items-center sm:flex-col">
           <div>
-            <div className="text-[40px] font-extrabold sm:text-[5vw]">
+            <div className="text-[40px] font-extrabold sm:text-[6vw] sm:my-5">
               OUR <br />
               INTERNAL VISION
             </div>
-            <div className="w-[600px] mt-[1.4vw] font-SUITE text-[23px] tracking-wide font-medium sm:text-[3.5vw]">
+            <div className="w-[600px] mt-[1.4vw] font-SUITE text-[23px] tracking-wide font-medium sm:text-[4vw] sm:whitespace-pre-wrap sm:w-[90vw]">
               {common("current-locale") === "ko" ? (
                 <>
                   성경 말씀과 성령 충만함, 기도와 진정한 예배를 통해 <br />
@@ -95,9 +95,14 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
                 </>
               ) : (
                 <>
-                  Through scripture, the Holy Spirit, prayer, and true worship,
-                  instill in youth the essential values they need. <br />
-                  <br />
+                  {!isMobile && (
+                    <>
+                      Through scripture, the Holy Spirit, prayer, and true
+                      worship, instill in youth the essential values they need.
+                      <br />
+                      <br />
+                    </>
+                  )}
                   Spiritual Area - Love, Reverence, Honesty, and Service <br />
                   Personality Area - Ability, diligence, self-reliance,
                   cooperation
@@ -131,11 +136,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             />
           )}
           <div>
-            <div className="text-[40px] font-extrabold sm:text-[5vw]">
+            <div className="text-[40px] font-extrabold sm:text-[6vw] sm:my-7">
               OUR <br />
               EXTERNAL VISION
             </div>
-            <div className="w-[600px] mt-[1.4vw] font-SUITE text-[23px] tracking-wide whitespace-pre-wrap font-medium sm:text-[3.5vw] sm:w-[80vw]">
+            <div className="w-[600px] mt-[1.4vw] font-SUITE text-[23px] tracking-wide whitespace-pre-wrap font-medium sm:text-[4vw] sm:w-[80vw]">
               {aboutUs("our-external-vision-description")}
             </div>
             <div className="mt-[1.2vw] font-SUITE">

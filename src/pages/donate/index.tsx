@@ -8,8 +8,8 @@ export default function Donation() {
   const { t: donate } = useTranslation(["donate"]);
 
   return (
-    <div className="flex flex-col items-center justify-center py-4 bg-[url('/image/donateBackground.jpg')] h-[93vh] bg-cover sm:h-[630px] sm:bg-none">
-      <div className="flex items-start gap-[10vw] sm:flex-col">
+    <div className="flex flex-col items-center justify-center py-4 bg-[url('/image/donateBackground.jpg')] h-[93vh] bg-cover sm:h-[630px] sm:bg-none sm:items-center">
+      <div className="flex items-start gap-[10vw]">
         {!isMobile && (
           <div className="font-NSK text-white">
             <div className="text-[62px] font-bold indent-3 mt-5">
@@ -21,7 +21,7 @@ export default function Donation() {
           </div>
         )}
         <iframe
-          className="min-w-[425px] max-w-[560px] h-[630px] sm:mt-10"
+          className="min-w-[425px] sm:min-w-[90vw] max-w-[560px] h-[630px] sm:mt-10"
           src="https://donorbox.org/embed/oaktree-ministry-1?default_interval=m"
           name="donorbox"
         ></iframe>

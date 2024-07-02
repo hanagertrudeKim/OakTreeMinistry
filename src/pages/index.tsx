@@ -28,7 +28,7 @@ export default function Home() {
           className="w-[100vw] h-[850px] object-cover sm:hidden"
         />
         <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]">
-          <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[8vw]">
+          <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[9vw]">
             {common("current-locale") === "ko"
               ? `라고나브 청소년들을
 후원해주세요`
@@ -53,13 +53,13 @@ La Gonave Children`}
             {home("customized-donation")}
           </div>
         </div>
-        <div className="text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw] sm:text-[7vw]">
+        <div className="text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw] sm:text-[5.5vw] sm:ml-[13vw]">
           {common("current-locale") === "ko"
             ? `양육에 가치를 더하는,
 당신을 위한 `
             : `Enhancing Parenting Support 
 with Personalized, `}
-          <strong className="text-[#F3851D] font-bold">
+          <strong className="text-[#F3851D] font-bold sm:block sm:text-[6.2vw] sm:mt-[5px]">
             {home("customized-donation")}
           </strong>
         </div>
