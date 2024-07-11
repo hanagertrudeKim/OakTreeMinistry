@@ -10,7 +10,7 @@ export default function AboutUs() {
   const { t: common } = useTranslation(["common"]);
   const { t: aboutUs } = useTranslation(["about-us"]);
 
-  const ref1 = useRef();
+  const ref1 = useRef(null);
   const isVisible1 = useIsVisible(ref1);
 
   return (

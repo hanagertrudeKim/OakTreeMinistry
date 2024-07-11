@@ -8,7 +8,7 @@ export default function Donation() {
   const isMobile = useMediaQuery();
   const { t: donate } = useTranslation(["donate"]);
 
-  const ref1 = useRef();
+  const ref1 = useRef(null);
   const isVisible1 = useIsVisible(ref1);
 
   return (

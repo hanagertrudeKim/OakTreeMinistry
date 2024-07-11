@@ -11,11 +11,11 @@ export default function Home() {
   const { t: common } = useTranslation(["common"]);
   const { t: home } = useTranslation(["home"]);
 
-  const ref1 = useRef();
+  const ref1 = useRef(null);
   const isVisible1 = useIsVisible(ref1);
-  const ref2 = useRef();
+  const ref2 = useRef(null);
   const isVisible2 = useIsVisible(ref2);
-  const ref3 = useRef();
+  const ref3 = useRef(null);
   const isVisible3 = useIsVisible(ref3);
 
   return (
