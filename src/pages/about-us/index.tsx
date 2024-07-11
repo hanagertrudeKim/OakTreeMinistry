@@ -1,17 +1,29 @@
+import { useIsVisible } from "@/utils/hooks/useIsVisible";
 import useMediaQuery from "@/utils/hooks/useMediaQuery";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 export default function AboutUs() {
   const isMobile = useMediaQuery();
   const { t: common } = useTranslation(["common"]);
   const { t: aboutUs } = useTranslation(["about-us"]);
 
+  const ref1 = useRef();
+  const isVisible1 = useIsVisible(ref1);
+
   return (
     <div className="mt-[3vw]">
-      <div className="py-[2vw] px-[9vw] z-4 sm:px-[5vw]">
+      <div
+        ref={ref1}
+        className={`py-[2vw] px-[9vw] z-4 sm:px-[5vw] transition-all ease-in-out duration-1000
+            ${
+              isVisible1
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+      >
         <div className="whitespace-pre text-[55px] font-extrabold text-end leading-snug sm:text-[6vw]">
           {!isMobile
             ? common("current-locale") === "ko"

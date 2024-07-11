@@ -1,14 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DONATE_CARD, PROJECT, VISION } from "@/static/Home";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { useIsVisible } from "@/utils/hooks/useIsVisible";
 
 export default function Home() {
   const [projectIdx, setProjectIdx] = useState(0);
   const { t: common } = useTranslation(["common"]);
   const { t: home } = useTranslation(["home"]);
+
+  const ref1 = useRef();
+  const isVisible1 = useIsVisible(ref1);
+  const ref2 = useRef();
+  const isVisible2 = useIsVisible(ref2);
+  const ref3 = useRef();
+  const isVisible3 = useIsVisible(ref3);
 
   return (
     <main className="flex flex-col justify-center">
@@ -27,7 +35,9 @@ export default function Home() {
           height={900}
           className="w-[100vw] h-[850px] object-cover sm:hidden"
         />
-        <div className="absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]">
+        <div
+          className={`absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]`}
+        >
           <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[9vw]">
             {common("current-locale") === "ko"
               ? `라고나브 청소년들을
@@ -45,7 +55,6 @@ La Gonave Children`}
             Learn More
           </Link>
         </div>
-
         {/* 후원 card */}
         <div className="flex items-baseline ">
           <div className="w-[9vw] border-b-2 border-black" />
@@ -53,7 +62,16 @@ La Gonave Children`}
             {home("customized-donation")}
           </div>
         </div>
-        <div className="text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw] sm:text-[5.5vw] sm:ml-[13vw]">
+        `
+        <div
+          ref={ref1}
+          className={`text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[4vw] sm:text-[5.5vw] sm:ml-[13vw] transition-all ease-in-out duration-700
+            ${
+              isVisible1
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+        >
           {common("current-locale") === "ko"
             ? `양육에 가치를 더하는,
 당신을 위한 `
@@ -64,7 +82,15 @@ with Personalized, `}
           </strong>
         </div>
         <div className="flex justify-center mt-[140px] sm:ml-0 sm:mt-[50px]">
-          <div className="flex overflow-x-scroll sm:pl-10 sm:flex-col sm:gap-[20px]">
+          <div
+            ref={ref2}
+            className={`flex overflow-x-scroll sm:pl-10 sm:flex-col sm:gap-[20px] transition-all ease-in-out duration-700
+            ${
+              isVisible2
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            } `}
+          >
             {DONATE_CARD.map((info, index) => {
               return (
                 <div
@@ -184,7 +210,15 @@ with Personalized, `}
         <div className="text-black text-[45px] font-bold ml-[9vw] my-[2vw] sm:hidden">
           {home("project-title")}
         </div>
-        <div className="my-[30px] flex sm:px-[2vw] sm:mt-[10vw] relative w-[80vw] h-[700px] sm:flex-col sm:h-[440px] sm:w-[100vw]">
+        <div
+          ref={ref3}
+          className={`my-[30px] flex sm:px-[2vw] sm:mt-[10vw] relative w-[80vw] h-[700px] sm:flex-col sm:h-[440px] sm:w-[100vw] transition-all ease-in-out duration-700
+            ${
+              isVisible3
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+        >
           <Image
             src={PROJECT[projectIdx].image}
             alt="project"
