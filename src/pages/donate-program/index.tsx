@@ -130,7 +130,7 @@ export default function DonateProgram() {
             ) : null}
             <div
               className={`w-[620px] h-[340px] flex flex-col justify-center gap-[20px] ${
-                index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#07403A] text-white"
+                index % 2 === 0 ? "bg-[#FFEFE0]" : "bg-[#FFEFE0] text-black"
               } p-[70px] pt-[90px] sm:p-[30px] sm:w-[90vw] sm:h-[280px] sm:gap-[22px]`}
             >
               <div className="text-[31px] font-NSK font-extrabold sm:text-[26px]">
