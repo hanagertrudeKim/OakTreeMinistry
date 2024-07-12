@@ -67,7 +67,7 @@ export default function DonateProgram() {
           </div>
           <Image
             src={
-              common("current_locale") == "ko"
+              common("current-locale") == "ko"
                 ? "/image/ko_HandinHand.jpg"
                 : "/image/en_HandinHand.jpg"
             }

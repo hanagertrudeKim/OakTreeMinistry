@@ -3,7 +3,7 @@ import useMediaQuery from "@/utils/hooks/useMediaQuery";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function AboutUs() {
   const isMobile = useMediaQuery();
@@ -12,6 +12,13 @@ export default function AboutUs() {
 
   const ref1 = useRef(null);
   const isVisible1 = useIsVisible(ref1);
+
+  const [currentLocale, setCurrentLocale] = useState(false);
+
+  useEffect(() => {
+    setCurrentLocale(common("current_locale") == "current_locale");
+    console.log(common("current_locale"));
+  }, []);
 
   return (
     <div className="mt-[3vw]">
@@ -26,12 +33,12 @@ export default function AboutUs() {
       >
         <div className="whitespace-pre text-[55px] font-extrabold text-end leading-snug sm:text-[6vw]">
           {!isMobile
-            ? common("current-locale") === "ko"
+            ? common("current-locale") == "ko"
               ? `우리는 아이티 라고나브 청소년이 그리스도의 제자로 
 잘 성장하도록 훈련시키고 지지합니다.`
               : `We train and support La Gonave youth 
 to grow as Christ's disciples.`
-            : common("current-locale") === "ko"
+            : common("current-locale") == "ko"
             ? `우리는 청소년이 그리스도의 제자로 
 잘 성장하도록 훈련시키고 지지합니다.`
             : `We train and support youth 
@@ -97,7 +104,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
               INTERNAL VISION
             </div>
             <div className="w-[600px] mt-[1.4vw] font-SUITE text-[23px] tracking-wide font-medium sm:text-[4vw] sm:whitespace-pre-wrap sm:w-[90vw]">
-              {common("current-locale") === "ko" ? (
+              {common("current-locale") == "ko" ? (
                 <>
                   성경 말씀과 성령 충만함, 기도와 진정한 예배를 통해 <br />
                   청소년들의 내면에 맺어야 할 핵심 가치들을 갖게 한다. <br />
@@ -127,7 +134,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
           </div>
           <Image
             src={
-              common("current_locale") == "ko"
+              common("current-locale") == "ko"
                 ? "/image/ko_internal-vision.jpg"
                 : "/image/en_internal-vision.jpg"
             }
@@ -140,7 +147,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
         <div className="flex font-roboto mt-[3vw] justify-center items-center sm:flex-col sm:m-auto">
           {!isMobile && (
             <Image
-              src={"/image/external-vision.jpg"}
+              src={
+                common("current-locale") == "ko"
+                  ? "/image/ko_external-vision.jpg"
+                  : "/image/en_external-vision.jpg"
+              }
               alt="about-us"
               width={581}
               height={480}
@@ -162,7 +173,7 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
           {isMobile && (
             <Image
               src={
-                common("current_locale") === "ko"
+                common("current-locale") == "ko"
                   ? "/image/ko_external-vision.jpg"
                   : "/image/en_external-vision.jpg"
               }

@@ -78,7 +78,7 @@ export default function index() {
                   </div>
                   <div className="flex gap-[8vw] justify-between items-center sm:w-[90vw] sm:flex-col">
                     <div className="text-[20px] w-[500px] whitespace-pre-wrap sm:w-[90vw] sm:text-[18px] sm:mb-10">
-                      {common("current_locale") === "ko"
+                      {common("current-locale") == "ko"
                         ? `
 1. 아이티 라고나브 섬의 미성년 미혼모들에게 적절한 직업 훈련과 경제적 자립을 위한 식량과 의료 서비스를 제공합니다.
 
@@ -99,7 +99,7 @@ export default function index() {
                     <div className="mb-12">
                       <Image
                         src={
-                          common("current_locale") == "ko"
+                          common("current-locale") == "ko"
                             ? "/image/ko_dorega-graph.jpg"
                             : "/image/en_dorega-graph.jpg"
                         }
