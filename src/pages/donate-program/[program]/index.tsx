@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Program() {
   const router = useRouter();
-  
+
   return (
     <div>
       <div
@@ -31,16 +31,16 @@ export default function Program() {
       </div>
       <div className="font-NSK m-auto px-[20vw] my-[100px] sm:px-[5vw]">
         <div className="text-[30px] font-extrabold sm:text-[28px]">
-          {PROJECT.dominica_project.info.title}
+          {PROJECT.dominica_projects.info.title}
         </div>
         <div className="text-[20px] font-normal mt-[60px] sm:mt-[30px] sm:text-[18px]">
-          {PROJECT.dominica_project.info.text}
+          {PROJECT.dominica_projects.info.text}
         </div>
         <div className="text-[30px] font-extrabold mt-[100px] sm:mt-[80px] sm:text-[28px]">
-          {PROJECT.dominica_project.clinic.title}
+          {PROJECT.dominica_projects.clinic.title}
         </div>
         <div className="text-[20px] font-normal my-[60px] whitespace-pre-wrap leading-relaxed sm:text-[17px] sm:my-[30px]">
-          {PROJECT.dominica_project.clinic.text}
+          {PROJECT.dominica_projects.clinic.text}
         </div>
         <Image
           src={"/image/pontezuela.jpg"}
