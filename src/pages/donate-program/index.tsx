@@ -142,7 +142,7 @@ export default function DonateProgram() {
               <div className="flex gap-10 text-[16px] mt-[30px] font-semibold sm:text-[16px] sm:gap-6 sm:mt-[15px] font-NSK">
                 <Link
                   href={{
-                    pathname: `/donate-program/${item.title}`,
+                    pathname: `/project`,
                     query: {
                       title: item.title,
                       description: item.description,
