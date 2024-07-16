@@ -119,7 +119,7 @@ with Personalized, `}
                         Learn More
                       </Link>
                       <Link
-                        href={"/donate"}
+                        href={info.donateLink}
                         className="bg-[#F3851D] text-white w-[167px] h-[44px] flex justify-center items-center rounded-md sm:w-[120px] sm:h-[35px]"
                       >
                         {common("donate-button")}

@@ -154,7 +154,7 @@ export default function DonateProgram() {
                   {common("detail-button")}
                 </Link>
                 <Link
-                  href={"/donate"}
+                  href={item.donationLink}
                   className="bg-[#F3851D] text-white w-[210px] h-[48px] flex justify-center items-center sm:w-[150px] sm:h-[55px]"
                 >
                   {common("donate-button")}
