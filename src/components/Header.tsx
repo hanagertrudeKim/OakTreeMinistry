@@ -49,16 +49,18 @@ export default function Header({ setIsOpen }: any) {
         className="lg:hidden sm:absolute sm:right-5"
       />
       <button
-        className="flex ml-5 gap-1 justify-center sm:mr-[40px]"
+        className="flex ml-5 gap-1 justify-center items-center sm:mr-[40px]"
         onClick={handleClickChangeLng}
       >
         <Image
-          src="/globalIcon.svg"
+          src={
+            t("current-locale") === "ko" ? "korea_flag.svg" : "english_flag.svg"
+          }
           alt="언어 선택 버튼"
           width={25}
           height={25}
         />
-        <span>{t("current-locale")}</span>
+        <span className="font-roboto font-normal">{t("current-locale")}</span>
       </button>
     </div>
   );

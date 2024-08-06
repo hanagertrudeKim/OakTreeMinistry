@@ -6,13 +6,13 @@ export const DONATE_CARD = [
     learnMoreLink: "donate-program",
     donateLink: "/donate?program=youth",
   },
-  {
-    backgroundImage: "/image/donateCard2.jpg",
-    title: "donateCard2-title",
-    description: "donateCard2-description",
-    learnMoreLink: "donate-program",
-    donateLink: "/donate?program=college-students",
-  },
+  // {
+  //   backgroundImage: "/image/donateCard2.jpg",
+  //   title: "donateCard2-title",
+  //   description: "donateCard2-description",
+  //   learnMoreLink: "donate-program",
+  //   donateLink: "/donate?program=college-students",
+  // },
   {
     backgroundImage: "/image/donateCard3.jpg",
     title: "donateCard3-title",

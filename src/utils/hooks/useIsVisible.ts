@@ -10,6 +10,7 @@ export function useIsVisible(ref: any) {
       );
       
       observer.observe(ref.current);
+      
       return () => {
         observer.disconnect();
       };

@@ -11,6 +11,8 @@ export default function Home() {
   const { t: common } = useTranslation(["common"]);
   const { t: home } = useTranslation(["home"]);
 
+  const ref0 = useRef(null);
+  const isVisible0 = useIsVisible(ref0);
   const ref1 = useRef(null);
   const isVisible1 = useIsVisible(ref1);
   const ref2 = useRef(null);
@@ -36,9 +38,17 @@ export default function Home() {
           className="w-[100vw] h-[850px] object-cover sm:hidden"
         />
         <div
-          className={`absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px]`}
+          ref={ref0}
+          className={`absolute left-[100px] top-[16vw] text-white sm:top-[32vh] sm:left-[30px] transition-all ease-in-out duration-1000
+            ${
+              isVisible0
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
         >
-          <div className="text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[9vw]">
+          <div
+            className={`text-[60px] whitespace-pre font-bold leading-[120%] sm:text-[9vw]`}
+          >
             {common("current-locale") === "ko"
               ? `라고나브 청소년들을
 후원해주세요`
@@ -73,8 +83,8 @@ La Gonave Children`}
             }`}
         >
           {common("current-locale") === "ko"
-            ? `양육에 가치를 더하는,
-당신을 위한 `
+            ? `잊혀진 아이티 라고나브 섬,
+더 나은 배움을 꿈꾸는 아이들을 위한 `
             : `Enhancing Parenting Support 
 with Personalized, `}
           <strong className="text-[#F3851D] font-bold sm:block sm:text-[6.2vw] sm:mt-[5px]">
