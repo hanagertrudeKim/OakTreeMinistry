@@ -105,7 +105,7 @@ with Personalized, `}
               return (
                 <div
                   key={index}
-                  className="flex flex-col relative contrast-70 mr-[30px] rounded"
+                  className="flex flex-col relative contrast-70 mr-[100px] rounded"
                 >
                   <Image
                     src={info.backgroundImage}

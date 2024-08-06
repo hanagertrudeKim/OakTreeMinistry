@@ -25,13 +25,13 @@ export const DONATION_PROGRAM = [
     description: "donate-option1-description",
     donationLink: "/donate?program=youth",
   },
-  {
-    imageUrl: "/image/collegeDonate.jpg",
-    alt: "donate-option2-alt",
-    title: "donate-option2-title",
-    description: "donate-option2-description",
-    donationLink: "/donate?program=college-students",
-  },
+  // {
+  //   imageUrl: "/image/collegeDonate.jpg",
+  //   alt: "donate-option2-alt",
+  //   title: "donate-option2-title",
+  //   description: "donate-option2-description",
+  //   donationLink: "/donate?program=college-students",
+  // },
   {
     imageUrl: "/image/schoolDonate.jpg",
     alt: "donate-option3-alt",
