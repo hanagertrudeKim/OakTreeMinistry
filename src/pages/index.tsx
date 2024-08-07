@@ -85,8 +85,8 @@ La Gonave Children`}
           {common("current-locale") === "ko"
             ? `잊혀진 아이티 라고나브 섬,
 더 나은 배움을 꿈꾸는 아이들을 위한 `
-            : `Enhancing Parenting Support 
-with Personalized, `}
+            : `Forgotten Island of La Gonâve, Haiti
+Support children's education with `}
           <strong className="text-[#F3851D] font-bold sm:block sm:text-[6.2vw] sm:mt-[5px]">
             {home("customized-donation")}
           </strong>
