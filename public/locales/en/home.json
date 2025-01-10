@@ -3,7 +3,7 @@
   "know-about-us-title": "La Gonave Mission",
   "know-about-us-description": "We're engaged in La Gonave Island, Haiti's impoverished region, focusing on vital ministries: training health missionaries, developing medical infrastructure, combating cholera, establishing churches, fostering community, nurturing youth, and building schools with churches and global care teams.",
   "vision-title": "Christ's Love of La Gonave",
-  "project-title": "How We Work Together",
+  "project-title": "Haiti, La gonave",
 
   "donateCard1-title": "Sponsor Youth 1:1",
   "donateCard1-description": "Supporting students from elementary to high school with tuition aid, alongside weekly Bible studies and discipleship training.",
@@ -25,5 +25,21 @@
 
   "project3-location": "Dominican Republic",
   "project3-title": "Clinic de Salud Integral",
-  "project3-description": "The Oak Tree Ministry team operates a clinic in Pontezuela, Dominican Republic, offering mobile medical services, clinical practice for medical professionals, emergency medical support via social media, community health education, and children's education programs for Haitian immigrants."
+  "project3-description": "The Oak Tree Ministry team operates a clinic in Pontezuela, Dominican Republic, offering mobile medical services, clinical practice for medical professionals, emergency medical support via social media, community health education, and children's education programs for Haitian immigrants.",
+
+  "child-sponsorship-title": "1:1 Child Sponsorship",
+  "child-intro-prefix": "Let us introduce",
+  "child-intro-suffix": "",
+  "child-greeting-prefix": "Hello, I am",
+  "child-location-mid": "from",
+  "child-greeting-suffix": "",
+  "child-age-prefix": "I am",
+  "child-age-suffix": "years old",
+  "child-gender-male": "boy",
+  "child-gender-female": "girl",
+  "child-type": "",
+  "child-message": "I look forward to exchanging letters with my sponsor.",
+  "child-question": "Would you like to be my sponsor?",
+  "learn-more-button": "Learn More",
+  "sponsor-now-button": "Sponsor Now"
 }

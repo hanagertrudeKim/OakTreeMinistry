@@ -1,32 +1,40 @@
 {
-  "donate-program-title": "Donation Programs",
-  "page-title": "Donation Programs",
-  "page-sub-title": "Supporting every child to grow without lacking anything.",
+  "donate-program-title": "Donation Program",
+  "page-title": "1:1 Child Donation",
+  "page-sub-title": "For just $40 a month, a sponsor is connected with a child. This connection provides the child with opportunities for survival, growth, and achieving their dreams.",
   "hand-in-hand-project-description1": "The Hand In Hand project supports underprivileged youth on La Gonave Island, Haiti, through one-on-one sponsorship for school education, along with various discipleship training programs to help them grow into wholehearted Christians.",
   "hand-in-hand-project-description2": "Through this, the youth of La Gonave will build Christ's kingdom in their homes, communities, country, and globally as true Christian leaders.",
   "hand-in-hand-project-cycle": "Cycle of the Hand in Hand project",
 
-  "donate-program1-title": "Youth Sponsorship",
   "donate-program1-description": "We support a total of 180 students from elementary to high school. Each grade (13 grades) has 15 students receiving tuition aid. Through weekly Bible study and discipleship training, students experience Christ and live a true worship life.",
-  "donate-program2-title": "University Student Sponsorship",
   "donate-program2-description": "We select outstanding high school graduates to study abroad in Haiti's capital or the Dominican Republic. During their university years, we build a student faith community, instill a vision for missions, and train them as missionaries both domestically and internationally.",
-  "donate-program3-title": "Local Teacher Sponsorship",
   "donate-program3-description": "We send selected high school graduates to college to obtain teaching qualifications. After graduation, they return to coastal or mountain village schools as teacher missionaries, discipling students and spreading the gospel in local schools.",
-  "donate-program4-title": "Hope School Sponsorship",
   "donate-program4-description": "We establish a Christian school where sponsored students receive quality education and faith training. The school offers modern education through internet and computer access, e-libraries, free meals, and vocational training programs.",
 
-  "how-to-Donate": "How to Doante",
-
-  "donate-option1-alt": "Children Sponsorship Photo",
-  "donate-option1-title": "1:1 Youth Sponsorship",
   "donate-option1-description": "Supporting Bible study and disciple training through tuition support.",
-
-  "donate-option2-alt": "University Student Sponsorship Photo",
-  "donate-option2-title": "University Student Sponsorship",
   "donate-option2-description": "Supporting the enrollment of La Gonave students in universities.",
-
-  "donate-option3-alt": "Hope School Sponsorship Photo",
-  "donate-option3-title": "Hope School Sponsorship",
   "donate-option3-description": "Establishing a Christian school for education and faith training.",
-  "how-to-donate": "How to Donate"
+
+  "children-waiting-desc": "Join us in transforming a child's life",
+  "child-info-desc": "Help bring hope to children's future through sponsorship",
+
+  "program-introduction-desc": "Since 2016, our youth sponsorship program has been providing continuous educational support from middle school through high school graduation. Currently, 74 youth are benefiting from the program, with sponsorship continuing based on annual evaluations of academic performance and behavior.",
+  "donation-usage-desc": "Donations support children's education, healthcare, and nutrition",
+
+  "vision-statement-1": "School ministry is the most effective channel for raising youth as disciples of Jesus.",
+  "vision-statement-2": "Through years of education, service, and training, they will become spiritually and physically complete disciples of Jesus, becoming key players in transforming their communities into beautiful Christian communities.",
+
+  "child-greeting": "Hello, I am",
+  "child-greeting-end": "",
+  "residence": "Residence",
+  "age": "Age",
+  "years-old": "years old",
+  "future-dream": "Future Dream",
+  "prayer-request": "Prayer Request",
+  "program-introduction": "Program Introduction",
+  "donation-usage": "How Your Donation Helps",
+
+  "youth_support": "Youth Support",
+  "college_support": "College Student Support",
+  "hope_school": "Hope School Support"
 }

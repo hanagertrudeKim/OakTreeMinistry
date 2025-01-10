@@ -15,8 +15,8 @@ export default function Header({ setIsOpen }: any) {
   };
 
   return (
-    <div className="sticky w-full h-[85px] bg-white flex items-center pr-5 sm:relative sm:h-[12vw] justify-end">
-      <Link href={"/"}>
+    <div className="sticky w-full h-[85px] bg-white flex items-center pr-5 sm:relative sm:h-[12vw] justify-end shadow-md">
+      <Link href={"/"} className="">
         <Image
           src="/logo.svg"
           alt="logo"
@@ -28,7 +28,11 @@ export default function Header({ setIsOpen }: any) {
       <div className="sm:hidden flex gap-16 text-[18px] font-bold font-NSK">
         {NAVIGATION.map((content, index) => {
           return (
-            <Link key={index} href={content.link} className="">
+            <Link
+              key={index}
+              href={content.link}
+              className="transition-colors hover:text-[#07403A] relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-[#07403A] after:transition-all hover:after:w-full"
+            >
               {t(content.title)}
             </Link>
           );
@@ -36,7 +40,7 @@ export default function Header({ setIsOpen }: any) {
       </div>
       <Link
         href="/donate"
-        className="bg-[#07403A] text-white w-28 h-10 leading-none flex justify-center items-center rounded-md text-md sm:hidden sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] ml-16"
+        className="bg-[#07403A] text-white w-28 h-10 leading-none flex justify-center items-center rounded-md text-md font-bold sm:hidden sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] ml-16 transition-all hover:bg-[#0a5048] hover:shadow-lg"
       >
         <div>Donate</div>
       </Link>
@@ -46,21 +50,29 @@ export default function Header({ setIsOpen }: any) {
         width={26}
         height={26}
         onClick={() => setIsOpen(true)}
-        className="lg:hidden sm:absolute sm:right-5"
+        className="lg:hidden sm:absolute sm:right-5 cursor-pointer hover:opacity-80 transition-opacity"
       />
       <button
-        className="flex ml-5 gap-1 justify-center items-center sm:mr-[40px]"
+        className="flex ml-5 gap-2 justify-center items-center sm:mr-[40px] 
+          px-3 py-1.5 rounded-full border border-gray-200 
+          hover:bg-gray-50 hover:border-gray-300 
+          transition-all duration-200 ease-in-out"
         onClick={handleClickChangeLng}
       >
         <Image
           src={
-            t("current-locale") === "ko" ? "korea_flag.svg" : "english_flag.svg"
+            t("current-locale") === "ko"
+              ? "/korea_flag.svg"
+              : "/english_flag.svg"
           }
           alt="언어 선택 버튼"
-          width={25}
-          height={25}
+          width={22}
+          height={22}
+          className="rounded-full shadow-sm"
         />
-        <span className="font-roboto font-normal">{t("current-locale")}</span>
+        <span className="font-roboto font-medium text-gray-700">
+          {t("current-locale")}
+        </span>
       </button>
     </div>
   );

@@ -3,7 +3,7 @@
   "know-about-us-title": "라고나브로의 보내심",
   "know-about-us-description": "우리는 아이티에서도 가장 열악한 지역 중 하나인 La Gonave 섬으로 발을 들였습니다. 거기서는 마을 보건 선교사 양성, 의료 인프라 구축, 콜레라 퇴치, 교회 개척, 지역 개발, 청소년 양육, 학교 건축 등 다양한 사역을 교회와 글로벌 케어 팀과 함께 진행해왔습니다.",
   "vision-title": "라고나브 청소년에게 그리스도의 사랑을",
-  "project-title": "우리는 이렇게 함께 일합니다",
+  "haiti-project-title": "아이티, 라고나브에서",
 
   "donateCard1-title": "1:1 청소년 후원하기",
   "donateCard1-description": "초등학생부터 고등학생까지 학비 지원과 매주 성경공부 및 제자훈련을 통해 신앙생활을 지도합니다.",
@@ -16,7 +16,7 @@
   "vision2-description": "성경말씀과 성령 충만함, 기도와 진정한 예배를 통해 청소년들의 내면에 맺어야 할 핵심 가치들을 갖게 한다",
 
   "project1-location": "아이티 라고나브 섬",
-  "project1-title": "소망 학교를 세우다",
+  "project1-title": "소망 학교 건축",
   "project1-description": "우리는 지금 쉽지 않은 상황이지만 아이들이 안전하게 공부할 수 있는 초. 중고등학교 크리스찬 학교를 짓고 있습니다. 이 학교를 통해 청소년들에게 성경을 가르치고 예수의 비전을 심어 주고 하나님 나라에 소망을 갖게 하여 이들을 주님의 군사로 준비 시키고자 합니다.",
 
   "project2-location": "아이티 라고나브 섬",
@@ -25,5 +25,21 @@
 
   "project3-location": "도미니카 공화국",
   "project3-title": "Clinic de salud integral",
-  "project3-description": "Oak Tree Ministry 팀은 도미니카 공화국의 Pontezuela에서 클리닉을 운영하며, 아이티 이주민들을 위해 이동 진료, 의료인 임상 실습, SNS 긴급 의료 지원, 주민 의료 교육, 아동 교육 프로그램 등을 제공합니다."
+  "project3-description": "도미니카 공화국의 Pontezuela에서 클리닉을 운영하며, 아이티 이주민들을 위해 이동 진료, 의료인 임상 실습, SNS 긴급 의료 지원, 주민 의료 교육, 아동 교육 프로그램 등을 제공합니다.",
+
+  "child-sponsorship-title": "1:1 어린이 양육",
+  "child-intro-prefix": "함께 자라는",
+  "child-intro-suffix": "을 소개합니다",
+  "child-greeting-prefix": "안녕하세요,",
+  "child-location-mid": "에 사는",
+  "child-greeting-suffix": "입니다.",
+  "child-age-prefix": "저는",
+  "child-age-suffix": "살",
+  "child-gender-male": "남자",
+  "child-gender-female": "여자",
+  "child-type": "어린이에요.",
+  "child-message": "얼른 후원자님을 만나 편지를 주고받고 싶어요.",
+  "child-question": "저의 후원자님이 되어주시겠어요?",
+  "learn-more-button": "자세히 보기",
+  "sponsor-now-button": "바로 후원하기"
 }

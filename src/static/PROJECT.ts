@@ -21,15 +21,27 @@ export const PROJECT = {
       image: "/image/project-dorega.jpg",
     },
   ], 
-  dominica_projects: 
-  {
+  dominica_projects: {
     "info": {
-      "title": "dominica_projects_title1",
-      "text": "dominica_projects_text1"
+        "title": "dominica_projects_title1",
+        "text": "dominica_projects_text1",
     },
-    "clinic": {
-      "title": "dominica_projects_title2",
-      "text": "dominica_projects_text2"
-    }
+    projects : [
+    {
+      title: "dominica_projects_title2",
+      description: "dominica_projects_text2",
+      image: "/image/project-school.jpg",
+    },
+    {
+      title: "dominica_projects_title3",
+      description: "dominica_projects_text3",
+      image: "/image/project-clinic.jpg",
+    },
+    {
+      title: "dominica_projects_title4",
+      description: "dominica_projects_text4",
+      image: "/image/project-disability.jpg",
+    },
+  ], 
   }
 }

@@ -1,6 +1,6 @@
 export const DONATE_CARD = [
   {
-    backgroundImage: "/image/donateCard1.jpg",
+    backgroundImage: "/image/donateCard3.jpg",
     title: "donateCard1-title",
     description: "donateCard1-description",
     learnMoreLink: "donate-program",
@@ -14,7 +14,7 @@ export const DONATE_CARD = [
   //   donateLink: "/donate?program=college-students",
   // },
   {
-    backgroundImage: "/image/donateCard3.jpg",
+    backgroundImage: "/image/HopeSchoolDesign.jpeg",
     title: "donateCard3-title",
     description: "donateCard3-description",
     learnMoreLink: "donate-program",
@@ -37,18 +37,21 @@ export const VISION = [
 
 export const PROJECT = [
   {
+    country: "haiti",
     location: "project1-location",
     title: "project1-title",
     description: "project1-description",
-    image: "/image/main-project1.jpg",
+    image: "/image/HopeSchoolDesign.jpeg",
   },
   {
+    country: "haiti",
     location: "project2-location",
     title: "project2-title",
     description: "project2-description",
     image: "/image/project-clinic.jpg",
   },
   {
+    country: "dominican",
     location: "project3-location",
     title: "project3-title",
     description: "project3-description",
