@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   const { t } = useTranslation(["common"]);
   return (
-    <footer className="bg-[#07403A] text-white pt-12 pb-4 px-[8vw]">
+    <footer className="bg-[#07403A] text-white pt-12 pb-4 px-[8vw] sm:hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* 상단 섹션 */}
         <div className="grid grid-cols-3 gap-8 sm:grid-cols-1 sm:gap-10">

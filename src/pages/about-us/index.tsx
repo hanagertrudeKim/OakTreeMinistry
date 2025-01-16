@@ -11,15 +11,9 @@ export default function AboutUs() {
   const { t: aboutUs } = useTranslation(["about-us"]);
 
   return (
-    <div className="mt-[60px] sm:mt-[20px] mb-[120px] sm:mb-[80px]">
-      <div className="flex items-baseline max-w-[1200px] px-4">
-        <div className="w-[60px] border-b-2 border-[#0B403A]" />
-        <div className="pl-[20px] text-[32px] font-bold text-[#0B403A] sm:text-[4vw]">
-          KNOW ABOUT US
-        </div>
-      </div>
-      <div className="mt-[60px] sm:mt-[10px] bg-[#0B403A] text-white py-24 px-8 sm:py-12 sm:px-4">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-16 sm:flex-col">
+    <div className="mb-[120px] sm:mb-[80px]">
+      <div className="bg-[#0B403A] text-white py-24 px-8 sm:py-8 sm:px-4">
+        <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-16 sm:flex-col sm:gap-8">
           <div className="flex flex-col w-[550px] sm:w-full">
             <div className="font-extrabold text-[56px] sm:text-[7vw] relative mb-8">
               OUR STORY
@@ -43,12 +37,12 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             alt="about-us"
             width={580}
             height={680}
-            className="w-[500px] h-[580px] sm:w-[92%] sm:h-[350px] object-cover shadow-xl rounded-lg sm:mt-[35px]"
+            className="w-[500px] h-[580px] sm:w-full sm:h-[400px] object-cover shadow-xl rounded-lg sm:mt-6"
           />
         </div>
       </div>
-      <div className="max-w-[1200px] mx-auto px-4 mt-[120px] sm:mt-[80px]">
-        <div className="flex items-start gap-x-16 sm:flex-col">
+      <div className="max-w-[1200px] mx-auto px-4 mt-[120px] sm:mt-[60px]">
+        <div className="flex items-start gap-x-16 sm:flex-col sm:gap-y-6">
           <div className="relative">
             <p className="font-extrabold text-[54px] text-[#0B403A] sm:text-[7vw]">
               OUR {isMobile && <br />}
@@ -60,58 +54,54 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
             {aboutUs("our-vision")}
           </div>
         </div>
-        <div className="max-w-[1200px] mx-auto mt-[120px] sm:mt-[80px]">
-          <div className="flex font-roboto mt-[120px] justify-center items-center sm:flex-col sm:object-center sm:mt-[50px]">
-            <div>
-              <div className="text-[45px] font-extrabold sm:text-[6vw]">
-                OUR <br />
-                INTERNAL VISION
-              </div>
-              <div className="w-[530px] mt-[40px] mr-[50px] font-SUITE text-[21px] tracking-wide font-medium sm:text-[4vw] sm:whitespace-pre-wrap sm:w-[90vw] sm:mr-0">
-                {common("current-locale") == "ko" ? (
-                  <>
-                    성경 말씀과 성령 충만함, 기도와 진정한 예배를 통해 <br />
-                    청소년들의 내면에 맺어야 할 핵심 가치들을 갖게 한다. <br />
-                    <br />
-                    영적 영역 - 사랑, 경건, 정직, 섬김 <br />
-                    인성 영역 - 실력, 근면, 자립, 협력
-                  </>
-                ) : (
-                  <>
-                    {!isMobile && (
-                      <>
-                        Through scripture, the Holy Spirit, prayer, and true
-                        worship, instill in youth the essential values they
-                        need.
-                        <br />
-                        <br />
-                      </>
-                    )}
-                    Spiritual Area - Love, Reverence, Honesty, and Service{" "}
-                    <br />
-                    Personality Area - Ability, diligence, self-reliance,
-                    cooperation
-                  </>
-                )}
-              </div>
-              <div className="mt-[20px] font-SUITE">
-                {aboutUs("our-internal-vision-bible")}
-              </div>
+        <div className="max-w-[1200px] mx-auto mt-[120px] sm:mt-[60px] flex items-center sm:flex-col sm:gap-8">
+          <div>
+            <div className="text-[45px] font-extrabold sm:text-[6vw]">
+              OUR <br />
+              INTERNAL VISION
             </div>
-            <Image
-              src={
-                common("current-locale") == "ko"
-                  ? "/image/ko_internal-vision.jpg"
-                  : "/image/en_internal-vision.jpg"
-              }
-              alt="about-us"
-              width={581}
-              height={480}
-              className="w-[530px] sm:w-[70vw] object-contain sm:ml-0 sm:mt-5"
-            />
+            <div className="w-[530px] mt-[40px] mr-[50px] font-SUITE text-[21px] tracking-wide font-medium sm:text-[4vw] sm:whitespace-pre-wrap sm:w-[90vw] sm:mr-0">
+              {common("current-locale") == "ko" ? (
+                <>
+                  성경 말씀과 성령 충만함, 기도와 진정한 예배를 통해 <br />
+                  청소년들의 내면에 맺어야 할 핵심 가치들을 갖게 한다. <br />
+                  <br />
+                  영적 영역 - 사랑, 경건, 정직, 섬김 <br />
+                  인성 영역 - 실력, 근면, 자립, 협력
+                </>
+              ) : (
+                <>
+                  {!isMobile && (
+                    <>
+                      Through scripture, the Holy Spirit, prayer, and true
+                      worship, instill in youth the essential values they need.
+                      <br />
+                      <br />
+                    </>
+                  )}
+                  Spiritual Area - Love, Reverence, Honesty, and Service <br />
+                  Personality Area - Ability, diligence, self-reliance,
+                  cooperation
+                </>
+              )}
+            </div>
+            <div className="mt-[20px] font-SUITE">
+              {aboutUs("our-internal-vision-bible")}
+            </div>
           </div>
+          <Image
+            src={
+              common("current-locale") == "ko"
+                ? "/image/ko_internal-vision.jpg"
+                : "/image/en_internal-vision.jpg"
+            }
+            alt="about-us"
+            width={581}
+            height={480}
+            className="w-[530px] sm:w-[100%] object-contain sm:ml-0 sm:mt-4"
+          />
         </div>
-        <div className="max-w-[1200px] mx-auto mt-[120px] sm:mt-[80px] flex items-center sm:flex-col">
+        <div className="max-w-[1200px] mx-auto mt-[120px] sm:mt-[60px] flex items-center sm:flex-col sm:gap-8">
           {!isMobile && (
             <div className="flex-shrink-0 mr-[120px]">
               <Image
@@ -149,11 +139,11 @@ In 2024, near UTESA University in Santiago, we opened the YWAM Oak Tree Mission 
               alt="about-us"
               width={581}
               height={480}
-              className="w-[70vw] mt-5 object-contain"
+              className="w-full mt-4 object-contain"
             />
           )}
         </div>
-        <div className="mt-[120px] sm:mt-[80px] space-y-[100px]">
+        <div className="mt-[120px] sm:mt-[60px] space-y-[100px] sm:space-y-[60px]">
           <div className="bg-gray-50 rounded-lg p-12 sm:p-6">
             <div className="relative mb-12">
               <p className="font-extrabold text-[50px] sm:text-[7vw] flex items-center gap-4 text-[#0B403A]">
