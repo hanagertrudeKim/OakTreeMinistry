@@ -11,8 +11,4 @@ export const NAVIGATION = [
     title: "project",
     link: "/project",
   },
-  {
-    title: "media",
-    link: "/media",
-  },
 ];

@@ -1,4 +1,6 @@
 {
   "donate_title": "후원 결제 진행하기",
-  "donate_sub-title": "후원하실 프로그램을 선택해주세요."
+  "donate_sub-title": "후원하실 프로그램을 선택해주세요.",
+  "main_programs": "주요 후원 프로그램",
+  "other_programs": "기타 후원 프로그램"
 }

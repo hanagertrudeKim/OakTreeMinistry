@@ -4,7 +4,12 @@
   "donate-program": "1:1 어린이 후원",
   "project": "사역",
   "media": "소식",
-  "donate": "후원",
+  "donate": {
+    "subtitle": "후원하기",
+    "program_title": "{{program}}",
+    "main_programs": "주요 프로그램",
+    "other_programs": "기타 프로그램"
+  },
   "donate-button": "바로 후원하기",
   "detail-button": "자세히 보기",
   "contact-us": "문의하기",

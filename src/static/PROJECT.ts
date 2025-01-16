@@ -30,17 +30,17 @@ export const PROJECT = {
     {
       title: "dominica_projects_title2",
       description: "dominica_projects_text2",
-      image: "/image/project-school.jpg",
+      image: "/image/dominica-clinic.jpg",
     },
     {
       title: "dominica_projects_title3",
       description: "dominica_projects_text3",
-      image: "/image/project-clinic.jpg",
+      image: "/image/CMV.jpeg",
     },
     {
       title: "dominica_projects_title4",
       description: "dominica_projects_text4",
-      image: "/image/project-disability.jpg",
+      image: "/image/mothercare.jpeg",
     },
   ], 
   }

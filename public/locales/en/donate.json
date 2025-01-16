@@ -1,5 +1,9 @@
 {
   "donate_title": "Support Our Mission",
   "donate_sub-title": "Select a program to sponsor",
-  "how-to-donate": "How to Donate"
+  "how-to-donate": "How to Donate",
+  "main_programs": "Main Programs",
+  "other_programs": "Other Programs",
+  "donate_subtitle": "Donate",
+  "program_title": "Support {{program}}"
 }

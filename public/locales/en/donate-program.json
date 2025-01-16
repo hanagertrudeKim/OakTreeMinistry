@@ -2,8 +2,8 @@
   "donate-program-title": "Donation Program",
   "page-title": "1:1 Child Donation",
   "page-sub-title": "For just $40 a month, a sponsor is connected with a child. This connection provides the child with opportunities for survival, growth, and achieving their dreams.",
-  "hand-in-hand-project-description1": "The Hand In Hand project supports underprivileged youth on La Gonave Island, Haiti, through one-on-one sponsorship for school education, along with various discipleship training programs to help them grow into wholehearted Christians.",
-  "hand-in-hand-project-description2": "Through this, the youth of La Gonave will build Christ's kingdom in their homes, communities, country, and globally as true Christian leaders.",
+  "hand-in-hand-project-description1": "This is a youth school sponsorship project that helps teenagers living in the slums of La Gonave Island, Haiti, attend school through one-on-one sponsorship and helps them grow as complete Christians through various discipleship training programs.",
+  "hand-in-hand-project-description2": "On La Gonave Island, which is like a wilderness with no food, drinking water, or electricity, many children want to study at school while enduring hunger. By sponsoring and nurturing these children who cannot properly attend school due to poverty, they will become Christian leaders who influence their families, communities, nations, and the world.",
   "hand-in-hand-project-cycle": "Cycle of the Hand in Hand project",
 
   "donate-program1-description": "We support a total of 180 students from elementary to high school. Each grade (13 grades) has 15 students receiving tuition aid. Through weekly Bible study and discipleship training, students experience Christ and live a true worship life.",
@@ -36,5 +36,55 @@
 
   "youth_support": "Youth Support",
   "college_support": "College Student Support",
-  "hope_school": "Hope School Support"
+  "hope_school": "Hope School Support",
+
+  "donation": {
+    "title": "1:1 Child Sponsorship Payment",
+    "subtitle": "Join us in changing a child's future",
+    "usage_title": "How Your Donation Will Be Used",
+    "monthly": "Monthly Donation",
+    "yearly": "Yearly Donation",
+    "period": "Sponsorship Period",
+    "years": "years",
+    "until_graduation": "until graduation",
+    "usage_note": "Your donation will be used for children's education, medical care, and nutrition support",
+    "regular_support": "Regular Sponsorship"
+  },
+  "profile": {
+    "label": "Child Profile",
+    "greeting": "Hello!",
+    "introduction": "I am",
+    "introduction_end": "",
+    "my_story": "My Story"
+  },
+  "usage": {
+    "tuition": {
+      "title": "Annual Tuition",
+      "desc": "Registration, classes, and textbook support"
+    },
+    "afterschool": {
+      "title": "After School Programs",
+      "desc": "English, computer, music, and sports"
+    },
+    "food": {
+      "title": "Food Support",
+      "desc": "3 times per year"
+    },
+    "medical": {
+      "title": "Medical Support",
+      "desc": "Basic medical care"
+    }
+  },
+  "donation_child": "1:1 Child Sponsorship",
+  "donation_hope_school": "Hope School Support",
+  "donation_college_students": "Haiti College Student Support",
+  "donation_hope_clinic": "Hope Clinic Support",
+  "donation_single_mothers": "Single Mothers Support",
+  "donation_theological_school": "Lagonav Hope Theological School",
+  "donation_child_title": "1:1 Child Sponsorship Program",
+  "donation_hope_school_title": "Hope School Support Program",
+  "donation_college_students_title": "Haiti College Student Support Program",
+  "donation_hope_clinic_title": "Hope Clinic Support Program",
+  "donation_single_mothers_title": "Single Mothers Support Program",
+  "donation_theological_school_title": "Lagonav Hope Theological School Support"
 }

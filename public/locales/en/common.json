@@ -4,7 +4,12 @@
   "donate-program": "1:1 Child Support",
   "project": "Projects",
   "media": "News",
-  "donate": "Donate",
+  "donate": {
+    "subtitle": "Donate",
+    "program_title": "Support {{program}}",
+    "main_programs": "Main Programs",
+    "other_programs": "Other Programs"
+  },
   "donate-button": "Donate",
   "detail-button": "Detail",
   "contact-us": "Contact Us",

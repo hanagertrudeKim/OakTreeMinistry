@@ -40,9 +40,19 @@ export default function Header({ setIsOpen }: any) {
       </div>
       <Link
         href="/donate"
-        className="bg-[#07403A] text-white w-28 h-10 leading-none flex justify-center items-center rounded-md text-md font-bold sm:hidden sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] ml-16 transition-all hover:bg-[#0a5048] hover:shadow-lg"
+        className="bg-[#07403A] text-white w-28 h-10 leading-none 
+          flex justify-center items-center rounded-md text-md font-bold 
+          sm:hidden sm:h-[8vw] sm:w-[18vw] sm:text-[2.8vw] ml-16 
+          transition-all duration-300 ease-in-out
+          hover:bg-[#0a5048] hover:shadow-lg hover:scale-105
+          relative overflow-hidden
+          before:absolute before:top-0 before:left-0 
+          before:w-full before:h-full before:bg-white/10
+          before:translate-x-[-100%] before:skew-x-[-45deg]
+          before:transition-transform before:duration-300
+          hover:before:translate-x-[100%]"
       >
-        <div>Donate</div>
+        <span className="text-center">Donate</span>
       </Link>
       <Image
         src="/mobileMenu.svg"
@@ -54,8 +64,10 @@ export default function Header({ setIsOpen }: any) {
       />
       <button
         className="flex ml-5 gap-2 justify-center items-center sm:mr-[40px] 
-          px-3 py-1.5 rounded-full border border-gray-200 
-          hover:bg-gray-50 hover:border-gray-300 
+          px-4 py-2 rounded-full border border-gray-200 
+          bg-white shadow-sm
+          hover:bg-gray-50 hover:border-gray-300 hover:shadow-md
+          active:scale-95
           transition-all duration-200 ease-in-out"
         onClick={handleClickChangeLng}
       >
@@ -68,9 +80,16 @@ export default function Header({ setIsOpen }: any) {
           alt="언어 선택 버튼"
           width={22}
           height={22}
-          className="rounded-full shadow-sm"
+          className="rounded-full shadow-sm hover:scale-105 transition-transform"
         />
-        <span className="font-roboto font-medium text-gray-700">
+        <span
+          className="font-roboto font-medium text-gray-700 
+          relative after:content-[''] after:absolute 
+          after:bottom-0 after:left-0 after:w-0 
+          after:h-[1px] after:bg-gray-400
+          after:transition-all after:duration-300
+          group-hover:after:w-full"
+        >
           {t("current-locale")}
         </span>
       </button>

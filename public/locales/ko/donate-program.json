@@ -2,8 +2,8 @@
   "donate-program-title": "후원 프로그램",
   "page-title": "1:1 어린이 양육",
   "page-sub-title": "한달 40불로 후원자는 어린이와 연결됩니다. 어린이는 생존과 성장, 꿈을 이룰 수 있는 기회와도 연결됩니다.",
-  "hand-in-hand-project-description1": "Hand In Hand 프로젝트는 아이티의 La Gonave 섬의 빈민가청소년들을 일대일 후원을 통해 학교 교육에 참여할 수 있도록 돕고, 더불어 다양한 제자 훈련 프로그램을 통해 온전한 그리스도인으로 성장할 수 있도록 지원하는 청소년 학교 후원 프로젝트입니다.",
-  "hand-in-hand-project-description2": "이를 통해 La Gonave의 청소년들은 자신의 가정, 지역, 국가, 그리고 전 세계에 그리스도의 나라를 참된 그리스도 지도자로서 구축해 나갈 것입니다.",
+  "hand-in-hand-project-description1": "아이티 라고나브(La Gonave) 섬 빈민가에 살고 있는 청소년들을 일대일 후원을 통해 학교에 다닐 수 있도록 도와 주며 또한 다양한 제자 훈련 프로그램을 통해 온전한 그리스도인으로 성장하도록 돕는 청소년 학교 후원 프로젝트 입니다.",
+  "hand-in-hand-project-description2": "황무지같은 라고나브 섬에는 먹을 것도 마실 물도, 전기도 없는 그 곳에 많은 아이들이 배고픔을 참으며 학교에서 공부를 하고자 합니다. 그러나 가난해서 제대로 학교를 못다니는 아이들을 후원하고 양육하면 후에 이들이 자신의 가정, 지역 , 국가 그리고 전 세계에 영향력을 끼치는 크리스찬 지도자들이 될 것입니다.",
   "hand-in-hand-project-cycle": "Hand in Hand project 의 선순환",
 
   "donate-program1-description": "초등학생부터 고등학생까지 총 13학년이며 한 학년당 15명의 학생을 후원하며 총 180명의 학생들을 후원 프로그램을 통해 학비 진원을 하며 또한 매주 성경공부 및 제자훈련 프로그램을 실시하여 학교생활 동안 성경을 배우고 그리스도를 체험하며 진정한 예배 생활을 하게 한다.",
@@ -36,5 +36,49 @@
 
   "youth_support": "청소년 후원",
   "college_support": "대학생 후원",
-  "hope_school": "희망학교 후원"
+  "hope_school": "희망학교 후원",
+
+  "donation": {
+    "title": "1:1 어린이 후원 결제하기",
+    "subtitle": "한 아이의 미래를 변화시키는 여정에 동참해주세요",
+    "usage_title": "후원금은 이렇게 쓰여요",
+    "monthly": "월 후원하기",
+    "yearly": "연간 후원하기",
+    "period": "후원기간",
+    "years": "년",
+    "until_graduation": "졸업까지",
+    "usage_note": "후원금은 아이들의 교육, 의료, 영양 지원에 사용됩니다",
+    "regular_support": "정기 후원 하기"
+  },
+  "profile": {
+    "label": "아동 프로필",
+    "greeting": "안녕하세요!",
+    "introduction": "저는",
+    "introduction_end": "입니다",
+    "my_story": "나의 이야기"
+  },
+  "usage": {
+    "tuition": {
+      "title": "1년 학비",
+      "desc": "등록비, 수업비, 책값 보조 등"
+    },
+    "afterschool": {
+      "title": "방과후 학교",
+      "desc": "영어, 컴퓨터, 악기, 체육 등"
+    },
+    "food": {
+      "title": "식량 지원",
+      "desc": "연 3회"
+    },
+    "medical": {
+      "title": "의료비 지원",
+      "desc": "기초 의료 지원"
+    }
+  },
+  "donation_child_title": "1:1 어린이 후원",
+  "donation_hope_school_title": "소망 학교 후원",
+  "donation_college_students_title": "아이티 대학생 후원",
+  "donation_hope_clinic_title": "소망 클리닉 후원",
+  "donation_single_mothers_title": "미혼모 후원",
+  "donation_theological_school_title": "라고나브 소망 신학교 후원"
 }

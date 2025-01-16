@@ -1,6 +1,6 @@
 export const DONATE_CARD = [
   {
-    backgroundImage: "/image/donateCard3.jpg",
+    backgroundImage: "/image/childrenDonate.jpg",
     title: "donateCard1-title",
     description: "donateCard1-description",
     learnMoreLink: "donate-program",

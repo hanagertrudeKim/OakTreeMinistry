@@ -30,10 +30,6 @@ export default function index() {
             <h1 className="text-[42px] font-bold mt-6 text-white leading-tight tracking-tight sm:text-[26px] sm:mt-4">
               {project("title")}
             </h1>
-
-            <p className="text-[18px] mt-4 text-white/90 max-w-[500px] sm:text-[14px] sm:mt-3">
-              {project("sub-title")}
-            </p>
           </div>
         </div>
       </div>
@@ -109,23 +105,29 @@ export default function index() {
                 alt={info.title}
                 width={550}
                 height={550}
-                className="w-[500px] sm:w-[90vw] object-scale-down"
+                className="w-[500px] h-[400px] sm:w-[90vw] sm:h-[300px] object-cover rounded-lg"
               />
             </div>
           ))
         ) : (
           <>
-            <div className="font-NSK mt-[100px] px-[15%] sm:mt-[40px] sm:px-5">
-              <div className="text-[35px] font-extrabold sm:text-[28px] mb-[60px] border-l-4 border-[#175a41] pl-6">
-                {project(PROJECT.dominica_projects.info.title)}
+            <div className="font-NSK mt-[100px] px-[20%] sm:mt-[40px] sm:px-5">
+              <div className="relative mb-[40px] pl-6 before:content-[''] before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-gradient-to-b before:from-[#2E4B9B] before:to-[#3457B2]">
+                <h2 className="text-[35px] font-extrabold sm:text-[28px] text-[#2E4B9B]">
+                  {project(PROJECT.dominica_projects.info.title)}
+                </h2>
               </div>
               <div
-                className="text-[21px] leading-relaxed font-normal text-gray-700 
-                bg-gray-50 p-8 rounded-lg shadow-md 
-                border-l-2 border-[#175a41]/30
-                sm:text-[18px] sm:p-5"
+                className="relative p-8 rounded-lg 
+                bg-gradient-to-br from-white to-gray-50
+                shadow-[0_10px_30px_-15px_rgba(46,75,155,0.3)]
+                border border-[#2E4B9B]/10
+                sm:p-5"
               >
-                {project(PROJECT.dominica_projects.info.text)}
+                <div className="text-[21px] leading-relaxed font-normal text-gray-700 sm:text-[18px]">
+                  {project(PROJECT.dominica_projects.info.text)}
+                </div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[url('/image/palm-pattern.svg')] opacity-[0.03] rounded-tr-lg"></div>
               </div>
             </div>
 
@@ -147,7 +149,7 @@ export default function index() {
                   alt={info.title}
                   width={550}
                   height={550}
-                  className="w-[500px] sm:w-[90vw] object-scale-down"
+                  className="w-[500px] h-[400px] sm:w-[90vw] sm:h-[300px] object-cover rounded-lg"
                 />
               </div>
             ))}

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export default function ChildDonation() {
   const router = useRouter();
   const { id } = router.query;
+  const { locale } = router;
   const { t: dp } = useTranslation(["donate-program"]);
   const [child, setChild] = useState<any>(null);
 
@@ -35,10 +36,14 @@ export default function ChildDonation() {
             <div className="mx-auto max-w-3xl relative">
               <h1 className="relative z-10">
                 <span className="block text-2xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-900 mb-2 sm:mb-5">
-                  1:1 어린이 후원 결제하기
+                  {locale === "ko"
+                    ? "1:1 어린이 후원 결제하기"
+                    : "1:1 Child Sponsorship Payment"}
                 </span>
                 <span className="mt-2 sm:mt-0 block text-sm sm:text-xs leading-6 sm:leading-0 text-gray-600">
-                  한 아이의 미래를 변화시키는 여정에 동참해주세요
+                  {locale === "ko"
+                    ? "한 아이의 미래를 변화시키는 여정에 동참해주세요"
+                    : "Join us in changing a child's future"}
                 </span>
               </h1>
 
@@ -55,7 +60,7 @@ export default function ChildDonation() {
               <div className="relative w-full md:w-64 lg:w-72 h-[300px] md:h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src={child.photo}
-                  alt={child.korean_name}
+                  alt={locale === "ko" ? child.korean_name : child.english_name}
                   fill
                   className="object-cover transition-transform duration-300"
                 />
@@ -68,140 +73,206 @@ export default function ChildDonation() {
 
               <div className="flex-1 space-y-4 md:space-y-6 w-full">
                 <div className="space-y-3 border-b border-gray-100 pb-6">
-                  <div className="inline-block bg-[#1e4d2b]/10 px-3 py-1 rounded-full">
-                    <span className="text-[#1e4d2b] font-medium text-xs">
-                      아동 프로필
+                  <div className="inline-block bg-[#1e4d2b]/10 px-3 py-1.5 rounded-full">
+                    <span className="text-[#1e4d2b] font-medium text-xs tracking-wide">
+                      {locale === "ko" ? "프로필" : "Profile"}
                     </span>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-2xl font-bold text-gray-800">
-                      안녕하세요!
-                      <br />
-                      저는{" "}
-                      <span className="text-[#1e4d2b] relative">
-                        {child.english_name}
-                        <span className="absolute bottom-0 left-0 w-full h-[6px] bg-[#1e4d2b]/10 -z-10"></span>
-                      </span>
-                      입니다
+                    <p className="text-2xl font-bold text-gray-800 ml-3">
+                      {locale === "ko" ? (
+                        <>
+                          안녕하세요!
+                          <br />
+                          저는{" "}
+                          <span className="text-[#1e4d2b] relative">
+                            {child.korean_name}
+                            <span className="absolute bottom-0 left-0 w-full h-[6px] bg-[#1e4d2b]/10 -z-10"></span>
+                          </span>
+                          입니다
+                        </>
+                      ) : (
+                        <>
+                          Hello!
+                          <br />I am{" "}
+                          <span className="text-[#1e4d2b] relative">
+                            {child.english_name}
+                            <span className="absolute bottom-0 left-0 w-full h-[6px] bg-[#1e4d2b]/10 -z-10"></span>
+                          </span>
+                        </>
+                      )}
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="rounded-lg p-6 hover:shadow-md transition-all duration-300 border border-gray-100">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                      <span className="text-xl">📖</span>
+                    </div>
+                    <h3 className="font-semibold text-gray-800 text-lg">
+                      {locale === "ko" ? "나의 이야기" : "My Story"}
+                    </h3>
+                  </div>
+                  <div className="relative mx-4">
+                    <p className="text-gray-600 leading-relaxed pt-2">
+                      {locale === "ko" ? child.story.ko : child.story.en}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-3">
                   {[
                     {
-                      label: "등록번호",
-                      value: child.registration_number,
-                      icon: "🆔",
+                      label: locale === "ko" ? "학년" : "Grade",
+                      value:
+                        locale === "ko"
+                          ? `${child.grade}학년`
+                          : `Grade ${child.grade}`,
+                      icon: "📚",
                     },
                     {
-                      label: "나이",
-                      value: `${child.age}세`,
+                      label: locale === "ko" ? "나이" : "Age",
+                      value:
+                        locale === "ko"
+                          ? `${child.age}세`
+                          : `${child.age} years old`,
                       icon: "🎂",
                     },
                     {
-                      label: "성별",
-                      value: child.gender === "M" ? "남자" : "여자",
+                      label: locale === "ko" ? "성별" : "Gender",
+                      value:
+                        child.gender === "M"
+                          ? locale === "ko"
+                            ? "남자"
+                            : "Male"
+                          : locale === "ko"
+                          ? "여자"
+                          : "Female",
                       icon: "👤",
                     },
                     {
-                      label: "생년월일",
-                      value: child.date_of_birth,
-                      icon: "📅",
-                    },
-                    {
-                      label: "거주지",
-                      value: child.residence,
-                      icon: "🏠",
-                    },
-                    {
-                      label: "장래희망",
-                      value: child.future_dream,
-                      icon: "✨",
+                      label: locale === "ko" ? "학교" : "School",
+                      value: child.school,
+                      icon: "🏫",
                     },
                   ].map((item) => (
                     <div
                       key={item.label}
                       className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors flex items-center"
                     >
-                      <span className="text-lg w-6">{item.icon}</span>
-                      <span className="text-gray-500 w-16 text-sm">
-                        {item.label}
-                      </span>
-                      <span className="font-medium text-gray-800 flex-1 text-sm">
-                        {item.value}
-                      </span>
+                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-3">
+                        <span className="text-sm">{item.icon}</span>
+                      </div>
+                      <div>
+                        <span className="text-sm text-gray-500 font-bold uppercase tracking-wide block">
+                          {item.label}
+                        </span>
+                        <span className="font-medium text-gray-800 text-sm mt-0.5 block">
+                          {item.value}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
+
+                <div className="mt-3 pt-3 border-t border-gray-100">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center">
+                      <span className="text-sm">👨‍👩‍👧‍👦</span>
+                    </div>
+                    <h5 className="text-base font-bold text-gray-800">
+                      {dp("profile.family_relationship", "가족관계")}
+                    </h5>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed pl-4 border-l-2 border-gray-200 text-[15px]">
+                    {locale === "ko" ? child.family.ko : child.family.en}
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-[#f8f9fa] rounded-lg p-6 mt-12">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xl">🙏</span>
-                <h3 className="font-semibold text-gray-800">기도제목</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                {child.prayer_request}
-              </p>
-            </div>
-
-            <div className="mt-6 md:mt-12">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 md:mb-6 flex items-center">
-                <span className="text-primary mr-2">💝</span> 후원금은 이렇게
-                쓰여요
+            <div className="mt-12">
+              <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 md:mb-6">
+                {locale === "ko"
+                  ? "후원금은 이렇게 쓰여요"
+                  : "How Your Donation Helps"}
               </h2>
 
               <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6 mb-6 md:mb-8">
-                <div className="flex items-center justify-between mb-3 md:mb-4">
-                  <div>
+                <div className="grid grid-cols-2 gap-6 mb-3">
+                  <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
                     <p className="text-xs md:text-sm text-gray-500 mb-1">
-                      월 후원금
+                      {locale === "ko" ? "월 후원하기" : "Monthly Donation"}
                     </p>
-                    <p className="text-xl md:text-2xl font-bold text-primary">
-                      $30 / $40
-                    </p>
-                  </div>
-                  <div className="h-10 md:h-12 w-[1px] bg-gray-200"></div>
-                  <div>
+                    <p className="text-[28px] font-bold text-[#1e4d2b]">$40</p>
+                  </button>
+                  <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
                     <p className="text-xs md:text-sm text-gray-500 mb-1">
-                      연간 후원금
+                      {locale === "ko" ? "연간 후원하기" : "Annual Donation"}
                     </p>
-                    <p className="text-xl md:text-2xl font-bold text-gray-900">
-                      $420
-                    </p>
-                  </div>
+                    <p className="text-2xl font-bold text-gray-900">$420</p>
+                  </button>
                 </div>
-                <div className="text-xs md:text-sm text-gray-600 bg-gray-50 p-2 md:p-3 rounded-lg">
-                  💡 후원금은 아이들의 교육, 의료, 영양 지원에 사용됩니다
+
+                <div className="mt-4 p-4 bg-[#f8faf8] rounded-lg">
+                  <p className="text-sm font-medium text-gray-700 mb-3">
+                    <span className="inline-flex items-center gap-2">
+                      {locale === "ko" ? "후원기간" : "Sponsorship Period"}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-800 ml-5">
+                    <span>{locale === "ko" ? "5년" : "5 years"}</span>
+                    <span className="text-gray-500">
+                      {locale === "ko" ? "(졸업까지)" : "(until graduation)"}
+                    </span>
+                    <span className="text-gray-400 mx-2">/</span>
+                    <span>{locale === "ko" ? "3년" : "3 years"}</span>
+                    <span className="text-gray-400 mx-2">/</span>
+                    <span>{locale === "ko" ? "1년" : "1 year"}</span>
+                  </p>
+                </div>
+
+                <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-md mt-4">
+                  💡{" "}
+                  {locale === "ko"
+                    ? "후원금은 아이들의 교육, 의료, 영양 지원에 사용됩니다"
+                    : "Donations are used for children's education, medical care, and nutritional support"}
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {[
                   {
-                    title: "1년 학비",
+                    title: locale === "ko" ? "1년 학비" : "Annual Tuition",
                     amount: "$300",
-                    desc: "등록비, 수업비, 책값 보조 등",
+                    desc:
+                      locale === "ko"
+                        ? "등록비, 수업비, 책값 보조 등"
+                        : "Registration, tuition, and book support",
                     icon: "📚",
                   },
                   {
-                    title: "방과후 학교",
-                    amount: "$170/년",
-                    desc: "영어, 컴퓨터, 악기, 체육 등",
+                    title:
+                      locale === "ko" ? "방과후 학교" : "After-school Programs",
+                    amount: locale === "ko" ? "$170/년" : "$170/year",
+                    desc:
+                      locale === "ko"
+                        ? "영어, 컴퓨터, 악기, 체육 등"
+                        : "English, computer, music, sports, etc.",
                     icon: "🎨",
                   },
                   {
-                    title: "식량 지원",
-                    amount: "$175/년",
-                    desc: "연 3회",
+                    title: locale === "ko" ? "식량 지원" : "Food Support",
+                    amount: locale === "ko" ? "$175/년" : "$175/year",
+                    desc: locale === "ko" ? "연 3회" : "3 times per year",
                     icon: "🍱",
                   },
                   {
-                    title: "의료비 지원",
-                    amount: "$5/월",
-                    desc: "기초 의료 지원",
+                    title: locale === "ko" ? "의료비 지원" : "Medical Support",
+                    amount: locale === "ko" ? "$5/월" : "$5/month",
+                    desc:
+                      locale === "ko" ? "기초 의료 지원" : "Basic medical care",
                     icon: "🏥",
                   },
                 ].map((item) => (
@@ -235,11 +306,13 @@ export default function ChildDonation() {
                 <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-bl-full transform translate-x-8 -translate-y-8"></div>
                 <div className="flex items-center gap-1">
                   <span className="text-white/80 text-xs">
-                    {child.korean_name} 어린이
+                    {locale === "ko"
+                      ? `${child.korean_name} 어린이`
+                      : `${child.english_name}`}
                   </span>
                 </div>
                 <h2 className="text-lg font-semibold text-white">
-                  정기 후원 하기
+                  {dp("donation.regular_support", "정기 후원 하기")}
                 </h2>
               </div>
               <iframe
@@ -261,9 +334,14 @@ export default function ChildDonation() {
 }
 
 export const getStaticPaths = async () => {
-  const paths = DONATE_CHILDREN.map((child) => ({
-    params: { id: child.registration_number },
-  }));
+  const locales = ["ko", "en"];
+
+  const paths = DONATE_CHILDREN.flatMap((child) =>
+    locales.map((locale) => ({
+      params: { id: child.registration_number },
+      locale,
+    }))
+  );
 
   return {
     paths,

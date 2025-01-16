@@ -12,226 +12,260 @@ export default function Home() {
   const { t: home } = useTranslation(["home"]);
 
   const ref0 = useRef(null);
-  const isVisible0 = useIsVisible(ref0);
   const ref1 = useRef(null);
+  const ref2 = useRef(null);
+
+  const isVisible0 = useIsVisible(ref0);
   const isVisible1 = useIsVisible(ref1);
+  const isVisible2 = useIsVisible(ref2);
 
   return (
     <main className="flex flex-col justify-center">
       <div className="flex flex-col relative contrast-70">
         {/* 배너 섹션 */}
         <div className="relative">
+          {/* 그라데이션 오버레이 개선 */}
           <div
-            className="absolute inset-0 w-full bg-gradient-to-r from-[#1A1A1A]/60 via-[#0A5045]/40 to-transparent z-10 
-            lg:w-[40%]"
-          ></div>
+            className="absolute inset-0 z-10 bg-gradient-to-r 
+              from-black/40 via-[#0A5045]/30 to-transparent
+              lg:from-black/70 lg:via-[#0A5045]/50 lg:to-transparent
+              lg:w-[50%]"
+          />
+
+          {/* 모바일 이미지 */}
           <Image
             src={"/image/main-mobileBanner.jpg"}
-            alt="main banner"
+            alt="라고나브 섬의 아이들"
             width={439}
             height={539}
-            className="w-full h-[60vh] object-cover brightness-[0.8] lg:hidden"
+            className="w-full h-[70vh] object-cover brightness-90 lg:hidden"
             priority
           />
+
+          {/* 데스크톱 이미지 */}
           <Image
             src={"/image/children-high-resolution.jpg"}
-            alt="main banner"
+            alt="라고나브 섬의 아이들"
             width={1400}
             height={900}
-            className="w-full h-[85vh] object-cover object-left-top brightness-[1] contrast-[1] sm:hidden"
+            className="hidden w-full h-[80vh] object-cover object-center 
+              brightness-95 lg:block"
             priority
           />
+
+          {/* 텍스트 컨텐츠 */}
           <div
             ref={ref0}
-            className={`absolute left-[5%] top-[13%] text-white 
-              sm:left-[5%] sm:top-[50%] transition-all ease-out duration-700 z-20
+            className={`absolute z-20 left-[7%] top-[30%] -translate-y-1/2
+              transition-all duration-700 ease-out sm:top-[75%]
               ${
                 isVisible0
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-10"
               }`}
           >
-            <div
-              className="text-[60px] whitespace-pre font-bold leading-[1.3] 
-              sm:text-[8vw] sm:leading-[1.2]"
+            <h1
+              className="text-white text-[55px] font-bold leading-snug 
+              max-w-2xl whitespace-pre-line sm:text-4xl"
             >
               {common("current-locale") === "ko"
-                ? `잊혀진 섬, 라고나브에서
-들려오는 아이들의
-꿈을 함께합니다`
-                : `La Gonâve,
-the Forgotten Island:
-Creating a Future
-for Its Youth`}
-            </div>
+                ? `잊혀진 섬, 라고나브에서\n들려오는 아이들의\n꿈을 함께합니다`
+                : `La Gonâve,\nthe Forgotten Island:\nCreating a Future\nfor Its Youth`}
+            </h1>
+
             <Link
               href={"/donate-program"}
-              className="border-[2px] border-white bg-transparent 
-                text-white w-[170px] h-[50px] flex justify-center items-center 
-                rounded-md text-[18px] font-bold mt-[5vh]
-                transition-all duration-300 ease-out
-                hover:bg-white/20 hover:scale-105
-                lg:w-[150px] lg:h-[45px] lg:text-[16px]
-                md:w-[130px] md:h-[40px] md:text-[14px]
-                sm:w-[120px] sm:h-[35px] sm:text-[12px] sm:mt-[3vh]
+              className="inline-flex items-center justify-center
+                px-8 py-4 mt-8 text-lg font-semibold
+                text-white border-2 border-white rounded-lg
+                transition-all duration-300
+                hover:bg-white hover:text-[#0B6954]
+                sm:px-6 sm:py-3 sm:text-base
                 sm:bg-[#0B6954] sm:border-none"
             >
-              Learn More
+              {common("current-locale") === "ko" ? "자세히 보기" : "Learn More"}
             </Link>
           </div>
         </div>
 
-        {/* 1:1 어린이 후원 아동 소개 */}
+        {/* 후원 프로그램 소개 섹션 */}
         <section className="py-[100px] bg-gradient-to-b from-[#F3F7F6] to-[#E8F0ED] sm:py-[50px]">
-          <div className="flex items-baseline max-w-[1400px] mb-[70px] mx-auto">
-            <div className="w-[9vw] border-b-2 border-black" />
-            <div className="text-[#0B6954] pl-[3vw] text-[28px] font-bold sm:text-[4vw]">
-              {home("child-sponsorship-title")}
-            </div>
-          </div>
-          <div className="max-w-[1400px] mx-auto px-[5vw] sm:px-[4vw]">
-            <div className="flex gap-[5vw] items-center bg-white rounded-2xl p-16 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] sm:flex-col sm:p-6">
-              {/* 왼쪽: 아동 정보 */}
-              <div className="w-[55%] sm:w-full sm:order-2">
-                <h2 className="text-[42px] font-bold leading-tight text-[#042C28] mb-8 sm:text-[28px]">
-                  {home("child-intro-prefix")}
-                  <br />
-                  <span className="text-[#0B6954]">
-                    {common("current-locale") === "ko"
-                      ? DONATE_CHILDREN[0].korean_name
-                      : DONATE_CHILDREN[0].english_name}
-                  </span>
-                  {home("child-intro-suffix")}
-                </h2>
-
-                <p className="text-[16px] text-gray-700 leading-relaxed mb-8 sm:text-[15px]">
-                  {home("child-greeting-prefix")} {DONATE_CHILDREN[0].residence}{" "}
-                  {home("child-location-mid")}{" "}
-                  {common("current-locale") === "ko"
-                    ? DONATE_CHILDREN[0].korean_name
-                    : DONATE_CHILDREN[0].english_name}
-                  {home("child-greeting-suffix")}
-                  <br />
-                  {home("child-age-prefix")} {DONATE_CHILDREN[0].age}
-                  {home("child-age-suffix")}{" "}
-                  {DONATE_CHILDREN[0].gender === "M"
-                    ? home("child-gender-male")
-                    : home("child-gender-female")}{" "}
-                  {home("child-type")}
-                  <br />
-                  <br />
-                  {home("child-message")}
-                  <br />
-                  {home("child-question")}
-                </p>
-
-                <div className="flex gap-4 sm:flex-col sm:gap-3">
-                  <Link
-                    href={`/donate-program?childId=${DONATE_CHILDREN[0].registration_number}`}
-                    className="px-10 py-4 bg-white border-2 border-[#0B6954] text-[#0B6954] rounded-md font-semibold transition-all hover:bg-[#0B6954] hover:text-white sm:text-center"
-                  >
-                    {home("learn-more-button")}
-                  </Link>
-                  <Link
-                    href={`/donate-program/${DONATE_CHILDREN[0].registration_number}`}
-                    className="px-10 py-4 bg-[#0B6954] text-white rounded-md font-semibold transition-all hover:bg-[#095544] sm:text-center"
-                  >
-                    {home("sponsor-now-button")}
-                  </Link>
-                </div>
-              </div>
-
-              {/* 오른쪽: 아동 사진 */}
-              <div className="w-[45%] sm:w-full sm:order-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-[500px] mx-auto sm:h-[70vw]">
-                  <Image
-                    src={DONATE_CHILDREN[0].photo}
-                    alt={`${DONATE_CHILDREN[0].korean_name} 아동 사진`}
-                    width={500}
-                    height={500}
-                    className="object-cover w-full h-full"
-                    sizes="(max-width: 700px) 90vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 후원 card */}
-        <section className="py-[100px] sm:py-[50px]">
+          {/* 섹션 헤더 */}
           <div className="flex items-baseline">
             <div className="w-[9vw] border-b-2 border-black" />
-            <div className="text-[#0B6954] pl-[3vw] text-[25px] font-bold sm:text-[4vw]">
+            <div className="text-[#042C28] pl-[3vw] text-[28px] font-bold sm:text-[4vw]">
               {home("customized-donation")}
             </div>
           </div>
-          <div
-            ref={ref1}
-            className={`text-[45px] whitespace-pre font-bold leading-[120%] ml-[16vw] mt-[2vw] 
-              sm:text-[5.5vw] sm:ml-[13vw] sm:mt-[4vw] transition-all ease-in-out duration-700
-              ${
-                isVisible1
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-          >
-            {common("current-locale") === "ko"
-              ? `잊혀진 아이티 라고나브 섬,
-더 나은 배움을 꿈꾸는 아이들을 위한 `
-              : `Enhancing Parenting Support 
-with Personalized, `}
-            <strong className="text-[#0B6954] font-bold sm:block sm:text-[6.2vw] sm:mt-[2vw]">
-              {home("customized-donation")}
-            </strong>
-          </div>
-          <div className="flex justify-center mt-[100px] sm:mt-[50px]">
+          <div className="max-w-[1400px] mx-auto px-[5vw]">
+            {/* 섹션 타이틀 */}
             <div
-              className="flex overflow-x-auto gap-[60px] pb-[20px] px-[30px] 
-              sm:gap-[15px] sm:px-[20px] scrollbar-hide max-w-full"
+              ref={ref1}
+              className={`text-[45px] whitespace-pre font-bold leading-[120%] mt-[2vw] mb-[60px]
+                sm:text-[24px] sm:ml-[6vw] transition-all ease-in-out duration-700
+                ${
+                  isVisible1
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
             >
-              {DONATE_CARD.map((info, index) => (
-                <div
-                  key={index}
-                  className="relative flex-shrink-0 w-[450px] sm:w-[330px] sm:min-w-[330px]"
-                >
-                  <Image
-                    src={info.backgroundImage}
-                    alt="donation card"
-                    width={450}
-                    height={600}
-                    className="object-cover rounded-2xl w-full h-[600px] sm:h-[450px]"
-                  />
+              {common("current-locale") === "ko"
+                ? `잊혀진 아이티 라고나브 섬,\n더 나은 배움을 꿈꾸는 아이들을 위한 `
+                : `Enhancing Parenting Support\nwith Personalized, `}
+              <strong className="text-[#0B6954] font-bold sm:block sm:text-[28px] sm:mt-[5px]">
+                {home("customized-donation")}
+              </strong>
+            </div>
+
+            {/* PC 버전 후원 프로그램 섹션 */}
+            <div className="hidden lg:block max-w-[1400px] mx-auto">
+              <div className="space-y-[80px]">
+                {DONATE_CARD.map((info, index) => (
                   <div
-                    className="absolute bottom-[70px] left-[40px] text-white w-[80%] 
-                    sm:bottom-[40px] sm:left-[20px]"
+                    key={index}
+                    className="flex gap-[5vw] items-center bg-white rounded-[20px] p-12 
+                      shadow-[0_12px_32px_-16px_rgba(0,0,0,0.1)]
+                      hover:shadow-[0_24px_48px_-16px_rgba(0,0,0,0.15)] 
+                      transition-all duration-500 group"
                   >
-                    <div className="text-[29px] font-bold sm:text-[22px]">
-                      {home(info.title)}
+                    <div className="w-[48%]">
+                      <div className="relative rounded-2xl overflow-hidden transform transition-all duration-500">
+                        <Image
+                          src={info.backgroundImage}
+                          alt={home(info.title)}
+                          width={700}
+                          height={580}
+                          className="w-full h-[420px] object-cover transition-transform duration-700 
+                            group-hover:scale-105 brightness-[0.95]"
+                          priority={index === 0}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-br from-[#0B6954]/20 to-transparent 
+                          group-hover:from-[#0B6954]/30 transition-all duration-500"
+                        />
+                      </div>
                     </div>
-                    <div className="text-[16px] mt-4 sm:text-[14px] sm:line-clamp-3">
-                      {home(info.description)}
-                    </div>
-                    <div className="flex gap-3 mt-[30px] sm:mt-[20px]">
-                      <Link
-                        href={"/donate-program"}
-                        className="bg-white text-black flex-1 h-[44px] flex justify-center items-center 
-                          rounded-md text-[16px] sm:text-[14px] sm:h-[40px] hover:bg-gray-100 transition-colors"
+                    <div className="w-[52%] pr-6">
+                      <div
+                        className="inline-block px-5 py-2.5 bg-[#0B6954]/10 text-[#0B6954] 
+                        text-[14px] font-semibold rounded-lg mb-7"
                       >
-                        Learn More
-                      </Link>
-                      <Link
-                        href={info.donateLink}
-                        className="bg-[#0B6954] text-white flex-1 h-[44px] flex justify-center items-center 
-                          rounded-md text-[16px] sm:text-[14px] sm:h-[40px] hover:bg-[#095544] transition-colors"
+                        {common("current-locale") === "ko"
+                          ? "후원 프로그램"
+                          : "Donation Program"}
+                      </div>
+                      <h3
+                        className="text-[38px] font-bold leading-[1.3] text-[#042C28] mb-6
+                        tracking-[-0.02em]"
                       >
-                        {common("donate-button")}
-                      </Link>
+                        {home(info.title)}
+                      </h3>
+                      <p className="text-[16px] text-gray-600 leading-[1.7] mb-9">
+                        {home(info.description)}
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <Link
+                          href="/donate-program"
+                          className="px-7 py-3.5 bg-white border-2 border-[#0B6954] text-[#0B6954] rounded-lg
+                            text-[15px] font-semibold transition-all duration-300 
+                            hover:bg-[#0B6954] hover:text-white group/button"
+                        >
+                          <span className="flex items-center gap-2">
+                            {common("current-locale") === "ko"
+                              ? "자세히 보기"
+                              : "Learn More"}
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              className="transform transition-transform duration-300 
+                                group-hover/button:translate-x-1"
+                            >
+                              <path
+                                d="M5 12H19M19 12L12 5M19 12L12 19"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </span>
+                        </Link>
+                        <Link
+                          href={info.donateLink}
+                          className="px-7 py-3.5 bg-[#0B6954] text-white rounded-lg text-[15px] 
+                            font-semibold transition-all duration-300 hover:bg-[#095544] 
+                            flex items-center gap-2"
+                        >
+                          {common("current-locale") === "ko"
+                            ? "바로 후원하기"
+                            : "Donate Now"}
+                          <span className="text-lg">→</span>
+                        </Link>
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 모바일 버전 카드 */}
+            <div className="lg:hidden">
+              <div className="flex justify-center mt-[50px]">
+                <div
+                  ref={ref2}
+                  className={`flex overflow-x-auto gap-[20px] pb-[20px] px-[20px] 
+                    sm:gap-[15px] scrollbar-hide max-w-full transition-all ease-in-out duration-700
+                    ${
+                      isVisible2
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-10"
+                    }`}
+                >
+                  {DONATE_CARD.map((info, index) => (
+                    <div
+                      key={index}
+                      className="relative flex-shrink-0 w-[450px] sm:w-[330px] sm:min-w-[330px]"
+                    >
+                      <Image
+                        src={info.backgroundImage}
+                        alt="donation card"
+                        width={450}
+                        height={580}
+                        className="object-cover rounded-2xl w-full h-[580px] sm:h-[450px] brightness-[0.9]"
+                      />
+                      <div
+                        className="absolute bottom-[70px] left-[40px] text-white w-[80%] 
+                        sm:bottom-[40px] sm:left-[20px]"
+                      >
+                        <div className="text-[29px] font-bold sm:text-[22px]">
+                          {home(info.title)}
+                        </div>
+                        <div className="text-[16px] mt-4 sm:text-[14px] sm:line-clamp-3">
+                          {home(info.description)}
+                        </div>
+                        <div className="flex gap-3 mt-[30px] sm:mt-[20px]">
+                          <Link
+                            href="/donate-program"
+                            className="bg-white text-black flex-1 h-[44px] flex justify-center items-center 
+                              rounded-md text-[16px] sm:text-[14px] sm:h-[40px] hover:bg-gray-100 transition-colors"
+                          >
+                            Learn More
+                          </Link>
+                          <Link
+                            href={info.donateLink}
+                            className="bg-[#0B6954] text-white flex-1 h-[44px] flex justify-center items-center 
+                              rounded-md text-[16px] sm:text-[14px] sm:h-[40px] hover:bg-[#095544] transition-colors"
+                          >
+                            {common("donate-button")}
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -374,7 +408,7 @@ with Personalized, `}
         </section>
 
         {/* 5. Our Recent Work 섹션 */}
-        <section className="pb-[150px] sm:py-[30px]">
+        {/* <section className="pb-[150px] sm:py-[30px]">
           <div className="relative mb-[50px] sm:mb-[30px] ml-[8vw]">
             <div className="relative flex items-center">
               <Image
@@ -403,7 +437,7 @@ with Personalized, `}
               />
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* 성경 구절 섹션 */}
         <section className="py-[70px] bg-[#F3F7F6] relative overflow-hidden sm:py-[40px]">
