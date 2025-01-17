@@ -229,11 +229,11 @@ export default function Home() {
 
             {/* 모바일 버전 카드 */}
             <div className="lg:hidden">
-              <div className="flex justify-center mt-[50px]">
+              <div className="flex justify-center mt-[30px]">
                 <div
                   ref={ref2}
-                  className={`flex overflow-x-auto gap-[20px] pb-[20px] px-[20px] 
-                    sm:gap-[15px] scrollbar-hide max-w-full transition-all ease-in-out duration-700
+                  className={`flex overflow-x-auto gap-[15px] pb-[15px] px-[15px] 
+                    scrollbar-hide max-w-full transition-all ease-in-out duration-700
                     ${
                       isVisible2
                         ? "opacity-100 translate-y-0"
@@ -243,50 +243,50 @@ export default function Home() {
                   {DONATE_CARD.map((info, index) => (
                     <div
                       key={index}
-                      className="relative flex-shrink-0 w-[450px] sm:w-[300px] sm:min-w-[300px] 
+                      className="relative flex-shrink-0 w-[280px] min-w-[280px] 
                         group transition-all duration-300 hover:scale-[1.02]"
                     >
                       <div
-                        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 
+                        className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 
                         to-transparent rounded-2xl transition-all duration-300"
                       />
                       <Image
                         src={info.backgroundImage}
                         alt="donation card"
-                        width={450}
-                        height={580}
-                        className="object-cover rounded-2xl w-full h-[580px] sm:h-[420px] 
-                          brightness-80 transition-all duration-300"
+                        width={280}
+                        height={380}
+                        className="object-cover rounded-2xl w-full h-[380px] 
+                          brightness-90 transition-all duration-300"
                       />
                       <div
-                        className="absolute bottom-0 left-0 p-6 text-white w-full 
-                        bg-gradient-to-t from-black/60 to-transparent rounded-b-2xl"
+                        className="absolute bottom-0 left-0 p-5 text-white w-full 
+                        bg-gradient-to-t from-black/70 to-transparent rounded-b-2xl"
                       >
                         <div
-                          className="inline-flex items-center px-3 py-1 bg-white/20 
-                          backdrop-blur-sm text-[13px] font-medium rounded-full mb-4"
+                          className="inline-flex items-center px-2.5 py-1 bg-white/20 
+                          backdrop-blur-sm text-[12px] font-medium rounded-full mb-3"
                         >
                           {common("current-locale") === "ko"
                             ? "후원 프로그램"
                             : "Donation Program"}
                         </div>
                         <div
-                          className="text-[24px] font-bold sm:text-[20px] mb-3 
+                          className="text-[18px] font-bold mb-2 
                           leading-tight"
                         >
                           {home(info.title)}
                         </div>
                         <div
-                          className="text-[15px] mb-5 sm:text-[14px] line-clamp-2 
-                          text-gray-200"
+                          className="text-[13px] mb-4 line-clamp-2 
+                          text-gray-200 leading-relaxed"
                         >
                           {home(info.description)}
                         </div>
                         <div className="flex gap-2">
                           <Link
                             href="/donate-program#project-intro"
-                            className="bg-white/10 backdrop-blur-sm text-white flex-1 h-[40px] 
-                              flex justify-center items-center rounded-lg text-[14px] 
+                            className="bg-white/10 backdrop-blur-sm text-white flex-1 h-[36px] 
+                              flex justify-center items-center rounded-lg text-[13px] 
                               hover:bg-white/20 transition-colors"
                           >
                             {common("current-locale") === "ko"
@@ -295,8 +295,8 @@ export default function Home() {
                           </Link>
                           <Link
                             href={info.donateLink}
-                            className="bg-[#0B6954] text-white flex-1 h-[40px] 
-                              flex justify-center items-center rounded-lg text-[14px] 
+                            className="bg-[#0B6954] text-white flex-1 h-[36px] 
+                              flex justify-center items-center rounded-lg text-[13px] 
                               hover:bg-[#095544] transition-colors"
                           >
                             {common("donate-button")}
@@ -311,16 +311,16 @@ export default function Home() {
           </div>
         </section>
         {/* 2. What We Do 섹션 */}
-        <section className="py-[150px] sm:py-[70px]">
-          <div className="flex items-baseline">
-            <div className="w-[9vw] border-b-2 border-black" />
-            <div className="text-[#042C28] pl-[3vw] text-[28px] font-bold sm:text-[4vw]">
+        <section className="py-[150px] sm:py-[50px]">
+          <div className="flex items-baseline max-w-[1400px] mx-auto px-[8vw] sm:px-[4vw]">
+            <div className="w-[9vw] border-b-2 border-black sm:w-[15vw]" />
+            <div className="text-[#042C28] pl-[3vw] text-[28px] font-bold sm:text-[20px]">
               WHAT WE DO
             </div>
           </div>
           <div
             className="mt-[90px] flex flex-col gap-[150px] px-[8vw] max-w-[1400px] mx-auto 
-            sm:gap-[70px] sm:px-[4vw]"
+            sm:mt-[40px] sm:gap-[50px] sm:px-[4vw]"
           >
             {/* 아이티 프로젝트 */}
             {PROJECT.filter((p) => p.country === "haiti")
@@ -328,7 +328,7 @@ export default function Home() {
               .map((project, index) => (
                 <div
                   key={index}
-                  className="flex flex-row gap-[8vw] sm:flex-col"
+                  className="flex flex-row gap-[8vw] sm:flex-col sm:gap-[20px]"
                 >
                   <div className="relative w-[45%] sm:w-full">
                     <Image
@@ -336,40 +336,55 @@ export default function Home() {
                       alt={project.title}
                       width={600}
                       height={500}
-                      className="w-full h-[500px] object-cover sm:h-[300px] rounded-2xl shadow-md"
+                      className="w-full h-[500px] object-cover rounded-2xl shadow-md 
+                        sm:h-[250px] sm:rounded-lg"
                     />
                   </div>
-                  <div className="w-[45%] flex flex-col justify-center sm:w-full sm:mt-6">
+                  <div className="w-[45%] flex flex-col justify-center sm:w-full">
                     <div className="flex items-center gap-3 mb-3">
                       <Image
                         src="/haiti-flag.svg"
                         alt="Haiti flag"
                         width={35}
                         height={24}
-                        className="rounded shadow-sm sm:w-[25px]"
+                        className="rounded shadow-sm sm:w-[20px]"
                       />
-                      <span className="text-[22px] font-normal text-[#042C28] sm:text-[18px]">
+                      <span
+                        className="text-[22px] font-normal text-[#042C28] 
+                        sm:text-[16px]"
+                      >
                         Haiti
                       </span>
                     </div>
-                    <h3 className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] sm:text-[28px]">
+                    <h3
+                      className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] 
+                      sm:text-[24px] sm:mb-4"
+                    >
                       {home(project.title)}
                     </h3>
-                    <p className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal">
+                    <p
+                      className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal 
+                      sm:text-[16px] sm:mb-6 sm:leading-[1.6]"
+                    >
                       {home(project.description)}
                     </p>
                     <Link
                       href="/project"
-                      className="inline-flex items-center gap-2.5 text-[17px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
+                      className="inline-flex items-center gap-2.5 text-[17px] font-medium 
+                        text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 
+                        group sm:text-[15px]"
                     >
-                      <span className="text-[20px]">Read More</span>
+                      <span className="text-[20px] sm:text-[16px]">
+                        Read More
+                      </span>
                       <svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="transform transition-transform duration-300 group-hover:translate-x-1"
+                        className="transform transition-transform duration-300 
+                          group-hover:translate-x-1 sm:w-[20px] sm:h-[20px]"
                       >
                         <path
                           d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -390,7 +405,7 @@ export default function Home() {
               .map((project, index) => (
                 <div
                   key={index}
-                  className="flex flex-row-reverse gap-[8vw] sm:flex-col"
+                  className="flex flex-row-reverse gap-[8vw] sm:flex-col sm:gap-[20px]"
                 >
                   <div className="relative w-[45%] sm:w-full">
                     <Image
@@ -398,40 +413,55 @@ export default function Home() {
                       alt={project.title}
                       width={600}
                       height={500}
-                      className="w-full h-[500px] object-cover sm:h-[300px] rounded-2xl shadow-md"
+                      className="w-full h-[500px] object-cover rounded-2xl shadow-md 
+                        sm:h-[250px] sm:rounded-lg"
                     />
                   </div>
-                  <div className="w-[45%] flex flex-col justify-center sm:w-full sm:mt-6">
+                  <div className="w-[45%] flex flex-col justify-center sm:w-full">
                     <div className="flex items-center gap-3 mb-3">
                       <Image
                         src="/dominican-flag.svg"
                         alt="Dominican Republic flag"
                         width={35}
                         height={24}
-                        className="rounded shadow-sm sm:w-[25px]"
+                        className="rounded shadow-sm sm:w-[20px]"
                       />
-                      <span className="text-[22px] font-normal text-[#042C28] sm:text-[18px]">
+                      <span
+                        className="text-[22px] font-normal text-[#042C28] 
+                        sm:text-[16px]"
+                      >
                         Dominican Republic
                       </span>
                     </div>
-                    <h3 className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] sm:text-[28px]">
+                    <h3
+                      className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] 
+                      sm:text-[24px] sm:mb-4"
+                    >
                       {home(project.title)}
                     </h3>
-                    <p className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal">
+                    <p
+                      className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal 
+                      sm:text-[16px] sm:mb-6 sm:leading-[1.6]"
+                    >
                       {home(project.description)}
                     </p>
                     <Link
                       href="/project"
-                      className="inline-flex items-center gap-2.5 text-[17px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
+                      className="inline-flex items-center gap-2.5 text-[17px] font-medium 
+                        text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 
+                        group sm:text-[15px]"
                     >
-                      <span className="text-[20px]">Read More</span>
+                      <span className="text-[20px] sm:text-[16px]">
+                        Read More
+                      </span>
                       <svg
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="transform transition-transform duration-300 group-hover:translate-x-1"
+                        className="transform transition-transform duration-300 
+                          group-hover:translate-x-1 sm:w-[20px] sm:h-[20px]"
                       >
                         <path
                           d="M5 12H19M19 12L12 5M19 12L12 19"
@@ -449,11 +479,15 @@ export default function Home() {
         </section>
 
         {/* 성경 구절 섹션 */}
-        <section className="py-[80px] bg-gradient-to-b from-[#F3F7F6] to-[#E8F0ED] relative overflow-hidden sm:py-[50px]">
-          {/* 장식용 배경 요소 - 더 섬세한 디자인으로 변경 */}
+        <section
+          className="py-[80px] bg-gradient-to-b from-[#F3F7F6] to-[#E8F0ED] 
+          relative overflow-hidden sm:py-[40px]"
+        >
+          {/* 장식용 배경 요소 */}
           <div className="absolute top-0 left-0 w-full h-full opacity-[0.03]">
             <svg
-              className="absolute top-[5%] left-[5%] w-[200px] h-[200px]"
+              className="absolute top-[5%] left-[5%] w-[200px] h-[200px] 
+                sm:w-[100px] sm:h-[100px]"
               viewBox="0 0 100 100"
             >
               <path
@@ -464,7 +498,8 @@ export default function Home() {
               />
             </svg>
             <svg
-              className="absolute bottom-[5%] right-[5%] w-[150px] h-[150px]"
+              className="absolute bottom-[5%] right-[5%] w-[150px] h-[150px] 
+                sm:w-[80px] sm:h-[80px]"
               viewBox="0 0 100 100"
             >
               <rect
@@ -480,24 +515,23 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="max-w-[800px] mx-auto px-[5vw] relative">
-            <div className="flex flex-col items-center max-w-[1400px] mb-[40px]">
+          <div className="max-w-[800px] mx-auto px-[5vw] relative sm:px-[20px]">
+            <div className="flex flex-col items-center max-w-[1400px] mb-[40px] sm:mb-[30px]">
               <div
                 className="text-[#0B6954] text-[13px] font-medium tracking-[0.15em] mb-3 
-                uppercase flex items-center gap-3 sm:text-[12px]"
+                uppercase flex items-center gap-3 sm:text-[11px] sm:tracking-[0.1em]"
               >
-                <span className="w-[15px] h-[1px] bg-[#0B6954]/60" />
+                <span className="w-[15px] h-[1px] bg-[#0B6954]/60 sm:w-[10px]" />
                 Bible Verse
-                <span className="w-[15px] h-[1px] bg-[#0B6954]/60" />
+                <span className="w-[15px] h-[1px] bg-[#0B6954]/60 sm:w-[10px]" />
               </div>
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="max-w-[600px] relative">
-                {/* 성경 구절 - 크기 축소 */}
+              <div className="max-w-[600px] relative sm:max-w-full">
                 <p
                   className="text-[26px] leading-[1.6] text-[#042C28]/90 whitespace-pre-line mb-5
-                  font-medium sm:text-[22px] sm:leading-[1.5]"
+                  font-medium sm:text-[20px] sm:leading-[1.5] sm:whitespace-normal sm:px-[15px]"
                 >
                   {common("current-locale") === "ko"
                     ? `"그들이 의의 나무 
@@ -510,7 +544,7 @@ export default function Home() {
                 <div className="inline-block">
                   <p
                     className="text-[15px] text-[#0B6954]/80 font-medium tracking-wide
-                    border-t border-[#0B6954]/20 pt-3 sm:text-[14px]"
+                    border-t border-[#0B6954]/20 pt-3 sm:text-[13px] sm:pt-2"
                   >
                     {common("current-locale") === "ko"
                       ? "이사야 61:3"
