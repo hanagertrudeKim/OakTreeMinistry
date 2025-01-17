@@ -74,7 +74,7 @@ export default function Home() {
             </h1>
 
             <Link
-              href={"/donate-program"}
+              href="/donate-program#project-intro"
               className="inline-flex items-center justify-center
                 px-8 py-4 mt-8 text-lg font-semibold
                 text-white border-2 border-white rounded-lg
@@ -117,8 +117,7 @@ export default function Home() {
               <div className="whitespace-pre-line sm:whitespace-normal sm:leading-snug">
                 {common("current-locale") === "ko" ? (
                   <>
-                    <span className="text-[#0B6954]">라고나브 섬</span>의
-                    아이들이
+                    <span>라고나브 섬</span>의 아이들이{" "}
                     <br className="hidden sm:block" />
                     <span className="sm:block">
                       더 나은 미래를 꿈꿀 수 있도록
@@ -126,10 +125,10 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    Supporting Children's Dreams
+                    Empowering Children in
                     <br className="hidden sm:block" />
                     <span className="sm:block">
-                      in <span className="text-[#0B6954]">La Gonâve</span>
+                      <span>La Gonâve</span> for a Brighter Future
                     </span>
                   </>
                 )}
@@ -144,11 +143,11 @@ export default function Home() {
 
             {/* PC 버전 후원 프로그램 섹션 */}
             <div className="hidden lg:block max-w-[1200px] mx-auto">
-              <div className="space-y-[40px]">
+              <div className="space-y-[50px]">
                 {DONATE_CARD.map((info, index) => (
                   <div
                     key={index}
-                    className="flex gap-[3vw] items-center bg-white rounded-[20px] p-8 
+                    className="flex gap-[3vw] items-center bg-white rounded-[20px] p-10 
                       shadow-[0_15px_30px_-8px_rgba(0,0,0,0.08)]
                       hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.12)] 
                       transition-all duration-500 ease-in-out group
@@ -167,31 +166,24 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    <div className="w-[58%] pr-4">
-                      <div
-                        className="inline-flex items-center px-4 py-1.5 bg-[#0B6954]/[0.08] text-[#0B6954] 
-                          text-[13px] font-semibold rounded-full mb-5 gap-1.5"
-                      >
-                        <span className="w-1.5 h-1.5 bg-[#0B6954] rounded-full"></span>
-                        {common("current-locale") === "ko"
-                          ? "후원 프로그램"
-                          : "Donation Program"}
+                    <div className="w-[58%] pr-4 flex flex-col h-full justify-between">
+                      <div>
+                        <h3
+                          className="text-[34px] font-bold leading-[1.3] text-[#042C28]
+                            tracking-[-0.02em] transition-all duration-300 group-hover:text-[#0B6954]"
+                        >
+                          {home(info.title)}
+                        </h3>
+                        <p className="text-[17px] text-gray-600 leading-[1.8] pt-10 font-normal">
+                          {home(info.description)}
+                        </p>
                       </div>
-                      <h3
-                        className="text-[30px] font-bold leading-[1.3] text-[#042C28] mb-4
-                          tracking-[-0.02em] transition-all duration-300 group-hover:text-[#0B6954]"
-                      >
-                        {home(info.title)}
-                      </h3>
-                      <p className="text-[15px] text-gray-600 leading-[1.8] mb-7 font-normal">
-                        {home(info.description)}
-                      </p>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-4 mt-8">
                         <Link
-                          href="/donate-program"
-                          className="px-5 py-2.5 bg-white border border-[#0B6954] text-[#0B6954] rounded-lg
-                            text-[14px] font-medium transition-all duration-300 
-                            hover:bg-[#0B6954] hover:text-white group/button flex items-center gap-1.5"
+                          href="/donate-program#project-intro"
+                          className="px-7 py-3.5 bg-white border border-[#0B6954] text-[#0B6954] rounded-lg
+                            text-[16px] font-medium transition-all duration-300 
+                            hover:bg-[#0B6954] hover:text-white group/button flex items-center gap-2"
                         >
                           <span>
                             {common("current-locale") === "ko"
@@ -217,7 +209,7 @@ export default function Home() {
                         </Link>
                         <Link
                           href={info.donateLink}
-                          className="px-5 py-2.5 bg-[#0B6954] text-white rounded-lg text-[14px] 
+                          className="px-7 py-3.5 bg-[#0B6954] text-white rounded-lg text-[16px] 
                             font-medium transition-all duration-300 hover:bg-[#095544] 
                             flex items-center gap-2 hover:gap-3"
                         >
@@ -292,7 +284,7 @@ export default function Home() {
                         </div>
                         <div className="flex gap-2">
                           <Link
-                            href="/donate-program"
+                            href="/donate-program#project-intro"
                             className="bg-white/10 backdrop-blur-sm text-white flex-1 h-[40px] 
                               flex justify-center items-center rounded-lg text-[14px] 
                               hover:bg-white/20 transition-colors"
@@ -319,7 +311,7 @@ export default function Home() {
           </div>
         </section>
         {/* 2. What We Do 섹션 */}
-        <section className="py-[120px] sm:py-[50px]">
+        <section className="py-[150px] sm:py-[70px]">
           <div className="flex items-baseline">
             <div className="w-[9vw] border-b-2 border-black" />
             <div className="text-[#042C28] pl-[3vw] text-[28px] font-bold sm:text-[4vw]">
@@ -327,8 +319,8 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="mt-[70px] flex flex-col gap-[120px] px-[8vw] max-w-[1400px] mx-auto 
-            sm:gap-[50px] sm:px-[4vw]"
+            className="mt-[90px] flex flex-col gap-[150px] px-[8vw] max-w-[1400px] mx-auto 
+            sm:gap-[70px] sm:px-[4vw]"
           >
             {/* 아이티 프로젝트 */}
             {PROJECT.filter((p) => p.country === "haiti")
@@ -363,17 +355,17 @@ export default function Home() {
                     <h3 className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] sm:text-[28px]">
                       {home(project.title)}
                     </h3>
-                    <p className="text-[17px] mb-8 text-gray-600 leading-[1.8] font-normal">
+                    <p className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal">
                       {home(project.description)}
                     </p>
                     <Link
                       href="/project"
-                      className="inline-flex items-center gap-2 text-[15px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
+                      className="inline-flex items-center gap-2.5 text-[17px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
                     >
-                      Read More
+                      <span className="text-[20px]">Read More</span>
                       <svg
-                        width="20"
-                        height="20"
+                        width="24"
+                        height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -425,17 +417,17 @@ export default function Home() {
                     <h3 className="text-[36px] font-bold mb-6 text-[#042C28] leading-[1.2] sm:text-[28px]">
                       {home(project.title)}
                     </h3>
-                    <p className="text-[17px] mb-8 text-gray-600 leading-[1.8] font-normal">
+                    <p className="text-[20px] mb-12 text-gray-600 leading-[1.8] font-normal">
                       {home(project.description)}
                     </p>
                     <Link
                       href="/project"
-                      className="inline-flex items-center gap-2 text-[15px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
+                      className="inline-flex items-center gap-2.5 text-[17px] font-medium text-[#042C28] hover:text-[#0A3D38] transition-all duration-300 group"
                     >
-                      Read More
+                      <span className="text-[20px]">Read More</span>
                       <svg
-                        width="20"
-                        height="20"
+                        width="24"
+                        height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

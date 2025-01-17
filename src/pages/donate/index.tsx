@@ -84,7 +84,7 @@ export default function Donation() {
             )}
           </div>
 
-          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+          <div className="lg:col-span-5 space-y-7 sm:space-y-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 px-1">
                 {locale === "ko" ? "주요 후원 프로그램" : "Main Programs"}
@@ -97,22 +97,22 @@ export default function Donation() {
                     className={`group block transition-all duration-200 ${
                       selectedProgram === program.id
                         ? "bg-[#E7F4F0] hover:bg-[#E7F4F0]/90"
-                        : "hover:bg-[#E7F4F0]/20"
+                        : "hover:bg-[#E7F4F0]/10"
                     }`}
                   >
-                    <div className="px-4 sm:px-6 py-3 sm:py-4 relative overflow-hidden">
+                    <div className="px-4 sm:px-6 py-4 sm:py-5 relative overflow-hidden">
                       <div className="flex items-center justify-between relative z-10">
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 flex-1">
                           <div
-                            className={`w-1.5 h-12 rounded-full transition-all duration-300 ${
+                            className={`w-1.5 h-14 rounded-full transition-all duration-300 ${
                               selectedProgram === program.id
                                 ? "bg-[#0B6954] scale-y-100"
                                 : "bg-gray-200 group-hover:bg-[#0B6954]/60 scale-y-75 group-hover:scale-y-100"
                             }`}
                           />
-                          <div className="space-y-1">
+                          <div className="space-y-2 flex-1">
                             <span
-                              className={`font-semibold text-lg transition-colors duration-200 ${
+                              className={`font-bold text-lg sm:text-2xl tracking-tight transition-colors duration-200 block ${
                                 selectedProgram === program.id
                                   ? "text-[#0B6954]"
                                   : "text-gray-900 group-hover:text-[#0B6954]"
@@ -120,8 +120,10 @@ export default function Donation() {
                             >
                               {dp(program.title)}
                             </span>
-                            <p className="text-sm text-gray-500 group-hover:text-[#0B6954]/70 transition-colors duration-200">
-                              {locale === "ko" ? "자세히 보기" : "Learn More"}
+                            <p className="text-sm text-gray-400 group-hover:text-gray-500 transition-colors duration-200 pr-4 font-normal leading-relaxed">
+                              {locale === "ko"
+                                ? program.descriptionKo
+                                : program.descriptionEn}
                             </p>
                           </div>
                         </div>
@@ -129,15 +131,15 @@ export default function Donation() {
                           <div
                             className={`p-3 rounded-full transition-all duration-200 ${
                               selectedProgram === program.id
-                                ? "bg-[#E7F4F0]"
-                                : "bg-gray-100 group-hover:bg-[#E7F4F0]"
+                                ? "bg-[#0B6954] shadow-lg shadow-[#0B6954]/20"
+                                : "bg-gray-100 group-hover:bg-[#0B6954]"
                             }`}
                           >
                             <svg
                               className={`w-5 h-5 transition-all duration-200 ${
                                 selectedProgram === program.id
-                                  ? "text-[#0B6954]"
-                                  : "text-gray-400 group-hover:text-[#0B6954]"
+                                  ? "text-white"
+                                  : "text-gray-400 group-hover:text-white"
                               }`}
                               fill="none"
                               stroke="currentColor"
@@ -205,7 +207,9 @@ export default function Donation() {
                                 {dp(program.title)}
                               </span>
                               <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-200">
-                                {locale === "ko" ? "자세히 보기" : "Learn More"}
+                                {locale === "ko"
+                                  ? program.descriptionKo
+                                  : program.descriptionEn}
                               </p>
                             </div>
                           </div>
@@ -267,7 +271,7 @@ export default function Donation() {
                           : "hover:bg-gray-50/70"
                       }`}
                     >
-                      <div className="px-4 sm:px-6 py-3 sm:py-4 relative overflow-hidden">
+                      <div className="px-4 sm:px-6 py-5 sm:py-4 relative overflow-hidden">
                         <div className="flex items-center justify-between relative z-10">
                           <div className="flex items-center gap-4">
                             <div
@@ -288,7 +292,9 @@ export default function Donation() {
                                 {dp(program.title)}
                               </span>
                               <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-200">
-                                {locale === "ko" ? "자세히 보기" : "Learn More"}
+                                {locale === "ko"
+                                  ? program.descriptionKo
+                                  : program.descriptionEn}
                               </p>
                             </div>
                           </div>

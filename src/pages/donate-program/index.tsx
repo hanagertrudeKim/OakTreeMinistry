@@ -2,18 +2,26 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import { DONATE_CHILDREN, DonateChild } from "@/static/DonateChildren";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function DonateProgram() {
   const { t: common } = useTranslation(["common"]);
   const { t: dp } = useTranslation(["donate-program"]);
   const [selectedChild, setSelectedChild] = useState<DonateChild | null>(null);
   const router = useRouter();
+  const projectIntroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (router.asPath.includes("#project-intro") && projectIntroRef.current) {
+      projectIntroRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [router.asPath]);
 
   return (
     <div>
-      <div className="relative h-[400px] sm:h-[280px] group">
+      <div className="relative h-[350px] sm:h-[280px] group">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/image/projectBanner.jpg')] bg-cover bg-center" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/50" />
@@ -21,12 +29,6 @@ export default function DonateProgram() {
 
         <div className="relative h-full flex items-center px-[15vw] sm:px-5">
           <div className="max-w-3xl">
-            <div className="inline-block mb-6 sm:mb-4">
-              <div className="text-white/90 text-lg sm:text-xs font-medium tracking-wide px-4 py-2 border border-white/20 rounded-full backdrop-blur-sm">
-                {dp("donate-program-title")}
-              </div>
-            </div>
-
             <h1 className="text-4xl font-bold text-white leading-tight tracking-tight sm:text-[22px] sm:leading-snug mb-6 sm:mb-4">
               {dp("page-title")}
             </h1>
@@ -41,28 +43,23 @@ export default function DonateProgram() {
       <div className="py-16 sm:py-12 sm:hidden">
         <div className="w-[68vw] max-w-[1000px] mx-auto sm:w-[90vw]">
           <div className="text-center space-y-5">
-            <span className="inline-block px-5 py-2 bg-[#1e4d2b]/10 rounded-full text-[#1e4d2b] text-lg font-bold">
+            <span className="inline-block px-5 py-2 bg-[#1e4d2b]/10 rounded-full text-[#1e4d2b] text-xl font-bold">
               {common("current-locale") === "ko"
                 ? "아동 후원 프로그램"
                 : "Child Sponsorship Program"}
             </span>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg sm:text-base leading-relaxed">
-              {common("current-locale") === "ko"
-                ? "후원을 통해 아이티 라고나브 섬의 아이들에게 교육과 희망을 전달합니다"
-                : "Through sponsorship, we deliver education and hope to children in La Gonave, Haiti"}
-            </p>
           </div>
         </div>
       </div>
 
-      <div className="w-[68vw] max-w-[1000px] mx-auto mb-[100px] sm:mb-4 sm:py-8 sm:w-[94vw]">
-        <div className="space-y-6">
+      <div className="w-[70vw] max-w-[1100px] mx-auto mb-[100px] sm:mb-4 sm:py-8 sm:w-[94vw]">
+        <div className="space-y-16">
           {DONATE_CHILDREN.map((child, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm hover:shadow-xl flex sm:flex-col items-stretch w-full sm:h-auto h-[400px] cursor-pointer transition-all duration-300 border border-gray-100/50 overflow-hidden group"
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl flex sm:flex-col items-stretch w-full sm:h-auto h-[440px] cursor-pointer transition-all duration-300 border border-gray-100/50 overflow-hidden group"
             >
-              <div className="w-[380px] sm:w-full h-full sm:h-[220px] relative overflow-hidden">
+              <div className="w-[400px] sm:w-full h-full sm:h-[280px] relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10" />
                 <Image
                   src={child.photo}
@@ -70,35 +67,35 @@ export default function DonateProgram() {
                   fill
                   className="object-cover sm:rounded-t-2xl sm:rounded-b-none rounded-l-2xl transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-sm">
-                  <span className="text-[#1e4d2b] text-xs font-semibold">
+                <div className="absolute top-5 left-5 z-20 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm">
+                  <span className="text-[#1e4d2b] text-sm font-semibold">
                     #{child.registration_number}
                   </span>
                 </div>
               </div>
 
-              <div className="flex-1 px-12 py-10 sm:px-4 sm:py-4 flex flex-col justify-between relative group-hover:bg-gray-50/50 transition-colors duration-300">
-                <div className="space-y-6 sm:space-y-3">
+              <div className="flex-1 px-12 py-10 sm:px-4 sm:py-6 flex flex-col justify-between relative group-hover:bg-gray-50/50 transition-colors duration-300">
+                <div className="space-y-8 sm:space-y-4">
                   <div>
-                    <h3 className="text-4xl sm:text-2xl font-bold text-gray-800 leading-tight mb-4 sm:mb-2">
+                    <h3 className="text-[36px] sm:text-2xl font-bold text-gray-800 leading-tight mb-10 sm:mb-2">
                       {common("current-locale") === "ko" ? (
                         <>
                           <span className="text-[#2b6f3e] relative inline-block">
                             {child.korean_name}
-                            <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#1e4d2b]/10 -z-10"></span>
+                            <span className="absolute bottom-2 left-0 w-full h-[8px] bg-[#1e4d2b]/10 -z-10"></span>
                           </span>
-                          <span className="text-gray-500 font-medium ml-2 text-xl sm:text-lg">
+                          <span className="text-gray-500 font-medium ml-3 text-xl sm:text-lg">
                             ({child.english_name})
                           </span>
                         </>
                       ) : (
                         <span className="text-[#2b6f3e] relative inline-block">
                           {child.english_name}
-                          <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#1e4d2b]/10 -z-10"></span>
+                          <span className="absolute bottom-2 left-0 w-full h-[8px] bg-[#1e4d2b]/10 -z-10"></span>
                         </span>
                       )}
                     </h3>
-                    <p className="text-gray-500 text-lg sm:text-sm leading-relaxed line-clamp-2 sm:line-clamp-3 mb-8 sm:mb-3">
+                    <p className="text-gray-500 text-lg sm:text-sm leading-relaxed line-clamp-2 sm:line-clamp-3 mb-8 sm:mb-4">
                       {common("current-locale") === "ko"
                         ? child.story.ko
                         : child.story.en}
@@ -106,31 +103,31 @@ export default function DonateProgram() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 sm:gap-2">
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-3 group-hover:bg-white transition-colors duration-300">
+                    <div className="bg-gray-50 rounded-xl p-4 sm:p-3 group-hover:bg-white transition-colors duration-300">
                       <div className="flex items-center gap-3 sm:gap-2">
                         <div className="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#1e4d2b]/5 flex items-center justify-center">
                           <span className="text-lg sm:text-base">🎂</span>
                         </div>
                         <div>
-                          <p className="text-xs text-gray-500 font-medium mb-0.5">
+                          <p className="text-sm text-gray-500 font-medium mb-0.5">
                             {dp("age")}
                           </p>
-                          <p className="font-semibold text-gray-800 text-sm sm:text-xs">
+                          <p className="font-semibold text-gray-800 text-base sm:text-xs">
                             {child.age} {dp("years-old")}
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-3 group-hover:bg-white transition-colors duration-300">
+                    <div className="bg-gray-50 rounded-xl p-4 sm:p-3 group-hover:bg-white transition-colors duration-300">
                       <div className="flex items-center gap-3 sm:gap-2">
                         <div className="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#1e4d2b]/5 flex items-center justify-center">
                           <span className="text-lg sm:text-base">🏫</span>
                         </div>
                         <div>
-                          <p className="text-xs text-gray-500 font-medium mb-0.5">
+                          <p className="text-sm text-gray-500 font-medium mb-0.5">
                             {dp("school")}
                           </p>
-                          <p className="font-semibold text-gray-800 text-sm sm:text-xs">
+                          <p className="font-semibold text-gray-800 text-base sm:text-xs">
                             {child.school}
                           </p>
                         </div>
@@ -145,7 +142,7 @@ export default function DonateProgram() {
                       e.stopPropagation();
                       setSelectedChild(child);
                     }}
-                    className="flex-1 py-4 sm:py-3 bg-[#EAEFEC] border border-[#D1D9D3] text-[#3A4D3E] rounded-xl hover:bg-[#DFE5E1] hover:border-[#B8C2BA] transition-all duration-300 font-medium text-sm sm:text-xs shadow-sm hover:shadow-md"
+                    className="flex-1 py-4 sm:py-3 bg-[#EAEFEC] border border-[#D1D9D3] text-[#3A4D3E] rounded-xl hover:bg-[#DFE5E1] hover:border-[#B8C2BA] transition-all duration-300 font-medium text-base sm:text-xs shadow-sm hover:shadow-md"
                   >
                     {common("current-locale") === "ko"
                       ? "자세히 보기"
@@ -158,7 +155,7 @@ export default function DonateProgram() {
                         `/donate-program/${child.registration_number}`
                       );
                     }}
-                    className="flex-1 py-4 sm:py-3 bg-[#1e4d2b] text-white rounded-xl hover:bg-[#133219] transition-all duration-300 font-medium text-sm sm:text-xs shadow-md hover:shadow-lg"
+                    className="flex-1 py-4 sm:py-3 bg-[#1e4d2b] text-white rounded-xl hover:bg-[#133219] transition-all duration-300 font-medium text-base sm:text-xs shadow-md hover:shadow-lg"
                   >
                     {common("current-locale") === "ko"
                       ? "바로 후원하기"
@@ -171,37 +168,32 @@ export default function DonateProgram() {
         </div>
       </div>
 
-      <div className="bg-white py-20 sm:py-12">
+      <div
+        className="bg-white py-20 sm:py-12"
+        ref={projectIntroRef}
+        id="project-intro"
+      >
         <div className="w-[78vw] max-w-[1200px] mx-auto sm:w-[94vw]">
           <div className="text-center mb-16 sm:mb-10">
-            <span className="inline-block px-4 py-1.5 bg-[#1e4d2b]/10 rounded-full text-[#1e4d2b] text-sm font-medium mb-4">
-              {common("current-locale") === "ko"
-                ? "후원 프로그램"
-                : "Sponsorship Programs"}
-            </span>
-            <h2 className="text-4xl sm:text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl sm:text-2xl font-bold text-gray-900">
               {common("current-locale") === "ko"
                 ? "라고나브 청소년 양육 후원 프로그램"
                 : "La Gonave Youth Nurturing Sponsorship Program"}
             </h2>
-            <p className="text-gray-600 max-w-xl mx-auto text-md sm:text-sm sm:px-4">
-              {common("current-locale") === "ko"
-                ? "아이티의 미래를 이끌어갈 청소년들의 꿈과 희망을 함께 만들어갑니다"
-                : "Together, we create dreams and hope for the youth who will lead Haiti's future"}
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-6 mb-20 sm:mb-12 items-center">
             <div className="relative sm:px-4">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#1e4d2b]/5 rounded-full blur-2xl"></div>
-              <div className="relative">
-                <Image
-                  src={"/image/lagonave-map.png"}
-                  alt="lagonave-map"
-                  width={500}
-                  height={300}
-                  className="w-full h-[350px] sm:h-[250px] object-cover rounded-2xl shadow-xl"
-                />
+              <div className="relative h-[350px] sm:h-[250px] rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245447.05739641684!2d-73.07647981951162!3d18.828176126561244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb94f31c9103dc3%3A0x9e2ae86c4e08d0b2!2sGonave%20Island!5e0!3m2!1sen!2skr!4v1710910000000!5m2!1sen!2skr&region=HT"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 
@@ -226,10 +218,6 @@ export default function DonateProgram() {
           </div>
 
           <div className="border-t border-gray-100 pt-16 sm:pt-10">
-            <h3 className="text-3xl sm:text-[22px] font-bold text-gray-800 mb-20 sm:mb-8 text-center">
-              {dp("hand-in-hand-project-cycle")}
-            </h3>
-
             <div className="flex justify-center mb-16 sm:mb-10">
               <Image
                 src={
@@ -249,47 +237,81 @@ export default function DonateProgram() {
                 {
                   title:
                     common("current-locale") === "ko"
-                      ? "청소년 후원"
-                      : "Youth Sponsorship",
+                      ? "1 : 1 청소년 후원"
+                      : "1 : 1 Child Sponsorship",
                   description: dp("donate-program1-description"),
+                  donationLink: "/donate-program",
+                  donorboxLink: "",
                 },
                 {
                   title:
                     common("current-locale") === "ko"
-                      ? "대학생 후원"
-                      : "University Student Sponsorship",
+                      ? "아이티 대학생 후원"
+                      : "Haitian College Student Sponsorship",
                   description: dp("donate-program2-description"),
+                  donationLink: "/donate?program=college-students",
+                  donorboxLink:
+                    "https://donorbox.org/embed/oaktree-support-college-students",
                 },
                 {
                   title:
                     common("current-locale") === "ko"
-                      ? "현지 교사 후원"
-                      : "Local Teacher Sponsorship",
+                      ? "라고나브 소망 신학교 후원"
+                      : "Hope Theological School Sponsorship",
                   description: dp("donate-program3-description"),
+                  donationLink: "/donate?program=theological-school",
+                  donorboxLink:
+                    "https://donorbox.org/embed/support-hope-theological-seminary",
                 },
                 {
                   title:
                     common("current-locale") === "ko"
-                      ? "소망학교 후원"
+                      ? "소망 학교 후원"
                       : "Hope School Sponsorship",
                   description: dp("donate-program4-description"),
+                  donationLink: "/donate?program=hope-school",
+                  donorboxLink:
+                    "https://donorbox.org/embed/oaktree-support-hope-school",
                 },
               ].map((info, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-lg p-8 sm:p-5 hover:bg-gray-100 transition-all"
+                  className="bg-white rounded-2xl p-8 sm:p-6 hover:shadow-lg transition-all duration-300 border border-gray-100"
                 >
                   <div className="flex items-start gap-6 sm:gap-4">
-                    <div className="bg-[#1e4d2b] text-white w-12 h-12 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0 text-xl sm:text-lg font-bold">
+                    <div className="bg-[#1e4d2b]/10 text-[#1e4d2b] w-12 h-12 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl sm:text-lg font-bold">
                       {index + 1}
                     </div>
-                    <div>
-                      <h4 className="text-xl sm:text-[18px] font-bold text-gray-800 mb-3 sm:mb-2">
-                        {dp(info.title)}
+                    <div className="flex-1">
+                      <h4 className="text-2xl sm:text-xl font-bold text-gray-800 mb-3">
+                        {info.title}
                       </h4>
-                      <p className="text-gray-600 text-lg sm:text-[15px] leading-relaxed">
+                      <p className="text-gray-600 text-base sm:text-sm leading-relaxed mb-6">
                         {dp(info.description)}
                       </p>
+                      <Link
+                        href={info.donationLink}
+                        className="group inline-flex items-center gap-2 text-[#1e4d2b] hover:text-[#143420] font-medium transition-colors"
+                      >
+                        <span>
+                          {common("current-locale") === "ko"
+                            ? "후원 바로가기"
+                            : "View Sponsorship Program"}
+                        </span>
+                        <svg
+                          className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -586,22 +608,6 @@ export default function DonateProgram() {
                       </div>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              <div className="mt-16 sm:mt-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 sm:text-xl">
-                  {common("current-locale") === "ko"
-                    ? "우리의 비전"
-                    : "Our Vision"}
-                </h2>
-
-                <div className="bg-gradient-to-br from-[#f8faf8] to-white rounded-xl p-8 sm:p-5 border border-[#e0e8e0] shadow-sm">
-                  <p className="text-gray-700 leading-relaxed">
-                    {dp("vision-statement-1")}
-                    <br />
-                    {dp("vision-statement-2")}
-                  </p>
                 </div>
               </div>
             </div>

@@ -26,7 +26,12 @@ export const PROJECT = {
         "title": "dominica_projects_title1",
         "text": "dominica_projects_text1",
     },
-    projects : [
+    projects: [
+    {
+      title: "dominica_projects_campus_title",
+      description: "dominica_projects_campus_description",
+      image: "/image/dominica_project1.jpeg",
+    },
     {
       title: "dominica_projects_title2",
       description: "dominica_projects_text2",
