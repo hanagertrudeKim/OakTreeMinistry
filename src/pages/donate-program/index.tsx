@@ -60,12 +60,12 @@ export default function DonateProgram() {
               className="bg-white rounded-2xl shadow-sm hover:shadow-xl flex sm:flex-col items-stretch w-full sm:h-auto h-[440px] cursor-pointer transition-all duration-300 border border-gray-100/50 overflow-hidden group"
             >
               <div className="w-[400px] sm:w-full h-full sm:h-[280px] relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t to-transparent z-10" />
                 <Image
                   src={child.photo}
                   alt={child.korean_name}
                   fill
-                  className="object-cover sm:rounded-t-2xl sm:rounded-b-none rounded-l-2xl transform group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover sm:rounded-t-2xl sm:rounded-b-none rounded-l-2xl transform group-hover:scale-105 transition-transform duration-700 brightness-140"
                 />
                 <div className="absolute top-5 left-5 z-20 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm">
                   <span className="text-[#1e4d2b] text-sm font-semibold">
@@ -286,7 +286,7 @@ export default function DonateProgram() {
                       <h4 className="text-2xl sm:text-xl font-bold text-gray-800 mb-3">
                         {info.title}
                       </h4>
-                      <p className="text-gray-600 text-base sm:text-sm leading-relaxed mb-6">
+                      <p className="text-gray-600 text-lg sm:text-sm leading-relaxed mb-6">
                         {dp(info.description)}
                       </p>
                       <Link
@@ -321,6 +321,7 @@ export default function DonateProgram() {
         </div>
       </div>
 
+      {/* child detail modal */}
       {selectedChild && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 sm:p-0">
           <div className="bg-white rounded-2xl max-w-[1200px] w-full mx-auto shadow-2xl sm:h-[100vh] sm:rounded-none">
@@ -331,7 +332,7 @@ export default function DonateProgram() {
                     ? "아동 정보"
                     : "Child Information"}
                 </h3>
-                <p className="text-sm text-gray-500 sm:text-xs">
+                <p className="text-base sm:text-sm text-gray-500">
                   {common("current-locale") === "ko"
                     ? "후원을 통해 아이들의 미래에 희망을 전해주세요"
                     : "Help bring hope to children's future through sponsorship"}
@@ -347,7 +348,7 @@ export default function DonateProgram() {
 
             <div className="px-16 sm:px-4 py-12 sm:py-6 max-h-[85vh] sm:max-h-[calc(100vh-80px)] overflow-y-auto">
               <div className="mb-12 sm:mb-6">
-                <h3 className="text-[36px] sm:text-2xl font-bold text-gray-800 leading-tight sm:leading-normal">
+                <h3 className="text-3xl sm:text-2xl font-bold text-gray-800 leading-tight sm:leading-normal">
                   {common("current-locale") === "ko" ? (
                     <>
                       안녕하세요! 저는{" "}
@@ -392,28 +393,26 @@ export default function DonateProgram() {
                   </div>
                 </div>
 
-                <div className="col-span-7 space-y-8 sm:space-y-4">
-                  <div className="rounded-lg p-8 sm:p-5 hover:shadow-md transition-all duration-300 border border-gray-100">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
-                        <span className="text-xl">📖</span>
+                <div className="col-span-7 space-y-8 sm:space-y-6">
+                  <div className="rounded-xl p-8 sm:p-6 hover:shadow-md transition-all duration-300 border border-gray-200 bg-white">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-2 rounded-full bg-[#f8faf8] flex items-center justify-center">
+                        <span className="text-2xl">📖</span>
                       </div>
-                      <h3 className="font-semibold text-gray-800 text-lg">
+                      <h3 className="font-bold text-xl text-gray-800">
                         {common("current-locale") === "ko"
                           ? "나의 이야기"
                           : "My Story"}
                       </h3>
                     </div>
-                    <div className="relative">
-                      <p className="text-gray-600 leading-relaxed text-lg sm:text-base">
-                        {common("current-locale") === "ko"
-                          ? selectedChild.story.ko
-                          : selectedChild.story.en}
-                      </p>
-                    </div>
+                    <p className="text-lg sm:text-base text-gray-600 leading-relaxed">
+                      {common("current-locale") === "ko"
+                        ? selectedChild.story.ko
+                        : selectedChild.story.en}
+                    </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6 px-4 sm:grid-cols-1 sm:gap-3 sm:px-0">
+                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
                     {[
                       {
                         label: dp("grade"),
@@ -449,64 +448,77 @@ export default function DonateProgram() {
                     ].map((item) => (
                       <div
                         key={item.label}
-                        className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors flex items-center"
+                        className="bg-[#f8faf8] rounded-xl p-5 sm:p-4 hover:bg-[#f0f4f0] transition-colors"
                       >
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-3">
-                          <span className="text-sm">{item.icon}</span>
-                        </div>
-                        <div>
-                          <span className="text-sm text-gray-500 font-bold uppercase tracking-wide block">
-                            {item.label}
-                          </span>
-                          <span className="font-lg text-gray-800 text-sm mt-0.5 block">
-                            {item.value}
-                          </span>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                            <span className="text-xl sm:text-lg">
+                              {item.icon}
+                            </span>
+                          </div>
+                          <div>
+                            <span className="text-sm font-bold text-gray-500 uppercase tracking-wide block mb-1">
+                              {item.label}
+                            </span>
+                            <span className="text-base font-semibold text-gray-800">
+                              {item.value}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center">
-                        <span className="text-sm">👨‍👩‍👧‍👦</span>
+                  <div className="bg-white rounded-xl p-6 sm:p-6 border border-gray-200">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-12 h-4 rounded-full bg-[#f8faf8] flex items-center justify-center">
+                        <span className="text-xl">👨‍👩‍👧‍👦</span>
                       </div>
                       <h5 className="text-lg font-bold text-gray-800">
                         {dp("family")}
                       </h5>
                     </div>
-                    <p className="text-gray-600 leading-relaxed pl-4 border-l-2 border-gray-200 text-base">
+                    <p className="text-md sm:text-base text-gray-600 leading-relaxed pl-4">
                       {common("current-locale") === "ko"
                         ? selectedChild.family.ko
                         : selectedChild.family.en}
                     </p>
                   </div>
+
+                  <div className="flex justify-end mt-8 sm:hidden">
+                    <button
+                      onClick={() =>
+                        router.push(
+                          `/donate-program/${selectedChild?.registration_number}`
+                        )
+                      }
+                      className="py-4 px-8 bg-[#1e4d2b] text-white rounded-xl hover:bg-[#133219] transition-all duration-300 font-medium text-lg shadow-md hover:shadow-lg"
+                    >
+                      {common("current-locale") === "ko"
+                        ? "지금 후원하기"
+                        : "Sponsor Now"}
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-12 sm:mt-8">
+              <div className="mt-12 space-y-8 sm:space-y-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 sm:text-xl">
                   {dp("program-introduction")}
                 </h2>
-                <div className="bg-white rounded-lg border border-gray-200 p-5">
-                  <p className="text-gray-600 text-base leading-relaxed">
+                <div className="bg-white rounded-lg border border-gray-200 p-8">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     {dp("program-introduction-desc")}
                   </p>
                 </div>
-              </div>
 
-              <div className="mt-8 sm:mt-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 sm:text-xl">
-                  {dp("donation-usage")}
-                </h2>
-
-                <div className="bg-white rounded-lg border border-gray-200 p-5 mb-4">
-                  <h3 className="text-lg font-bold text-gray-800 mb-4 text-left">
+                <div className="bg-white rounded-xl border border-gray-200 p-8 sm:p-6">
+                  <h3 className="text-xl font-bold text-gray-800 mb-6">
                     {common("current-locale") === "ko"
                       ? "후원 방법"
                       : "Donation Options"}
                   </h3>
-                  <div className="grid grid-cols-2 gap-6 mb-3 sm:grid-cols-1 sm:gap-3">
+                  <div className="grid grid-cols-2 gap-6 mb-4 sm:grid-cols-1 sm:gap-4">
                     <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
                       <p className="text-sm text-gray-500 mb-1">
                         {common("current-locale") === "ko"
@@ -526,12 +538,9 @@ export default function DonateProgram() {
                       <p className="text-2xl font-bold text-gray-900">$420</p>
                     </button>
                   </div>
-                  <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-md text-left">
-                    💡 {dp("donation-usage-desc")}
-                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-1">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
                   {[
                     {
                       title:
@@ -596,14 +605,14 @@ export default function DonateProgram() {
                       key={item.title}
                       className="bg-white p-6 rounded-lg border border-gray-200 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md"
                     >
-                      <div className="flex items-start gap-5 text-sm">
+                      <div className="flex items-start gap-5 text-md">
                         <span className="text-lg">{item.icon}</span>
                         <div>
                           <p className="font-semibold text-base text-gray-900 mb-1">
                             {item.title}
                           </p>
-                          <p className="text-primary mb-1">{item.amount}</p>
-                          <p className="text-sm text-gray-500">{item.desc}</p>
+                          <p className="text-md mb-1">{item.amount}</p>
+                          <p className="text-md text-gray-500">{item.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -615,6 +624,7 @@ export default function DonateProgram() {
         </div>
       )}
 
+      {/* 모바일 하단 고정 후원 버튼 */}
       {selectedChild && (
         <div className="hidden sm:block fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 z-50">
           <button
@@ -630,7 +640,40 @@ export default function DonateProgram() {
         </div>
       )}
 
+      {/* 모바일 하단 여백 */}
       {selectedChild && <div className="pb-20 sm:block hidden"></div>}
+
+      <style jsx global>{`
+        @media (min-width: 768px) {
+          .modal-text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+          }
+          .modal-text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          }
+          .modal-heading {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .modal-text-lg {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
+          .modal-text-xl {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+          }
+          .modal-heading {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }

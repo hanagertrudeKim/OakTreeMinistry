@@ -35,12 +35,12 @@ export default function ChildDonation() {
 
             <div className="mx-auto max-w-3xl relative">
               <h1 className="relative z-10">
-                <span className="block text-2xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-900 mb-2 sm:mb-5">
+                <span className="block text-4xl sm:text-4xl md:text-7xl font-bold tracking-tight text-gray-900 mb-2 sm:mb-5">
                   {locale === "ko"
                     ? "1:1 어린이 후원 결제하기"
                     : "1:1 Child Sponsorship Payment"}
                 </span>
-                <span className="mt-2 sm:mt-0 block text-sm sm:text-xs leading-6 sm:leading-0 text-gray-600">
+                <span className="mt-2 sm:mt-0 block text-lg sm:text-base leading-6 sm:leading-0 text-gray-600">
                   {locale === "ko"
                     ? "한 아이의 미래를 변화시키는 여정에 동참해주세요"
                     : "Join us in changing a child's future"}
@@ -79,7 +79,7 @@ export default function ChildDonation() {
                     </span>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-2xl font-bold text-gray-800 ml-3">
+                    <p className="text-4xl font-bold text-gray-800 ml-3">
                       {locale === "ko" ? (
                         <>
                           안녕하세요!
@@ -110,12 +110,12 @@ export default function ChildDonation() {
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
                       <span className="text-xl">📖</span>
                     </div>
-                    <h3 className="font-semibold text-gray-800 text-lg">
+                    <h3 className="font-semibold text-gray-800 text-xl">
                       {locale === "ko" ? "나의 이야기" : "My Story"}
                     </h3>
                   </div>
                   <div className="relative mx-4">
-                    <p className="text-gray-600 leading-relaxed pt-2">
+                    <p className="text-gray-600 leading-relaxed pt-2 text-lg">
                       {locale === "ko" ? child.story.ko : child.story.en}
                     </p>
                   </div>
@@ -165,10 +165,10 @@ export default function ChildDonation() {
                         <span className="text-sm">{item.icon}</span>
                       </div>
                       <div>
-                        <span className="text-sm text-gray-500 font-bold uppercase tracking-wide block">
+                        <span className="text-base text-gray-500 font-bold uppercase tracking-wide block">
                           {item.label}
                         </span>
-                        <span className="font-medium text-gray-800 text-sm mt-0.5 block">
+                        <span className="font-medium text-gray-800 text-lg mt-0.5 block">
                           {item.value}
                         </span>
                       </div>
@@ -181,11 +181,11 @@ export default function ChildDonation() {
                     <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center">
                       <span className="text-sm">👨‍👩‍👧‍👦</span>
                     </div>
-                    <h5 className="text-base font-bold text-gray-800">
+                    <h5 className="text-lg font-bold text-gray-800">
                       {dp("profile.family_relationship", "가족관계")}
                     </h5>
                   </div>
-                  <p className="text-gray-600 leading-relaxed pl-4 border-l-2 border-gray-200 text-[15px]">
+                  <p className="text-gray-600 leading-relaxed pl-4 border-l-2 border-gray-200 text-lg">
                     {locale === "ko" ? child.family.ko : child.family.en}
                   </p>
                 </div>
@@ -202,26 +202,26 @@ export default function ChildDonation() {
               <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6 mb-6 md:mb-8">
                 <div className="grid grid-cols-2 gap-6 mb-3">
                   <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
-                    <p className="text-xs md:text-sm text-gray-500 mb-1">
+                    <p className="text-sm md:text-base text-gray-500 mb-1">
                       {locale === "ko" ? "월 후원하기" : "Monthly Donation"}
                     </p>
-                    <p className="text-[28px] font-bold text-[#1e4d2b]">$40</p>
+                    <p className="text-[32px] font-bold text-[#1e4d2b]">$40</p>
                   </button>
                   <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
-                    <p className="text-xs md:text-sm text-gray-500 mb-1">
+                    <p className="text-sm md:text-base text-gray-500 mb-1">
                       {locale === "ko" ? "연간 후원하기" : "Annual Donation"}
                     </p>
-                    <p className="text-2xl font-bold text-gray-900">$420</p>
+                    <p className="text-[32px] font-bold text-gray-900">$420</p>
                   </button>
                 </div>
 
                 <div className="mt-4 p-4 bg-[#f8faf8] rounded-lg">
-                  <p className="text-sm font-medium text-gray-700 mb-3">
+                  <p className="text-base md:text-lg font-medium text-gray-700 mb-3">
                     <span className="inline-flex items-center gap-2">
                       {locale === "ko" ? "후원기간" : "Sponsorship Period"}
                     </span>
                   </p>
-                  <p className="text-sm text-gray-800 ml-5">
+                  <p className="text-base md:text-lg text-gray-800 ml-5">
                     <span>{locale === "ko" ? "5년" : "5 years"}</span>
                     <span className="text-gray-500">
                       {locale === "ko" ? "(졸업까지)" : "(until graduation)"}
@@ -233,10 +233,10 @@ export default function ChildDonation() {
                   </p>
                 </div>
 
-                <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-md mt-4">
+                <div className="text-base md:text-lg text-gray-600 bg-gray-50 p-3 rounded-md mt-4">
                   💡{" "}
                   {locale === "ko"
-                    ? "후원금은 아이들의 교육, 의료, 영양 지원에 사용됩니다"
+                    ? "후원금은 아이들의 학비, 의료, 영양 지원 및 방과후 활동 등에 사용됩니다"
                     : "Donations are used for children's education, medical care, and nutritional support"}
                 </div>
               </div>
@@ -281,15 +281,15 @@ export default function ChildDonation() {
                     className="bg-white p-5 sm:px-4 md:p-4 rounded-lg border border-gray-200 hover:border-primary/30 transition-colors"
                   >
                     <div className="flex items-start gap-2 md:gap-3">
-                      <span className="text-lg md:text-xl">{item.icon}</span>
+                      <span className="text-xl md:text-2xl">{item.icon}</span>
                       <div>
-                        <p className="font-medium text-gray-900 text-sm md:text-base">
+                        <p className="font-medium text-gray-900 text-base md:text-lg">
                           {item.title}
                         </p>
-                        <p className="text-primary font-semibold text-sm md:text-base">
+                        <p className="text-primary font-semibold text-base md:text-lg">
                           {item.amount}
                         </p>
-                        <p className="text-xs md:text-sm text-gray-500">
+                        <p className="text-sm md:text-base text-gray-500">
                           {item.desc}
                         </p>
                       </div>

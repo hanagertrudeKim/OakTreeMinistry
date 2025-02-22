@@ -69,7 +69,7 @@ export default function Home() {
               max-w-2xl whitespace-pre-line sm:text-4xl"
             >
               {common("current-locale") === "ko"
-                ? `잊혀진 섬, 라고나브에서\n들려오는 아이들의\n꿈을 함께합니다`
+                ? `가난하고 잊혀진 섬, 라고나브 땅의\n아이들에게 희망의 씨앗을\n심어주세요`
                 : `La Gonâve,\nthe Forgotten Island:\nCreating a Future\nfor Its Youth`}
             </h1>
 
