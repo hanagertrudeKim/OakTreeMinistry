@@ -57,7 +57,7 @@ export default function Home() {
           <div
             ref={ref0}
             className={`absolute z-20 left-[7%] top-[30%] -translate-y-1/2
-              transition-all duration-700 ease-out sm:top-[75%]
+              transition-all duration-700 ease-out sm:top-[76%]
               ${
                 isVisible0
                   ? "opacity-100 translate-x-0"
@@ -69,7 +69,7 @@ export default function Home() {
               max-w-2xl whitespace-pre-line sm:text-4xl"
             >
               {common("current-locale") === "ko"
-                ? `가난하고 잊혀진 섬, 라고나브 땅의\n아이들에게 희망의 씨앗을\n심어주세요`
+                ? `가난하고 잊혀진 섬,\n라고나브 땅의\n아이들에게 희망의 씨앗을\n심어주세요`
                 : `La Gonâve,\nthe Forgotten Island:\nCreating a Future\nfor Its Youth`}
             </h1>
 
@@ -80,7 +80,7 @@ export default function Home() {
                 text-white border-2 border-white rounded-lg
                 transition-all duration-300
                 hover:bg-white hover:text-[#0B6954]
-                sm:px-6 sm:py-3 sm:text-base
+                sm:px-8 sm:py-3 sm:text-base sm:mt-6
                 sm:bg-[#0B6954] sm:border-none"
             >
               {common("current-locale") === "ko" ? "자세히 보기" : "Learn More"}
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
 
         {/* 후원 프로그램 소개 섹션 */}
-        <section className="py-[80px] bg-gradient-to-b from-[#F3F7F6] to-[#E8F0ED] sm:py-[50px]">
+        <section className="py-[80px] bg-gradient-to-b from-[#F3F7F6] to-[#E8F0ED] sm:py-[30px]">
           {/* 섹션 헤더 - 모바일 버전 포함 */}
           <div className="flex items-baseline max-w-[1200px] mx-auto px-[4vw]">
             <div className="w-[6vw] border-b-2 border-[#0B6954]/60 sm:w-[8vw]" />

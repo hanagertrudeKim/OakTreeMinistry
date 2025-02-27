@@ -29,6 +29,8 @@ export default function Donation() {
     })),
   };
 
+  const [isMinorOpen, setIsMinorOpen] = useState(false);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -112,7 +114,7 @@ export default function Donation() {
                           />
                           <div className="space-y-2 flex-1">
                             <span
-                              className={`font-bold text-lg sm:text-2xl tracking-tight transition-colors duration-200 block ${
+                              className={`font-bold text-lg sm:text-lg tracking-tight transition-colors duration-200 block ${
                                 selectedProgram === program.id
                                   ? "text-[#0B6954]"
                                   : "text-gray-900 group-hover:text-[#0B6954]"
@@ -171,90 +173,119 @@ export default function Donation() {
             </div>
 
             <div className="relative">
-              <details className="lg:hidden">
-                <summary className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 px-1 cursor-pointer">
-                  {locale === "ko" ? "기타 후원 프로그램" : "Other Programs"}
-                </summary>
-                <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-white shadow-md overflow-hidden mx-2 sm:mx-0">
-                  {LOCALIZED_PROGRAMS.minor.map((program) => (
-                    <Link
-                      key={program.id}
-                      href={program.donationLink}
-                      className={`group block transition-all duration-200 ${
-                        selectedProgram === program.id
-                          ? "bg-[#E7F4F0]/70 hover:bg-[#E7F4F0]"
-                          : "hover:bg-gray-50/70"
-                      }`}
-                    >
-                      <div className="px-4 sm:px-6 py-3 sm:py-4 relative overflow-hidden">
-                        <div className="flex items-center justify-between relative z-10">
-                          <div className="flex items-center gap-4">
-                            <div
-                              className={`w-1.5 h-12 rounded-full transition-all duration-300 ${
-                                selectedProgram === program.id
-                                  ? "bg-[#0B6954] scale-y-100"
-                                  : "bg-gray-200 group-hover:bg-[#0B6954]/60 scale-y-75 group-hover:scale-y-100"
-                              }`}
-                            />
-                            <div className="space-y-1">
-                              <span
-                                className={`font-semibold text-lg transition-colors duration-200 ${
+              <div className="lg:hidden">
+                <button
+                  onClick={() => setIsMinorOpen(!isMinorOpen)}
+                  className="w-full flex items-center justify-between text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 px-1"
+                >
+                  <span>
+                    {locale === "ko" ? "기타 후원 프로그램" : "Other Programs"}
+                  </span>
+                  <svg
+                    className={`w-6 h-6 transform transition-transform duration-300 ${
+                      isMinorOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    isMinorOpen
+                      ? "max-h-[1000px] opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="rounded-xl sm:rounded-2xl border border-gray-200 bg-white shadow-md overflow-hidden mx-2 sm:mx-0">
+                    {LOCALIZED_PROGRAMS.minor.map((program) => (
+                      <Link
+                        key={program.id}
+                        href={program.donationLink}
+                        className={`group block transition-all duration-200 ${
+                          selectedProgram === program.id
+                            ? "bg-[#E7F4F0]/70 hover:bg-[#E7F4F0]"
+                            : "hover:bg-gray-50/70"
+                        }`}
+                      >
+                        <div className="px-4 sm:px-6 py-3 sm:py-4 relative overflow-hidden">
+                          <div className="flex items-center justify-between relative z-10">
+                            <div className="flex items-center gap-4">
+                              <div
+                                className={`w-1.5 h-12 rounded-full transition-all duration-300 ${
                                   selectedProgram === program.id
-                                    ? "text-[#0B6954]"
-                                    : "text-gray-900 group-hover:text-[#0B6954]"
+                                    ? "bg-[#0B6954] scale-y-100"
+                                    : "bg-gray-200 group-hover:bg-[#0B6954]/60 scale-y-75 group-hover:scale-y-100"
+                                }`}
+                              />
+                              <div className="space-y-1">
+                                <span
+                                  className={`font-semibold text-lg transition-colors duration-200 ${
+                                    selectedProgram === program.id
+                                      ? "text-[#0B6954]"
+                                      : "text-gray-900 group-hover:text-[#0B6954]"
+                                  }`}
+                                >
+                                  {dp(program.title)}
+                                </span>
+                                <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-200">
+                                  {locale === "ko"
+                                    ? program.descriptionKo
+                                    : program.descriptionEn}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex items-center">
+                              <div
+                                className={`p-3 rounded-full transition-all duration-200 ${
+                                  selectedProgram === program.id
+                                    ? "bg-[#E7F4F0]"
+                                    : "bg-gray-100 group-hover:bg-[#E7F4F0]"
                                 }`}
                               >
-                                {dp(program.title)}
-                              </span>
-                              <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-200">
-                                {locale === "ko"
-                                  ? program.descriptionKo
-                                  : program.descriptionEn}
-                              </p>
+                                <svg
+                                  className={`w-5 h-5 transition-all duration-200 ${
+                                    selectedProgram === program.id
+                                      ? "text-[#0B6954]"
+                                      : "text-gray-400 group-hover:text-[#0B6954]"
+                                  }`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </div>
                             </div>
                           </div>
-                          <div className="flex items-center">
-                            <div
-                              className={`p-3 rounded-full transition-all duration-200 ${
-                                selectedProgram === program.id
-                                  ? "bg-[#E7F4F0]"
-                                  : "bg-gray-100 group-hover:bg-[#E7F4F0]"
-                              }`}
-                            >
-                              <svg
-                                className={`w-5 h-5 transition-all duration-200 ${
-                                  selectedProgram === program.id
-                                    ? "text-[#0B6954]"
-                                    : "text-gray-400 group-hover:text-[#0B6954]"
-                                }`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </div>
+                          <div
+                            className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
+                              selectedProgram === program.id
+                                ? "opacity-100"
+                                : "opacity-0 group-hover:opacity-100"
+                            }`}
+                          >
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-32 bg-[#E7F4F0]/50 rounded-full blur-3xl" />
                           </div>
                         </div>
-                        <div
-                          className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
-                            selectedProgram === program.id
-                              ? "opacity-100"
-                              : "opacity-0 group-hover:opacity-100"
-                          }`}
-                        >
-                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-32 bg-[#E7F4F0]/50 rounded-full blur-3xl" />
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </details>
+              </div>
 
               <div className="hidden lg:block">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 px-1">
