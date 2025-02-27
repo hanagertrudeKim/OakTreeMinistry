@@ -113,7 +113,7 @@ In 2022, due to the deteriorating security situation in Haiti, our team relocate
                 alt="about-us"
                 width={581}
                 height={480}
-                className="w-[500px] sm:w-[90vw] object-contain"
+                className="w-[500px] sm:w-[80vw] object-contain"
               />
             </div>
           )}
@@ -163,7 +163,7 @@ In 2022, due to the deteriorating security situation in Haiti, our team relocate
               alt="about-us"
               width={600}
               height={618}
-              className="w-[60vw] rounded-lg shadow-lg"
+              className="w-[60vw] rounded-lg shadow-lg sm:w-[100vw]"
             />
           </div>
           <div className="bg-gray-50 rounded-lg p-8 sm:p-4">
@@ -185,7 +185,7 @@ In 2022, due to the deteriorating security situation in Haiti, our team relocate
               alt="about-us"
               width={600}
               height={618}
-              className="w-[60vw] rounded-lg shadow-lg"
+              className="w-[60vw] rounded-lg shadow-lg sm:w-[100vw]"
             />
           </div>
         </div>

@@ -346,12 +346,13 @@ export default function DonateProgram() {
               </button>
             </div>
 
-            <div className="px-16 sm:px-4 py-12 sm:py-6 max-h-[85vh] sm:max-h-[calc(100vh-80px)] overflow-y-auto">
+            <div className="px-16 sm:px-4 py-12 sm:py-6 max-h-[85vh] sm:max-h-[calc(100vh-140px)] overflow-y-auto">
               <div className="mb-12 sm:mb-6">
                 <h3 className="text-3xl sm:text-2xl font-bold text-gray-800 leading-tight sm:leading-normal">
                   {common("current-locale") === "ko" ? (
                     <>
-                      안녕하세요! 저는{" "}
+                      안녕하세요!
+                      <br className="hidden sm:block" /> 저는{" "}
                       <span className="text-[#1e4d2b] relative inline-block">
                         {selectedChild.korean_name}
                         <span className="absolute bottom-0 left-0 w-full h-[8px] bg-[#1e4d2b]/10 -z-10"></span>
@@ -518,14 +519,14 @@ export default function DonateProgram() {
                       ? "후원 방법"
                       : "Donation Options"}
                   </h3>
-                  <div className="grid grid-cols-2 gap-6 mb-4 sm:grid-cols-1 sm:gap-4">
+                  <div className="grid grid-cols-2 gap-6 mb-4">
                     <button className="bg-[#f8faf8] rounded-lg p-4 hover:bg-[#f0f4f0] transition-colors text-left">
                       <p className="text-sm text-gray-500 mb-1">
                         {common("current-locale") === "ko"
                           ? "월 후원하기"
                           : "Monthly Donation"}
                       </p>
-                      <p className="text-[28px] font-bold text-[#1e4d2b]">
+                      <p className="text-[28px] sm:text-2xl font-bold text-[#1e4d2b]">
                         $40
                       </p>
                     </button>
@@ -535,7 +536,9 @@ export default function DonateProgram() {
                           ? "연간 후원하기"
                           : "Annual Donation"}
                       </p>
-                      <p className="text-2xl font-bold text-gray-900">$420</p>
+                      <p className="text-[28px] sm:text-2xl font-bold text-gray-900">
+                        $420
+                      </p>
                     </button>
                   </div>
                 </div>
